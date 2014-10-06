@@ -1,0 +1,36 @@
+.course {
+  width:60px;
+  height:80px;
+  border-style:solid;
+  border-width:1px;
+  cursor: pointer;
+}
+
+.course p {
+  text-align:center;
+}
+
+.course:active {
+  cursor: move;
+}
+
+.MATH {
+  background-color:cyan;
+}
+
+.STAT {
+  background-color:red;
+}
+
+.SWEN {
+  background-color:orange;
+}
+
+.courseBin {
+  width:100px;
+  height:100px;
+  background-color:blue;
+}
+
+
+
