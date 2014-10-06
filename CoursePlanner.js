@@ -2,11 +2,13 @@ var app = angular.module("CoursePlanner", []);
 
 app.controller('courseCtrl', function($scope) {
   $scope.courses = [
-    {subj: 'SWEN', num:"101", credits:1, year:1},
-    {subj: 'MATH', num:"190", credits:3, year:1},
-    {subj: 'STAT', num:"250", credits:3, year:1},
-    {subj: 'SWEN', num:"220", credits:3, year:1}
+    {subj: 'SWEN', num:"101", credits:1},
+    {subj: 'MATH', num:"190", credits:3},
+    {subj: 'STAT', num:"250", credits:3},
+    {subj: 'SWEN', num:"220", credits:3}
   ];
+  
+  $scope.y1 = [];
 });
 
 app.directive('draggable', function() {
@@ -27,11 +29,14 @@ app.directive('droppable', function($compile) {
             element.droppable({
                 accept: ".course",
                 drop:function(event,ui) {
-                  var dragged = angular.element(ui.draggable);
-		      dropped = angular.element(this);
-		  alert(dragged.attr('id'));
+                  var draggedIndex = angular.element(ui.draggable).data('index'),
+		              dropped = angular.element(this);
+					  
+		          scope.y1.push(scope.courses[draggedIndex]);
+				  
                 }
-    	    })
+				$scope.$apply();
+    	    });
         }
     }
 });

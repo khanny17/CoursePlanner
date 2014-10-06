@@ -1,3 +1,12 @@
+.row{
+    overflow: hidden; 
+}
+
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
 .course {
   width:60px;
   height:80px;
@@ -5,6 +14,7 @@
   border-width:1px;
   cursor: pointer;
   cursor: url(https://mail.google.com/mail/images/2/openhand.cur), move;
+  z-index: 5;
 }
 
 .course p {
@@ -15,6 +25,7 @@
   cursor: grabbing;
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
+  z-index:10;
 }
 
 .MATH {
@@ -29,10 +40,8 @@
   background-color:orange;
 }
 
-.courseBin {
-  width:100px;
-  height:100px;
-  background-color:blue;
+.year {
+  background-color:#EEE8D5;
 }
 
 
