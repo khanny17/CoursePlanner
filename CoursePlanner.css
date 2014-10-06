@@ -4,6 +4,7 @@
   border-style:solid;
   border-width:1px;
   cursor: pointer;
+  cursor: url(https://mail.google.com/mail/images/2/openhand.cur), move;
 }
 
 .course p {
@@ -11,7 +12,9 @@
 }
 
 .course:active {
-  cursor: move;
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
 }
 
 .MATH {
