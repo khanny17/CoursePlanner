@@ -7,24 +7,28 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.1/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-
-
-<meta charset=utf-8 />
+  <meta charset=utf-8 />
 </head>
 <body ng-controller="courseCtrl">
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-1" id="Year0">
+
+
+   <div class="row">
+    <div class="col-xs-1">
+     <div class="connectedSortable year" id="Year0" sortable>
       <div ng-repeat="c in courses" data-index="{{index}}"
-	       class="course {{c.subj}}" draggable>
+	       class="course {{c.subj}}">
         <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
       </div>
+	 </div>
     </div><!-- col -->
 	
-	<div class="col-xs-1 col-xs-offset-1 year" id="Year1" droppable>
-	  
+	<div class="col-xs-1 col-xs-offset-1">
+	  <div class="connectedSortable year" id="Year1" sortable></div>	  
 	</div><!-- col -->
-  </div><!-- row -->
+   </div><!-- row -->
+  
+  
   
   <div class="row">
     <b>courses:</b>

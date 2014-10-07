@@ -11,34 +11,13 @@ app.controller('courseCtrl', function($scope) {
   $scope.y1 = [];
 });
 
-app.directive('draggable', function() {
+app.directive('sortable', function() {
   return {
     restrict:'A',
     link: function(scope, element, attrs) {
-      element.draggable({
-        revert:"invalid"
-      });
+      element.sortable({
+        connectWith: ".connectedSortable"
+      }).disableSelection();
     }
   };
 });
-
-app.directive('droppable', function($compile) {
-    return {
-        restrict: 'A',
-        link: function(scope,element,attrs){
-            element.droppable({
-                accept: ".course",
-                drop:function(event,ui) {
-                  var draggedIndex = angular.element(ui.draggable).data('index'),
-		              dropped = angular.element(this);
-					  
-		          scope.y1.push(scope.courses[draggedIndex]);
-				  
-                }
-				$scope.$apply();
-    	    });
-        }
-    }
-});
-
-
