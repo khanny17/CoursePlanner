@@ -44,9 +44,18 @@
 
 .year {
   background-color:#EEE8D5;
-  width:80px;
-  min-height:300px;
+  width:90px;
+  min-height:400px;
   max-height:800px;
+}
+
+.right {
+  position:absolute;
+  right:0px;
+}
+
+.offset {
+  min-width:50px;
 }
 
 
