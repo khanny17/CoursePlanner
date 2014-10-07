@@ -1,13 +1,36 @@
 var app = angular.module("CoursePlanner", []);
 
 app.controller('courseCtrl', function($scope) {
-  $scope.courses = [
-    {subj: 'SWEN', num:"101", credits:1},
-    {subj: 'MATH', num:"190", credits:3},
-    {subj: 'STAT', num:"250", credits:3},
-    {subj: 'SWEN', num:"220", credits:3}
+  $scope.years = [{
+
+      title: "Year 1",
+      semester1: [
+        {subj: 'SWEN', num:"101", credits:1},
+        {subj: 'MATH', num:"190", credits:3},
+        {subj: 'STAT', num:"250", credits:3},
+        {subj: 'SWEN', num:"220", credits:3}
+      ],
+      semester2: [
+        {subj: 'SWEN', num:"250", credits:3},
+        {subj: 'MATH', num:"180", credits:4},
+        {subj: 'CSCI', num:"142", credits:4},
+      ]
+    }, {
+      title: "Year 2",
+      semester1: [
+        {subj: 'SWEN', num:"101", credits:1},
+        {subj: 'MATH', num:"190", credits:3},
+        {subj: 'STAT', num:"250", credits:3},
+        {subj: 'SWEN', num:"220", credits:3}
+      ],
+      semester2: [
+        {subj: 'SWEN', num:"250", credits:3},
+        {subj: 'MATH', num:"180", credits:4},
+        {subj: 'CSCI', num:"142", credits:4},
+      ]
+    }
   ];
-  
+
   $scope.y1 = [];
 });
 
@@ -16,7 +39,12 @@ app.directive('sortable', function() {
     restrict:'A',
     link: function(scope, element, attrs) {
       element.sortable({
-        connectWith: ".connectedSortable"
+        connectWith: ".connectedSortable",
+        receive: function(event,ui) {
+          item = ui.item;
+           
+          
+        }
       }).disableSelection();
     }
   };

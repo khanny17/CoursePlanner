@@ -27,7 +27,7 @@
   cursor: grabbing;
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
-  z-index:10;
+  z-index:10000;
 }
 
 .MATH {
@@ -42,13 +42,33 @@
   background-color:orange;
 }
 
-.year {
+.list {
+  list-style: none outside none;
+  margin: 10px 0 30px;
+  border: 2px solid gray;
+  margin: 10px 10px 0 0;
+  padding: 5px;
+}
+
+.courseCol {
   background-color:#EEE8D5;
   width:90px;
   min-height:400px;
   max-height:800px;
 }
 
+.year-row {
+  margin-top:20px;
+}
+
+.year-header {
+  background-color:#EEE8D5;
+  height:50px;
+}
+
+.year-header h2 {
+  text-align:center;
+}
 .right {
   position:absolute;
   right:0px;

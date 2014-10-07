@@ -4,7 +4,6 @@
   <meta charset=utf-8 />
   <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.1/angular.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="CoursePlanner.css">
@@ -13,25 +12,31 @@
 <body ng-controller="courseCtrl">
 <div class="container">
 <div class="row">
-  <div class="col-xs-3">
-   <div class="year-header"> </div>
-  
-   <div class="row">
-    <div class="col-xs-1">
-     <div class="connectedSortable year" id="Year0" sortable>
-      <div ng-repeat="c in courses" data-index="{{index}}"
+  <div class="col-xs-3" ng-repeat="year in years">
+   <div class="year-header">
+     <h2>{{year.title}} </h1>
+   </div>
+   <div class="row year-row">
+     <div class="col-xs-1">
+         <ul class="connectedSortable courseCol list" id="Year0" sortable>
+          <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
-        <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
-      </div>
-	 </div>
+           <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
+          </li>
+	 </ul>
     </div><!-- col -->
 	<div class="col-xs-offset-1 offset"></div>
 	<div class="col-xs-1 pull-right">
-	  <div class="connectedSortable year right" id="Year1" sortable></div>	  
+	  <ul class="connectedSortable courseCol list right" id="Year1" ng-model="year1" sortable>
+            <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
+	       class="course {{c.subj}}">
+             <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
+            </li>
+          </ul>	  
 	</div><!-- col -->
-   </div><!-- row -->
- </div><!-- col -->
-</div><!-- row -->
+    </div><!-- row -->
+   </div><!-- col -->
+  </div><!-- row -->
   
   
   
@@ -41,7 +46,7 @@
 	<b>year 1:</b>
 	<p ng-repeat="c in year1">{{c.subj + c.num}}</p>
   </div>
-</div> <!-- container fluid -->
+</div> <!-- container-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="CoursePlanner.js"></script>
 </body>
