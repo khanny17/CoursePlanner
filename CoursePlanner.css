@@ -9,6 +9,7 @@
 
 .course {
   width:60px;
+  background-color:white;
   height:80px;
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +28,8 @@
   cursor: grabbing;
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
-  z-index:10000;
+  z-index:10;
+  
 }
 
 .MATH {
