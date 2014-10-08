@@ -17,7 +17,7 @@
      <h2>{{year.title}} </h1>
    </div>
    <div class="row year-row">
-     <ul class="col-xs-1 connectedSortable courseCol list" id="Year0" sortable>
+     <ul class="col-xs-1 connectedSortable courseCol list" sortable>
        <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
          <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
@@ -25,7 +25,7 @@
      </ul>
     
 	
-     <ul class="col-xs-1 connectedSortable courseCol list right" id="Year1" ng-model="year1" sortable>
+     <ul class="col-xs-1 connectedSortable courseCol list right" ng-model="year1" sortable>
        <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
          <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>

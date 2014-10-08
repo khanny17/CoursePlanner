@@ -39,9 +39,12 @@ app.directive('sortable', function() {
       element.sortable({
         connectWith: ".connectedSortable",
         receive: function(event,ui) {
-          item = ui.item;
-           
-          
+          console.log(ui.item.index());
+          console.log(ui.sender);
+          console.log("try to print model array");         
+        },
+        stop: function(event,ui) {
+          console.log(ui.item.index());
         }
       }).disableSelection();
     }
