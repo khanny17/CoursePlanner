@@ -69,8 +69,11 @@
   height:50px;
 }
 
-.year-header h2 {
+.year-header input {
   text-align:center;
+  background:#EEE8D5;
+  display:block;
+  margin:0 auto;
 }
 .right {
   position:absolute;

@@ -41,7 +41,9 @@ app.directive('sortable', function() {
         receive: function(event,ui) {
           console.log(ui.item.index());
           console.log(ui.sender);
-          console.log("try to print model array");         
+          console.log(event.target);
+          scope.years.splice(scope.years.indexOf(ui.sender),1);
+          scope.$apply();
         },
         stop: function(event,ui) {
           console.log(ui.item.index());

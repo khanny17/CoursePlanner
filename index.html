@@ -12,21 +12,22 @@
 <body ng-controller="courseCtrl">
 <div class="container">
 <div class="row">
-  <div class="col-xs-3" ng-repeat="year in years">
+  <div class="col-xs-3" ng-repeat="year in years track by $index">
    <div class="year-header">
-     <h2>{{year.title}} </h1>
+     <input type="text" ng-model="years[$index].title"></input>
    </div>
    <div class="row year-row">
      <ul class="col-xs-1 connectedSortable courseCol list" sortable>
-       <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
-	       class="course {{c.subj}}">
-         <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
-       </li>
+       <div ng-repeat="c in year.semester1 track by $index">
+         <li ng-model="year.semester1[$index]" class="course {{c.subj}}">
+           <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
+         </li>
+       </div>
      </ul>
     
 	
      <ul class="col-xs-1 connectedSortable courseCol list right" ng-model="year1" sortable>
-       <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
+       <li ng-repeat="c in year.semester2" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
          <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
        </li>
@@ -38,10 +39,12 @@
   
   
   <div class="row">
-    <b>courses:</b>
-    <p ng-repeat="c in courses">{{c.subj + c.num}}</p>
-	<b>year 1:</b>
-	<p ng-repeat="c in year1">{{c.subj + c.num}}</p>
+    <b>Years:</b>
+    <div ng-repeat="year in years">
+      <p>{{year.title + year.semester1}}</p>
+      <b>{{year.title}}</b>
+      <p ng-repeat="c in year.semester1">{{c.subj + c.num}}</p>
+    </div>
   </div>
 </div> <!-- container-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
