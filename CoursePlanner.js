@@ -42,7 +42,7 @@ app.directive('sortable', function() {
           console.log(ui.item.index());
           console.log(ui.sender);
           console.log(event.target);
-          scope.years.splice(scope.years.indexOf(ui.sender),1);
+          
           scope.$apply();
         },
         stop: function(event,ui) {
