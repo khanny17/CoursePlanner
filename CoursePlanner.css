@@ -17,7 +17,7 @@
   border-style:solid;
   border-width:1px;
   cursor: pointer;
-  cursor: url(https://mail.google.com/mail/images/2/openhand.cur), move;
+  cursor: url(cursors/openhand.cur), move;
   z-index: 5;
 }
 
