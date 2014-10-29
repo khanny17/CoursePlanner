@@ -6,7 +6,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="CoursePlanner.css">
-  <title>Course Planner TESTING</title>
+  <title>Course Planner</title>
 </head>
 <body ng-controller="courseCtrl">
 <div class="container">
@@ -28,7 +28,9 @@
      <ul class="col-xs-1 connectedSortable courseCol list right" ng-model="year1" sortable>
        <li ng-repeat="c in year.semester2" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
-         <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
+         <input class="course-detail" ng-model="c.subj"  />
+		 <input class="course-detail" ng-model="c.num"  />
+		 <input class="course-detail" ng-model="c.credits"  />
        </li>
      </ul>	  
     </div><!-- row -->
@@ -48,5 +50,13 @@
 </div> <!-- container-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="CoursePlanner.js"></script>
+<script>
+	//make a field editable on double click
+	//BORKED
+	$('.course-detail').bind('dblclick',function() {
+		$(this).disabled="false";	
+	});
+
+</script>
 </body>
 </html>

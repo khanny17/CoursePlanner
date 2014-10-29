@@ -22,7 +22,7 @@
 }
 
 .course p {
-  text-align:center;
+  text-align:center
 }
 
 .course:active {
@@ -43,6 +43,16 @@
 
 .SWEN {
   background-color:orange;
+}
+
+.course-detail {
+	border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+	text-align:center;
+	width:60px;
 }
 
 .list {
