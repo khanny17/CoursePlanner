@@ -17,11 +17,12 @@
    </div>
    <div class="row year-row">
      <ul class="col-xs-1 connectedSortable courseCol list" sortable>
-       <div ng-repeat="c in year.semester1 track by $index">
-         <li ng-model="year.semester1[$index]" class="course {{c.subj}}">
-           <p>{{c.subj}}<br>{{c.num}}<br>({{c.credits}})</p>
-         </li>
-       </div>
+       <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
+	       class="course {{c.subj}}">
+                 <input class="course-detail" maxlength="4" ng-model="c.subj"  />
+		 <input class="course-detail" ng-model="c.num"  />
+		 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
+       </li>
        <button class="addCourseButton">Add</button>
      </ul>
     
@@ -29,9 +30,9 @@
      <ul class="col-xs-1 connectedSortable courseCol list right" ng-model="year1" sortable>
        <li ng-repeat="c in year.semester2" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
-                 <input class="course-detail" ng-model="c.subj"  />
+                 <input class="course-detail" maxlength="4" ng-model="c.subj"  />
 		 <input class="course-detail" ng-model="c.num"  />
-		 <input class="course-detail" ng-model="c.credits"  />
+		 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
        </li>
        <button class="addCourseButton">Add</button>
      </ul>	  
@@ -58,6 +59,13 @@ $(document).ready(function() {
     var text = '<div class="course"><input class="course-detail" value="SUBJ"/> <input class="course-detail" value="NUM"/><input class="course-detail" value="C"/></div>';
     $(this).before(text);
   });
+
+  $(".num").keypress(function(e) {
+    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+      return false;
+    }
+  });
+
 });
 </script>
 </body>
