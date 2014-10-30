@@ -8,6 +8,10 @@
     padding-bottom: 99999px;
 }
 
+.addCourseButton {
+ margin:auto; 
+}
+
 .course {
   width:60px;
   background-color:white;
@@ -68,6 +72,7 @@
   width:90px;
   min-height:400px;
   max-height:800px;
+  text-align:center;
 }
 
 .year-row {
