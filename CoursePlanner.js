@@ -32,6 +32,25 @@ app.controller('courseCtrl', function($scope) {
   ];
 });
 
+app.directive('addcourse', function() {
+  return {
+    restrict:'A',
+    link: function(scope,element,attrs) {
+      element.click(function() {
+        var text = '<div class="course"><input class="course-detail" value="SUBJ"/> <input class="course-detail" value="NUM"/><input class="course-detail" value="C"/></div>';
+        $(this).before(text);
+        
+
+      });
+    }
+  };
+
+});
+
+
+
+
+
 app.directive('sortable', function() {
   return {
     restrict:'A',
