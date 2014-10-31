@@ -17,16 +17,17 @@
    </div>
    <button addsemester>Add Semester</button>
    <div class="row year-row">
-     <ul ng-repeat="semester in year.semesters" class="col-xs-1 connectedSortable courseCol list" sortable>
-       <li ng-repeat="c in semester" ng-model="c" data-index="{{index}}"
+    <div ng-repeat="semester in year.semesters" class="col-xs-6">
+      <ul class="connectedSortable courseCol list" sortable>
+       <li ng-repeat="c in semester.classes" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
          <input class="course-detail" maxlength="4" ng-model="c.subj"  />
 	 <input class="course-detail" ng-model="c.num"  />
 	 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
        </li>
+      </ul>
        <button class="addCourseButton" addcourse>Add</button>
-     </ul>
-    
+     </div>
     </div><!-- row -->
    </div><!-- col -->
   <button addyear>Add Year</button>

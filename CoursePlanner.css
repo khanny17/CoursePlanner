@@ -1,6 +1,6 @@
-
-.row{
-    overflow: hidden; 
+html {
+  overflow-x:scroll;
+  overflow-y:scroll;
 }
 
 [class*="col-"]{
@@ -134,7 +134,7 @@
   position:absolute;
   right:0px;
 }
-/* disable bootstrap responsiveness */
+/* disable bootstrap responsiveness */ 
 .container {
   width: 970px !important;
 }

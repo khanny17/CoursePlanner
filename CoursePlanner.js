@@ -4,33 +4,33 @@ app.controller('courseCtrl', function($scope) {
   $scope.years = [{
 
       title: "Year 1",
-      semesters: [
-        [
+      semesters: [{
+        classes: [
           {subj: 'SWEN', num:"101", credits:1},
           {subj: 'MATH', num:"190", credits:3},
           {subj: 'STAT', num:"250", credits:3},
           {subj: 'SWEN', num:"220", credits:3}
-        ],
-        [
+        ]},{
+        classes: [
           {subj: 'SWEN', num:"250", credits:3},
           {subj: 'MATH', num:"180", credits:4},
           {subj: 'CSCI', num:"142", credits:4},
-        ]
+        ]}
       ]
     }, {
       title: "Year 2",
-      semesters: [
-        [
+      semesters: [{
+        classes: [
           {subj: 'FNRT', num:"101", credits:1},
           {subj: 'FNRT', num:"390", credits:3},
           {subj: 'WREC', num:"250", credits:3},
           {subj: 'SWEN', num:"362", credits:3}
-        ],
-        [
+        ]},{
+        classes: [
           {subj: 'CSCI', num:"250", credits:3},
           {subj: 'MATH', num:"182", credits:4},
           {subj: 'CSCI', num:"148", credits:4},
-        ]
+        ]}
       ]
     }
   ];
@@ -44,12 +44,14 @@ app.controller('courseCtrl', function($scope) {
 
   $scope.addSemester = function(year) {
     if(year.semesters.length < 2) {
-      year.semesters.push(new function() {});
+      year.semesters.push(new function() {
+        this.classes=[];
+      });
     }
   }
 
   $scope.addCourse = function(semester) {
-    semester.push(new function() {
+    semester.classes.push(new function() {
       this.subj="SUBJ";
       this.num="000";
       this.credits=0;
