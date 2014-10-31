@@ -15,6 +15,7 @@
    <div class="year-header">
      <input type="text" ng-model="years[$index].title"></input>
    </div>
+   <button addsemester>Add Semester</button>
    <div class="row year-row">
      <ul ng-repeat="semester in year.semesters" class="col-xs-1 connectedSortable courseCol list" sortable>
        <li ng-repeat="c in semester" ng-model="c" data-index="{{index}}"

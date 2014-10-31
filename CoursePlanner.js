@@ -39,8 +39,13 @@ app.controller('courseCtrl', function($scope) {
     $scope.years.push(new function() {
       this.title="NEW YEAR";
       this.semesters=[];
-      console.log("called");
     });
+  }
+
+  $scope.addSemester = function(year) {
+    if(year.semesters.length < 2) {
+      year.semesters.push(new function() {});
+    }
   }
 
   $scope.addCourse = function(semester) {
@@ -52,6 +57,7 @@ app.controller('courseCtrl', function($scope) {
   }
 });
 
+
 app.directive('addyear', function() {
   return {
     restrict: 'A',
@@ -59,6 +65,18 @@ app.directive('addyear', function() {
     link: function(scope,element,attrs) {
       element.click(function() {
         scope.$apply("addYear()");
+      });
+    }
+  };
+});
+
+app.directive('addsemester', function() {
+  return {
+    restrict: 'A',
+    scope:true,
+    link: function(scope,element,attrs) {
+      element.click(function() {
+        scope.$apply("addSemester(year)");
       });
     }
   };
