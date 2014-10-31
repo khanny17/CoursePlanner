@@ -79,6 +79,9 @@ app.directive('addsemester', function() {
     link: function(scope,element,attrs) {
       element.click(function() {
         scope.$apply("addSemester(year)");
+        if(scope.year.semesters.length>1) {
+          element.remove();
+        }
       });
     }
   };
@@ -96,7 +99,28 @@ app.directive('addcourse', function() {
   };
 });
 
-
+app.directive('subj', function() {
+  return {
+    restrict:'E',
+    template:"<p class='course-detail'>{{c.subj}}</p>",
+    link: function(scope,element,attrs) {
+      element.click(function() {
+       console.log(element.children().get(0)); 
+        if(element.children().get(0).is("p")) {
+          //if its p, change to an input
+          var input = $('<input />', {
+          'type': 'text', 
+          'class': 'course-detail',
+          'value': $(element).html(),
+          }); 
+          element.parent.append(input);
+          element.remove();
+          input.focus();
+        }
+      });
+    }
+  };
+});
 
 
 
