@@ -102,23 +102,30 @@ app.directive('addcourse', function() {
 app.directive('subj', function() {
   return {
     restrict:'E',
+    scope:true,
+    require:'ngModel',
     template:"<p class='course-detail'>{{c.subj}}</p>",
-    link: function(scope,element,attrs) {
+    link: function(scope,element,attrs,ngModel) {
       element.click(function() {
+        console.log(ngModel);
         var child = element.children().get(0);
         if(element.children().get(0).tagName == "P") {
           //if its p, change to an input
           var input = $('<input />', {
             'type': 'text', 
             'class': 'course-detail',
+            'maxlength': '4',
+            'ng-model': ngModel,
             'value': $(child).html(),
           });
           //change to p when focus lost
           input.focusout(function () {
-            var p = $('<p>{{c.subj}}</p>', {
-              'class': 'course-detail'
+            var p = $('<p>'+input.val()+'</p>', {
+              'class': 'course-detail',
+              'ng-model': ngModel
             });
-            var parent = $(this).parent
+            console.log(ngModel.$viewValue);
+            var parent = $(this).parent()
             parent.append(p);
             $(this).remove();
           });
