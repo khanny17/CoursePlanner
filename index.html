@@ -16,26 +16,16 @@
      <input type="text" ng-model="years[$index].title"></input>
    </div>
    <div class="row year-row">
-     <ul class="col-xs-1 connectedSortable courseCol list" sortable>
-       <li ng-repeat="c in year.semester1" ng-model="c" data-index="{{index}}"
+     <ul ng-repeat="semester in year.semesters" class="col-xs-1 connectedSortable courseCol list" sortable>
+       <li ng-repeat="c in semester" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
-                 <input class="course-detail" maxlength="4" ng-model="c.subj"  />
-		 <input class="course-detail" ng-model="c.num"  />
-		 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
+         <input class="course-detail" maxlength="4" ng-model="c.subj"  />
+	 <input class="course-detail" ng-model="c.num"  />
+	 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
        </li>
        <button class="addCourseButton" addcourse>Add</button>
      </ul>
     
-	
-     <ul class="col-xs-1 connectedSortable courseCol list right" ng-model="year1" sortable>
-       <li ng-repeat="c in year.semester2" ng-model="c" data-index="{{index}}"
-	       class="course {{c.subj}}">
-                 <input class="course-detail" maxlength="4" ng-model="c.subj"  />
-		 <input class="course-detail" ng-model="c.num"  />
-		 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
-       </li>
-       <button class="addCourseButton" addcourse>Add</button>
-     </ul>	  
     </div><!-- row -->
    </div><!-- col -->
   </div><!-- row -->
@@ -55,10 +45,6 @@
 <script src="CoursePlanner.js"></script>
 <script>
 $(document).ready(function() {
-  //$(".addCourseButton").click(function() {
-  //  var text = '<div class="course"><input class="course-detail" value="SUBJ"/> <input class="course-detail" value="NUM"/><input class="course-detail" value="C"/></div>';
-  //  $(this).before(text);
-  //});
 
   $(".num").keypress(function(e) {
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {

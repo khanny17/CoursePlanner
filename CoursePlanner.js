@@ -4,43 +4,57 @@ app.controller('courseCtrl', function($scope) {
   $scope.years = [{
 
       title: "Year 1",
-      semester1: [
-        {subj: 'SWEN', num:"101", credits:1},
-        {subj: 'MATH', num:"190", credits:3},
-        {subj: 'STAT', num:"250", credits:3},
-        {subj: 'SWEN', num:"220", credits:3}
-      ],
-      semester2: [
-        {subj: 'SWEN', num:"250", credits:3},
-        {subj: 'MATH', num:"180", credits:4},
-        {subj: 'CSCI', num:"142", credits:4},
+      semesters: [
+        [
+          {subj: 'SWEN', num:"101", credits:1},
+          {subj: 'MATH', num:"190", credits:3},
+          {subj: 'STAT', num:"250", credits:3},
+          {subj: 'SWEN', num:"220", credits:3}
+        ],
+        [
+          {subj: 'SWEN', num:"250", credits:3},
+          {subj: 'MATH', num:"180", credits:4},
+          {subj: 'CSCI', num:"142", credits:4},
+        ]
       ]
     }, {
       title: "Year 2",
-      semester1: [
-        {subj: 'FNRT', num:"101", credits:1},
-        {subj: 'FNRT', num:"390", credits:3},
-        {subj: 'WREC', num:"250", credits:3},
-        {subj: 'SWEN', num:"362", credits:3}
-      ],
-      semester2: [
-        {subj: 'CSCI', num:"250", credits:3},
-        {subj: 'MATH', num:"182", credits:4},
-        {subj: 'CSCI', num:"148", credits:4},
+      semesters: [
+        [
+          {subj: 'FNRT', num:"101", credits:1},
+          {subj: 'FNRT', num:"390", credits:3},
+          {subj: 'WREC', num:"250", credits:3},
+          {subj: 'SWEN', num:"362", credits:3}
+        ],
+        [
+          {subj: 'CSCI', num:"250", credits:3},
+          {subj: 'MATH', num:"182", credits:4},
+          {subj: 'CSCI', num:"148", credits:4},
+        ]
       ]
     }
   ];
+
+  $scope.addCourse = function(yearIndex,semesterIndex) {
+    //right now this will only add to semester1
+    $scope.years[yearIndex].semesters[semesterIndex].push(new function() {
+      this.subj="SUBJ";
+      this.num="000";
+      this.credits=0;
+    });
+
+  }
+
+
 });
 
 app.directive('addcourse', function() {
   return {
     restrict:'A',
+    scope:true,
     link: function(scope,element,attrs) {
       element.click(function() {
-        var text = '<div class="course"><input class="course-detail" value="SUBJ"/> <input class="course-detail" value="NUM"/><input class="course-detail" value="C"/></div>';
-        $(this).before(text);
-        
-
+        scope.$apply("addCourse(0,0)"); 
       });
     }
   };
