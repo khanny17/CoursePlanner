@@ -74,7 +74,7 @@ html {
 }
 
 .WREC {
-  background-color:gold;
+  background-color:silver;
 }
 
 .BIOL {
@@ -94,13 +94,17 @@ html {
 }
 
 .course-detail {
-	border: none;
+    border: none;
     outline: none;
     background-color: transparent;
     font-family: inherit;
     font-size: inherit;
-	text-align:center;
-	width:60px;
+    text-align:center;
+    width:60px;
+}
+
+.cap {
+  text-transform:uppercase;
 }
 
 .list {
@@ -133,10 +137,6 @@ html {
   background:#EEE8D5;
   display:block;
   margin:0 auto;
-}
-.right {
-  position:absolute;
-  right:0px;
 }
 /* disable bootstrap responsiveness */ 
 .container {

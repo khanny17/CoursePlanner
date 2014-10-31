@@ -21,8 +21,8 @@
       <ul class="connectedSortable courseCol list" sortable>
        <li ng-repeat="c in semester.classes" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
-         <input class="course-detail" maxlength="4" ng-model="c.subj"  />
-	 <input class="course-detail" ng-model="c.num"  />
+         <input class="course-detail cap" maxlength="4" ng-model="c.subj"  />
+	 <input class="course-detail num" maxlength="6" ng-model="c.num"  />
 	 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
        </li>
       </ul>
