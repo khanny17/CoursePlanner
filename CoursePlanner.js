@@ -105,16 +105,26 @@ app.directive('subj', function() {
     template:"<p class='course-detail'>{{c.subj}}</p>",
     link: function(scope,element,attrs) {
       element.click(function() {
-       console.log(element.children().get(0)); 
-        if(element.children().get(0).is("p")) {
+        var child = element.children().get(0);
+        if(element.children().get(0).tagName == "P") {
           //if its p, change to an input
           var input = $('<input />', {
-          'type': 'text', 
-          'class': 'course-detail',
-          'value': $(element).html(),
-          }); 
-          element.parent.append(input);
-          element.remove();
+            'type': 'text', 
+            'class': 'course-detail',
+            'value': $(child).html(),
+          });
+          //change to p when focus lost
+          input.focusout(function () {
+            var p = $('<p>{{c.subj}}</p>', {
+              'class': 'course-detail'
+            });
+            var parent = $(this).parent
+            parent.append(p);
+            $(this).remove();
+          });
+
+          element.append(input);
+          child.remove();
           input.focus();
         }
       });
