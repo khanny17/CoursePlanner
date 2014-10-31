@@ -35,17 +35,13 @@ app.controller('courseCtrl', function($scope) {
     }
   ];
 
-  $scope.addCourse = function(yearIndex,semesterIndex) {
-    //right now this will only add to semester1
-    $scope.years[yearIndex].semesters[semesterIndex].push(new function() {
+  $scope.addCourse = function(semester) {
+    semester.push(new function() {
       this.subj="SUBJ";
       this.num="000";
       this.credits=0;
     });
-
   }
-
-
 });
 
 app.directive('addcourse', function() {
@@ -54,11 +50,10 @@ app.directive('addcourse', function() {
     scope:true,
     link: function(scope,element,attrs) {
       element.click(function() {
-        scope.$apply("addCourse(0,0)"); 
+        scope.$apply("addCourse(semester)"); 
       });
     }
   };
-
 });
 
 

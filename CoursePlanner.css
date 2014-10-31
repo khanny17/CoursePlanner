@@ -49,6 +49,46 @@
   background-color:orange;
 }
 
+.PHYS {
+  background-color:teal;
+}
+
+.CHEM {
+  background-color:magenta;
+}
+
+.CHMA {
+  background-color:purple;
+}
+
+.CHMB {
+  background-color:lavender;
+}
+
+.FNRT {
+  background-color:coral;
+}
+
+.WREC {
+  background-color:gold;
+}
+
+.BIOL {
+  background-color:green;
+}
+
+.BIOG {
+  background-color:chartreuse;
+}
+
+.CSCI {
+  background-color:yellow;
+}
+
+.CSEC {
+  background-color:blue;
+}
+
 .course-detail {
 	border: none;
     outline: none;
