@@ -139,6 +139,91 @@ app.directive('subj', ['$parse', function($parse) {
   };
 }]);
 
+app.directive('num', ['$parse', function($parse) {
+  return {
+    restrict:'E',
+    scope:true,
+    require:'?ngModel',
+    template:"<p class='course-detail'>{{c.num}}</p>",
+    link: function(scope,element,attrs,controller) {
+      element.click(function() {
+        console.log(controller);
+        var child = element.children().get(0);
+        if(element.children().get(0).tagName == "P") {
+          //if its p, change to an input
+          var input = $('<input />', {
+            'type': 'text',
+            'class': 'course-detail',
+            'maxlength': '6',
+            'value': $(child).html(),
+          });
+          //change to p when focus lost
+          input.focusout(function () {
+            var p = $('<p>'+input.val()+'</p>', {
+              'class': 'course-detail',
+            });
+            $(this).replaceWith(p);
+          });
+          //update model on keypress
+          input.keyup(function () {
+            var setFunction = $parse(attrs['ngModel']).assign;
+            setFunction(scope, $(input).val());
+            scope.$apply();
+          });
+
+          $(child).replaceWith(input);
+          input.focus();
+        }
+      });
+    }
+  };
+}]);
+
+app.directive('cred', ['$parse', function($parse) {
+  return {
+    restrict:'E',
+    scope:true,
+    require:'?ngModel',
+    template:"<p class='course-detail'>{{c.credits}}</p>",
+    link: function(scope,element,attrs,controller) {
+      element.click(function() {
+        var child = element.children().get(0);
+        if(element.children().get(0).tagName == "P") {
+          //if its p, change to an input
+          var input = $('<input />', {
+            'type': 'text',
+            'class': 'course-detail',
+            'maxlength': '1',
+            'value': $(child).html(),
+          });
+          //change to p when focus lost
+          input.focusout(function () {
+            var p = $('<p>'+input.val()+'</p>', {
+              'class': 'course-detail',
+            });
+            $(this).replaceWith(p);
+          });
+          //update model on keypress
+          input.keypress(function (e) {
+            //***Don't allow letters
+            if (e.which != 8 && e.which != 0 &&
+               (e.which < 48 || e.which > 57)) {
+              return false;
+            } else {
+              var setFunction = $parse(attrs['ngModel']).assign;
+              setFunction(scope, $(input).val());
+              scope.$apply();
+            }
+          });
+
+          $(child).replaceWith(input);
+          input.focus();
+        }
+      });
+    }
+  };
+}]);
+
 
 
 app.directive('sortable', function() {
