@@ -21,10 +21,9 @@
       <ul class="connectedSortable courseCol list" sortable>
        <li ng-repeat="c in semester.classes" ng-model="c" data-index="{{index}}"
 	       class="course {{c.subj}}">
-         <!-- <input class="course-detail cap" maxlength="4" ng-model="c.subj"  />-->
          <subj class="course-detail" ng-model="c.subj"></subj>
-	 <input class="course-detail num" maxlength="6" ng-model="c.num"  />
-	 <input class="course-detail num" maxlength="1" ng-model="c.credits"  />
+         <num class="course-detail" ng-model="c.num"></num>
+         <cred class="course-detail" ng-model="c.credits"></cred>
        </li>
       </ul>
        <button class="addCourseButton" addcourse>Add</button>
@@ -36,16 +35,5 @@
 </div> <!-- container-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script src="CoursePlanner.js"></script>
-<script>
-$(document).ready(function() {
-
-  $(".num").keypress(function(e) {
-    if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-      return false;
-    }
-  });
-
-});
-</script>
 </body>
 </html>
