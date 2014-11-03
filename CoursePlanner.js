@@ -93,51 +93,51 @@ app.directive('addcourse', function() {
     scope:true,
     link: function(scope,element,attrs) {
       element.click(function() {
-        scope.$apply("addCourse(semester)"); 
+        scope.$apply("addCourse(semester)");
       });
     }
   };
 });
 
-app.directive('subj', function() {
+app.directive('subj', ['$parse', function($parse) {
   return {
     restrict:'E',
     scope:true,
-    require:'ngModel',
+    require:'?ngModel',
     template:"<p class='course-detail'>{{c.subj}}</p>",
-    link: function(scope,element,attrs,ngModel) {
+    link: function(scope,element,attrs,controller) {
       element.click(function() {
-        console.log(ngModel);
+        console.log(controller);
         var child = element.children().get(0);
         if(element.children().get(0).tagName == "P") {
           //if its p, change to an input
           var input = $('<input />', {
-            'type': 'text', 
+            'type': 'text',
             'class': 'course-detail',
             'maxlength': '4',
-            'ng-model': ngModel,
             'value': $(child).html(),
           });
           //change to p when focus lost
           input.focusout(function () {
             var p = $('<p>'+input.val()+'</p>', {
               'class': 'course-detail',
-              'ng-model': ngModel
             });
-            console.log(ngModel.$viewValue);
-            var parent = $(this).parent()
-            parent.append(p);
-            $(this).remove();
+            $(this).replaceWith(p);
+          });
+          //update model on keypress
+          input.keyup(function () {
+            var setFunction = $parse(attrs['ngModel']).assign;
+            setFunction(scope, $(input).val());
+            scope.$apply();
           });
 
-          element.append(input);
-          child.remove();
+          $(child).replaceWith(input);
           input.focus();
         }
       });
     }
   };
-});
+}]);
 
 
 
@@ -151,7 +151,7 @@ app.directive('sortable', function() {
           console.log(ui.item.index());
           console.log(ui.sender);
           console.log(event.target);
-          
+
           scope.$apply();
         },
         stop: function(event,ui) {
