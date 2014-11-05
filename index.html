@@ -18,9 +18,9 @@
    <button addsemester>Add Semester</button>
    <div class="row year-row">
     <div ng-repeat="semester in year.semesters" class="col-xs-6">
-      <ul class="connectedSortable courseCol list" sortable>
-       <li ng-repeat="c in semester.classes" ng-model="c" data-index="{{index}}"
-	       class="course {{c.subj}}">
+      <ul class="connectedSortable courseCol list" ng-model="semester.classes"
+          ui-sortable="{ 'placeholder': 'course', 'connectWith': '.connectedSortable' }">
+       <li ng-repeat="c in semester.classes" class="course {{c.subj}}">
          <subj class="course-detail" ng-model="c.subj"></subj>
          <num class="course-detail" ng-model="c.num"></num>
          <cred class="course-detail" ng-model="c.credits"></cred>
@@ -34,6 +34,7 @@
   </div><!-- row -->
 </div> <!-- container-->
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script type="text/javascript" src="modules/ui-sortable-angular1.2/src/sortable.js"></script>
 <script src="CoursePlanner.js"></script>
 </body>
 </html>

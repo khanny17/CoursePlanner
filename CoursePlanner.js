@@ -1,4 +1,4 @@
-var app = angular.module("CoursePlanner", []);
+var app = angular.module("CoursePlanner", ['ui.sortable']);
 
 app.controller('courseCtrl', function($scope) {
   $scope.years = [{
