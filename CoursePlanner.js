@@ -225,4 +225,19 @@ app.directive('cred', ['$parse', function($parse) {
 }]);
 
 
-
+app.directive('downloadplan',function($http) {
+  return {
+    restrict:'E',
+    template:"<button>Download as JSON</button>",
+    replace:true,
+    link: function(scope,element,attrs) {
+      element.click(function() {/*
+        randomness = Math.random().toString(36).substring(7);
+        filename = randomness + ".json"; 
+        $http.post(filename,scope.years);
+        window.open(filename);*/
+        console.log("Not implemented yet");
+      });
+    }
+  };
+});
