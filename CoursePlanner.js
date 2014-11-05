@@ -226,23 +226,3 @@ app.directive('cred', ['$parse', function($parse) {
 
 
 
-app.directive('sortable', function() {
-  return {
-    restrict:'A',
-    link: function(scope, element, attrs) {
-      element.sortable({
-        connectWith: ".connectedSortable",
-        receive: function(event,ui) {
-          console.log(ui.item.index());
-          console.log(ui.sender);
-          console.log(event.target);
-
-          scope.$apply();
-        },
-        stop: function(event,ui) {
-          console.log(ui.item.index());
-        }
-      }).disableSelection();
-    }
-  };
-});
