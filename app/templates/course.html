@@ -1,8 +1,11 @@
 <li class="course {{c.subj}}">
+  <name class="course-name"><p>Sample long name of a course</p></name>
 
   <div class="courseInner">
-    <subj class="course-detail" ng-model="c.subj"></subj>
-    <num class="course-detail" ng-model="c.num"></num>
-    <cred class="course-detail" ng-model="c.credits"></cred>
+    <subj class="course-detail" ng-model="c.subj">
+    </subj>-<num class="course-detail" ng-model="c.num">
+    </num>
+    <br>
+    (<cred class="course-detail" ng-model="c.credits"></cred>)
   </div>
 </li>

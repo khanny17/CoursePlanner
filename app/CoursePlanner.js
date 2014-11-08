@@ -107,7 +107,6 @@ app.directive('subj', ['$parse', function($parse) {
     template:"<p class='course-detail'>{{c.subj}}</p>",
     link: function(scope,element,attrs,controller) {
       element.click(function() {
-        console.log(controller);
         var child = element.children().get(0);
         if(element.children().get(0).tagName == "P") {
           //if its p, change to an input
@@ -233,7 +232,7 @@ app.directive('downloadplan',function($http) {
     link: function(scope,element,attrs) {
       element.click(function() {/*
         randomness = Math.random().toString(36).substring(7);
-        filename = randomness + ".json"; 
+        filename = randomness + ".json";
         $http.post(filename,scope.years);
         window.open(filename);*/
         console.log("Not implemented yet");

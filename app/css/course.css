@@ -1,5 +1,6 @@
 .course {
-  width:60px;
+  position:relative;
+  width:65px;
   background-color:white;
   height:80px;
   margin-left: auto;
@@ -9,9 +10,10 @@
   cursor: pointer;
   cursor: url(cursors/openhand.cur), move;
   z-index: 5;
+  padding:1px;
 }
 
-.course p {
+.course p,input {
   text-align:center
 }
 
@@ -20,15 +22,48 @@
   cursor: -webkit-grabbing;
   cursor: -moz-grabbing;
   z-index:10;
-
 }
 
-.course-detail {
+.courseInner {
+  position:absolute;
+  width:80%;
+  margin: auto;
+  right: 0;
+  left: 0;
+  bottom:0;
+
+  text-align:center;
+  line-height:110%;
+
+  background-color:white;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
+
+.course-detail p,input{
     border: none;
     outline: none;
     background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
+
+    font-size:60%;
+    font-weight:bold;
     text-align:center;
-    width:60px;
+}
+
+name p{
+  font-size:80%;
+  line-height:90%;
+}
+
+subj p, input {
+  display:inline;
+}
+
+num p, input {
+  display:inline;
+}
+
+cred p, input {
+  display:inline;
 }
