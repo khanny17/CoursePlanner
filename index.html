@@ -20,7 +20,7 @@
     <div ng-repeat="semester in year.semesters" class="col-xs-6">
       <ul class="connectedSortable courseCol list" ng-model="semester.classes"
           ui-sortable="{ 'placeholder': 'course', 'connectWith': '.connectedSortable' }">
-        <div ng-repeat="c in semester.classes" ng-include="'templates/course.html'"> </div>
+        <div ng-repeat="c in semester.classes" ng-include="'app/templates/course.html'"> </div>
       </ul>
        <button class="addCourseButton" addcourse>Add</button>
      </div>
