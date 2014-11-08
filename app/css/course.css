@@ -41,10 +41,21 @@
   border-color: black;
 }
 
-.course-detail p,input{
+.course-detail p {
     border: none;
     outline: none;
     background-color: transparent;
+
+    font-size:60%;
+    font-weight:bold;
+    text-align:center;
+}
+
+.course-detail input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    display:inline;
 
     font-size:60%;
     font-weight:bold;
