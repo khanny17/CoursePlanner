@@ -1,0 +1,56 @@
+@import url("course.css");
+@import url("coursecolors.css");
+
+html {
+  overflow-x:scroll;
+  overflow-y:scroll;
+}
+
+[class*="col-"]{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.addCourseButton {
+ margin:auto;
+}
+
+.cap {
+  text-transform:uppercase;
+}
+
+.list {
+  list-style: none outside none;
+  margin: 10px 0 30px;
+  border: 2px solid gray;
+  margin: 10px 10px 0 0;
+  padding: 5px;
+}
+
+.courseCol {
+  background-color:#EEE8D5;
+  width:90px;
+  min-height:400px;
+  max-height:800px;
+  text-align:center;
+}
+
+.year-row {
+  margin-top:20px;
+}
+
+.year-header {
+  background-color:#EEE8D5;
+  height:50px;
+}
+
+.year-header input {
+  text-align:center;
+  background:#EEE8D5;
+  display:block;
+  margin:0 auto;
+}
+/* disable bootstrap responsiveness */
+.container {
+  width: 970px !important;
+}
