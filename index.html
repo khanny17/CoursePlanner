@@ -18,12 +18,13 @@
    <button addsemester>Add Semester</button>
    <button removeyear>Remove Year</button>
    <div class="row year-row">
-    <div ng-repeat="semester in year.semesters" class="semester-col">
+    <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
       <ul class="connectedSortable courseCol list" ng-model="semester.classes"
           ui-sortable="{ 'placeholder': 'course', 'connectWith': '.connectedSortable' }">
         <div ng-repeat="c in semester.classes" ng-include="'app/templates/course.html'"> </div>
       </ul>
        <button class="addCourseButton" addcourse>Add</button>
+       <button removesemester>Delete</button>
      </div>
     </div><!-- row -->
    </div><!-- col -->
@@ -32,6 +33,7 @@
 </div> <!-- container-->
 <downloadplan></downloadplan>
 <loadplan></loadplan>
+<p class="error">{{errormsg}}</p>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
 <script src="app/CoursePlanner.js"></script>

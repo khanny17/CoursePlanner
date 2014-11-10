@@ -9,6 +9,11 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
 
   $scope.maxSemesters=4;
 
+  $scope.errormsg = "";
+  $scope.setErrorMsg = function(text) {
+    $scope.errormsg = text;
+  }
+
   $scope.save = function() {
     var data = JSON.stringify($scope.years);
     var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
@@ -16,7 +21,8 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
     window.focus();
   }
 
-  $scope.open = function(data) {
+  $scope.load = function(data) {
+    console.log(data);
     $scope.years = data;
   }
 
@@ -29,6 +35,10 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
 
   $scope.removeYear = function(index) {
     $scope.years.splice(index,1);
+  }
+
+  $scope.removeSemester = function(year,index) {
+    year.semesters.splice(index,1);
   }
 
   $scope.addSemester = function(year) {
@@ -86,6 +96,21 @@ app.directive('addsemester', function() {
         if(scope.year.semesters.length>scope.maxSemesters-1) {
           element.remove();
         }
+      });
+    }
+  };
+});
+
+app.directive('removesemester', function() {
+  return {
+    restrict: 'A',
+    scope:true,
+    link: function(scope,element,attrs) {
+      element.click(function() {
+          if(confirm("Delete this semester and classes?")) {
+            scope.$apply("removeSemester(year,element.$index)");
+          }
+
       });
     }
   };
@@ -270,14 +295,15 @@ app.directive('loadplan',function() {
     link: function(scope,element,attrs) {
       element.click(function() {
         var text = prompt("paste json file here");
-        try {
-          var data = JSON.parse(text);
-        } catch(SyntaxError) {
-          alert("Invalid JSON File");
-          return;
-        }
         if(text != null) {
-          scope.$apply(open(data));
+          try {
+            var data = JSON.parse(text);
+            scope.load(data);
+          } catch(e) {
+            scope.setErrorMsg('invalid json file');
+          }
+
+          scope.$apply();
         }
       });
     }
