@@ -11,6 +11,7 @@
   cursor: url(cursors/openhand.cur), move;
   z-index: 5;
   padding:1px;
+  overflow:hidden;
 }
 
 .course p,input {
@@ -62,7 +63,7 @@
     text-align:center;
 }
 
-name p{
+.course-name {
   font-size:80%;
   line-height:90%;
 }

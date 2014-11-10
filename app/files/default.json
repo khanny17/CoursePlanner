@@ -1,0 +1,75 @@
+[
+    {
+      "title": "Year 1",
+      "semesters": [{
+        "classes": [
+          {
+            "name":"Intro to Software Engineering",
+            "subj": "SWEN", "num":"101", "credits":1
+          },
+          {
+            "name":"Discrete Mathematics for Computing",
+            "subj": "MATH", "num":"190", "credits":3
+          },
+          {
+            "name":"Applied Statistics",
+            "subj": "STAT", "num":"205", "credits":3
+          },
+          {
+            "name":"Math Models of Software",
+            "subj": "SWEN", "num":"220", "credits":3
+          }
+        ]},{
+        "classes": [
+          {
+            "name":"Personal Software Engineering",
+            "subj": "SWEN", "num":"250", "credits":3
+          },
+          {
+            "name":"Project Based Calculus 1",
+            "subj": "MATH", "num":"181", "credits":4
+          },
+          {
+            "name":"Computer Science II",
+            "subj": "CSCI", "num":"142", "credits":4
+          }
+        ]}
+      ]
+    }, {
+      "title": "Year 2",
+      "semesters": [{
+        "classes": [
+          {
+            "name":"General Biology I",
+            "subj": "BIOL", "num":"101", "credits":1
+          },
+          {
+            "name":"This is not a real class",
+            "subj": "FNRT", "num":"390", "credits":3
+          },
+          {
+            "name":"Also not a real class",
+            "subj": "WREC", "num":"250", "credits":3
+          },
+          {
+            "name":"This might have been something on quarters",
+            "subj": "SWEN", "num":"362", "credits":3
+          }
+        ]},{
+        "classes": [
+          {
+            "name":"Concepts of Computer Systems",
+            "subj": "CSCI", "num":"250", "credits":3
+          },
+          {
+            "name":"Calculus II",
+            "subj": "MATH", "num":"182", "credits":4
+          },
+          {
+            "name":"Advanced Java Programming",
+            "subj": "CSCI", "num":"605", "credits":4
+          }
+        ]}
+      ]
+    }
+]
