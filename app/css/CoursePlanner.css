@@ -13,7 +13,6 @@ body {
 
 .container {
   display:table;
-  border:solid red;
   white-space:nowrap;
 }
 
@@ -21,12 +20,17 @@ body {
   display:table-row;
 }
 
+.year-col {
+    display:table-cell;
+    padding-left:20px;
+    vertical-align:top;
+    white-space:normal;
+}
 
-[class*="col-"]{
+.semester-col {
   display:table-cell;
   padding-left:10px;
   vertical-align:top;
-  white-space:normal;
 }
 
 .addCourseButton {
@@ -67,8 +71,4 @@ body {
   background:#EEE8D5;
   display:block;
   margin:0 auto;
-}
-/* disable bootstrap responsiveness */
-.container {
-  width: 970px !important;
 }
