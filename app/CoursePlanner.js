@@ -7,6 +7,8 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
     $scope.years = data;
   });
 
+  $scope.maxSemesters=4;
+
 
   $scope.addYear = function() {
     $scope.years.push(new function() {
@@ -16,7 +18,7 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 
   $scope.addSemester = function(year) {
-    if(year.semesters.length < 2) {
+    if(year.semesters.length < $scope.maxSemesters) {
       year.semesters.push(new function() {
         this.classes=[];
       });
@@ -53,7 +55,7 @@ app.directive('addsemester', function() {
     link: function(scope,element,attrs) {
       element.click(function() {
         scope.$apply("addSemester(year)");
-        if(scope.year.semesters.length>1) {
+        if(scope.year.semesters.length>scope.maxSemesters-1) {
           element.remove();
         }
       });
@@ -90,7 +92,7 @@ app.directive('contenteditable',function() {
       element.bind("blur keyup change", function() {
         scope.$apply(read);
       });
-    } 
+    }
   };
 });
 
