@@ -56,25 +56,25 @@
 }
 
 .FOUND {
-  border:purple;
+  border-color:purple;
 }
 
 .PERSP {
-  border:violet;
+  border-color:violet;
 }
 
 .IMRSN {
-  border:pink;
+  border-color:pink;
 }
 
 .APPDM {
-  border:green;
+  border-color:green;
 }
 
 .ELECT {
-  border:teal;
+  border-color:teal;
 }
 
 .ENGEL {
-  border:red;
+  border-color:red;
 }
