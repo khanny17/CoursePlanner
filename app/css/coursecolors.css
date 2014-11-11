@@ -54,3 +54,27 @@
 .CSEC {
   background-color:blue;
 }
+
+.FOUND {
+  border:purple;
+}
+
+.PERSP {
+  border:violet;
+}
+
+.IMRSN {
+  border:pink;
+}
+
+.APPDM {
+  border:green;
+}
+
+.ELECT {
+  border:teal;
+}
+
+.ENGEL {
+  border:red;
+}

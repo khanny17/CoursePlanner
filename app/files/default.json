@@ -4,21 +4,31 @@
       "semesters": [{
         "classes": [
           {
-            "name":"Intro to Software Engineering",
+            "name":"Freshman Seminar",
             "subj": "SWEN", "num":"101", "credits":1
           },
           {
-            "name":"Discrete Mathematics for Computing",
-            "subj": "MATH", "num":"190", "credits":3
+            "name":"Computer Science I",
+            "subj": "CSCI", "num":"141", "credits":4
           },
           {
-            "name":"Applied Statistics",
-            "subj": "STAT", "num":"205", "credits":3
+            "name":"Project Based Calculus 1",
+            "subj": "MATH", "num":"181", "credits":4
           },
           {
-            "name":"Math Models of Software",
-            "subj": "SWEN", "num":"220", "credits":3
+            "name":"Foundation Elective",
+            "subj": "FOUND", "num":"000", "credits":3
+          },
+          {
+            "name":"Gen Ed Perspective 1",
+            "subj": "PERSP", "num":"000", "credits":3
+          },
+          {
+            "name":"Year One",
+            "subj": "ACSC", "num":"010", "credits":0
           }
+
+
         ]},{
         "classes": [
           {
@@ -26,12 +36,20 @@
             "subj": "SWEN", "num":"250", "credits":3
           },
           {
-            "name":"Project Based Calculus 1",
-            "subj": "MATH", "num":"181", "credits":4
-          },
-          {
             "name":"Computer Science II",
             "subj": "CSCI", "num":"142", "credits":4
+          },
+          {
+            "name":"Project Based Calculus 2",
+            "subj": "MATH", "num":"182", "credits":4
+          },
+          {
+            "name":"Discrete Mathematics for Computing",
+            "subj": "MATH", "num":"190", "credits":3
+          },
+          {
+            "name":"First Year Writing",
+            "subj": "ENGL", "num":"150", "credits":3
           }
         ]}
       ]
@@ -40,34 +58,164 @@
       "semesters": [{
         "classes": [
           {
-            "name":"General Biology I",
-            "subj": "BIOL", "num":"101", "credits":1
+            "name":"Intro to Software Engineering",
+            "subj": "SWEN", "num":"261", "credits":3
           },
           {
-            "name":"This is not a real class",
-            "subj": "FNRT", "num":"390", "credits":3
+            "name":"University Physics I",
+            "subj": "PHYS", "num":"211", "credits":4
           },
           {
-            "name":"Also not a real class",
-            "subj": "WREC", "num":"250", "credits":3
+            "name":"Intro to CS Theory",
+            "subj": "CSCI", "num":"262", "credits":3
           },
           {
-            "name":"This might have been something on quarters",
-            "subj": "SWEN", "num":"362", "credits":3
+            "name":"Professional Communication",
+            "subj": "COMM", "num":"253", "credits":3
+          },
+          {
+            "name":"Gen. Ed. Perspective 2",
+            "subj": "PERSP", "num":"000", "credits":3
           }
         ]},{
         "classes": [
           {
-            "name":"Concepts of Computer Systems",
-            "subj": "CSCI", "num":"250", "credits":3
+            "name":"Engineering of Software Subsystems",
+            "subj": "SWEN", "num":"262", "credits":3
           },
           {
-            "name":"Calculus II",
-            "subj": "MATH", "num":"182", "credits":4
+            "name":"University Physics II",
+            "subj": "PHYS", "num":"212", "credits":4
           },
           {
-            "name":"Advanced Java Programming",
-            "subj": "CSCI", "num":"605", "credits":4
+            "name":"Applied Statistics",
+            "subj": "STAT", "num":"205", "credits":3
+          },
+          {
+            "name":"Math Models of Software",
+            "subj": "SWEN", "num":"220", "credits":3
+          },
+          {
+            "name":"Gen. Ed. Perspective 3",
+            "subj": "PERSP", "num":"000", "credits":3
+          }
+        ]}
+      ]
+    }, {
+      "title": "Year 3",
+      "semesters": [{
+        "classes": [
+          {
+            "name":"Coop Fall",
+            "subj": "COOP", "num":"000", "credits":0
+          }
+        ]},{
+        "classes": [
+          {
+            "name":"SW Process and Project Management",
+            "subj": "SWEN", "num":"256", "credits":3
+          },
+          {
+            "name":"Engineering Secure Software",
+            "subj": "SWEN", "num":"331", "credits":3
+          },
+          {
+            "name":"SE Design Elective",
+            "subj": "SWEN", "num":"000", "credits":3
+          },
+          {
+            "name":"Engineering Found. of Computer Systems",
+            "subj": "CMPE", "num":"240", "credits":4
+          },
+          {
+            "name":"Gen. Ed. Perspective 4",
+            "subj": "PERSP", "num":"000", "credits":3
+          }
+        ]}
+      ]
+    }, {
+      "title": "Year 4",
+      "semesters": [{
+        "classes": [
+          {
+            "name":"SE Process Elective",
+            "subj": "SWEN", "num":"000", "credits":3
+          },
+          {
+            "name":"HC Reqts & Design",
+            "subj": "SWEN", "num":"444", "credits":3
+          },
+          {
+            "name":"SW System Reqts & Arch",
+            "subj": "SWEN", "num":"440", "credits":3
+          },
+          {
+            "name":"Application Domain Elective 1",
+            "subj": "APPDM", "num":"000", "credits":3
+          },
+          {
+            "name":"Gen. Ed. Immersion 1",
+            "subj": "IMRSN", "num":"000", "credits":3
+          }
+        ]},{
+        "classes": [
+          {
+            "name":"Coop Spring",
+            "subj": "COOP", "num":"000", "credits":0
+          }
+        ]},{
+        "classes": [
+          {
+            "name":"Coop Summer",
+            "subj": "COOP", "num":"000", "credits":0
+          }
+        ]}
+      ]
+    }, {
+      "title": "Year 5",
+      "semesters": [{
+        "classes": [
+          {
+            "name":"SW Engineering Project 1",
+            "subj": "SWEN", "num":"561", "credits":3
+          },
+          {
+            "name":"Engineering Elective",
+            "subj": "ENGEL", "num":"000", "credits":4
+          },
+          {
+            "name":"Free Elective",
+            "subj": "ELECT", "num":"000", "credits":3
+          },
+          {
+            "name":"Application Domain Elective 2",
+            "subj": "APPDM", "num":"000", "credits":3
+          },
+          {
+            "name":"Gen. Ed. Immersion 2",
+            "subj": "IMRSN", "num":"000", "credits":3
+          }
+        ]},{
+        "classes": [
+          {
+            "name":"SW Engineering Project 2",
+            "subj": "SWEN", "num":"562", "credits":3
+          },
+          {
+            "name":"Engineering Elective",
+            "subj": "ENGEL", "num":"000", "credits":4
+          },
+          {
+            "name":"Free Elective",
+            "subj": "ELECT", "num":"000", "credits":3
+          },
+          {
+            "name":"Application Domain Elective 3",
+            "subj": "APPDM", "num":"000", "credits":3
+          },
+          {
+            "name":"Gen. Ed. Immersion 3",
+            "subj": "IMRSN", "num":"000", "credits":3
           }
         ]}
       ]
