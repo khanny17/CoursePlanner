@@ -1,5 +1,5 @@
 <li class="course {{c.subj}}">
-  <div class="course-name" ng-model="c.name" contenteditable></div>
+  <div class="course-name" ng-model="c.name" contenteditable onclick='$(this).focus();'></div>
 
   <div class="courseInner">
     <subj class="course-detail" ng-model="c.subj">
