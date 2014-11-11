@@ -27,14 +27,12 @@
 
 .courseInner {
   position:absolute;
-  width:80%;
+  width:85%;
+  height:40px;
   margin: auto;
   right: 0;
   left: 0;
   bottom:0;
-
-  text-align:center;
-  line-height:110%;
 
   background-color:white;
   border-width: 1px;
@@ -42,41 +40,18 @@
   border-color: black;
 }
 
-.course-detail p {
-    border: none;
-    outline: none;
-    background-color: transparent;
-
-    font-size:60%;
-    font-weight:bold;
-    text-align:center;
-}
-
-.course-detail input {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    display:inline;
-
-    font-size:60%;
-    font-weight:bold;
-    text-align:center;
+.course-detail {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  display:inline;
+  font-size:55%;
+  font-weight:bold;
+  text-align:center;
 }
 
 .course-name {
   font-size:69%;
   line-height:85%;
   z-index:20px;
-}
-
-subj p, input {
-  display:inline;
-}
-
-num p, input {
-  display:inline;
-}
-
-cred p, input {
-  display:inline;
 }

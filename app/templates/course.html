@@ -2,12 +2,12 @@
   <div class="course-name" ng-model="c.name" contenteditable onclick='$(this).focus();'></div>
 
   <div class="courseInner">
-    <subj class="course-detail" ng-model="c.subj">
-    </subj>-<num class="course-detail" ng-model="c.num">
-    </num>
+    <div class="course-detail" ng-model="c.subj" contenteditable onclick='$(this).focus();'>
+    </div>-<div class="course-detail" ng-model="c.num" contenteditable onclick='$(this).focus();'>
+    </div>
     <br>
     <small>
-    (</small><cred class="course-detail" ng-model="c.credits">
-    </cred><small>)</small>
+    (</small><div class="course-detail" ng-model="c.credits" contenteditable onclick='$(this).focus();'>
+    </div><small>)</small>
   </div>
 </li>
