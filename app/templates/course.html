@@ -3,11 +3,11 @@
 
   <div class="courseInner">
     <div class="course-detail" ng-model="c.subj" contenteditable onclick='$(this).focus();'>
-    </div>-<div class="course-detail" ng-model="c.num" contenteditable onclick='$(this).focus();'>
+    </div>-<div class="course-detail" ng-model="c.num" contenteditable onclick='$(this).focus();' ng-maxlength=6>
     </div>
     <br>
     <small>
-    (</small><div class="course-detail" ng-model="c.credits" contenteditable onclick='$(this).focus();'>
+    (</small><div class="course-detail" ng-model="c.credits" contenteditable onclick='$(this).focus();' ng-maxlength=1>
     </div><small>)</small>
   </div>
 </li>

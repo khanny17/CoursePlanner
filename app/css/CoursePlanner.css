@@ -92,7 +92,11 @@ body {
   z-index:10;
 }
 
-
+.addyear {
+  position:fixed;
+  bottom:50px;
+  left:50px;
+}
 
 .error {
   color:red;

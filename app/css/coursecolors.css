@@ -8,7 +8,7 @@
 }
 
 .STAT {
-  background-color:red;
+  background-color:#FF6666;
 }
 
 .SWEN {
@@ -59,20 +59,48 @@
   background-color:lightgreen;
 }
 
+.ENGL {
+  background-color:#A37519;
+}
+
 .FOUND {
-  border-color:purple;
+  background: repeating-linear-gradient(
+  45deg,
+  yellow,
+  yellow 10px,
+  #FFB870 10px,
+  #FFB870 20px
+  );
 }
 
 .PERSP {
-  border-color:violet;
+  background: repeating-linear-gradient(
+  45deg,
+  #E1C4FF,
+  #E1C4FF 10px,
+  #FFCCFF 10px,
+  #FFCCFF 20px
+  );
 }
 
 .IMRSN {
-  border-color:pink;
+  background: repeating-linear-gradient(
+  45deg,
+  #FFBCDE,
+  #FFBCDE 10px,
+  #FFCCFF 10px,
+  #FFCCFF 20px
+  );
 }
 
 .APPDM {
-  border-color:green;
+  background: repeating-linear-gradient(
+  45deg,
+  lightgreen,
+  lightgreen 10px,
+  #CCFFFF 10px,
+  #CCFFFF 20px
+  );
 }
 
 .ELECT {
@@ -86,5 +114,11 @@
 }
 
 .ENGEL {
-  border-color:red;
+  background: repeating-linear-gradient(
+  45deg,
+  #FF9999,
+  #FF9999 10px,
+  pink 10px,
+  pink 20px
+  );
 }

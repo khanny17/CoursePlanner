@@ -48,12 +48,10 @@
   font-size:63%;
   font-weight:bold;
   text-align:center;
-  cursor:text;
 }
 
 .course-name {
   font-size:75%;
   line-height:89%;
   z-index:20px;
-  cursor:text;
 }

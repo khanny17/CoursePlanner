@@ -9,6 +9,8 @@
   <title>Course Planner</title>
 </head>
 <body ng-controller="courseCtrl">
+
+  
 <div class="container">
 <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
   <div class="year-col" ng-repeat="year in years track by $index">
@@ -28,9 +30,11 @@
      </div>
     </div><!-- row -->
    </div><!-- col -->
-  <button addyear>Add Year</button>
   </div><!-- row -->
 </div> <!-- container-->
+
+<button class="addyear btn btn-primary" addyear>Add Year</button>
+
 <div id="menu">
   <downloadplan></downloadplan>
   <loadplan></loadplan>
