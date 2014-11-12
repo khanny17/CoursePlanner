@@ -156,6 +156,10 @@
           {
             "name":"Gen. Ed. Immersion 1",
             "subj": "IMRSN", "num":"000", "credits":3
+          },
+          {
+            "name":"Math/Science Elective",
+            "subj": "ELECT", "num":"000", "credits":3
           }
         ]},{
         "classes": [
