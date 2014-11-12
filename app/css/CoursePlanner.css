@@ -22,7 +22,7 @@ body {
 
 .year-col {
     display:table-cell;
-    padding-left:20px;
+    padding-left:15px;
     vertical-align:top;
     white-space:normal;
 }
@@ -51,7 +51,7 @@ body {
 
 .courseCol {
   background-color:#EEE8D5;
-  width:90px;
+  width:80px;
   min-height:400px;
   max-height:800px;
   text-align:center;
@@ -64,6 +64,7 @@ body {
 .year-header {
   background-color:#EEE8D5;
   height:50px;
+  text-align:center;
 }
 
 .year-header input {

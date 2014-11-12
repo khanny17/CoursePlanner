@@ -55,6 +55,10 @@
   background-color:blue;
 }
 
+.CMPE {
+  background-color:lightgreen;
+}
+
 .FOUND {
   border-color:purple;
 }
@@ -72,7 +76,13 @@
 }
 
 .ELECT {
-  border-color:teal;
+  background: repeating-linear-gradient(
+  45deg,
+  #99CCFF,
+  #99CCFF 10px,
+  #CCFFFF 10px,
+  #CCFFFF 20px
+  );
 }
 
 .ENGEL {
