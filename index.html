@@ -16,7 +16,7 @@
      <h2 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h2>
    </div>
    <button addsemester>Add Semester</button>
-   <button removeyear>Remove Year</button>
+   <button ng:click="removeYear($index)">Remove Year</button>
    <div class="row year-row">
     <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
       <ul class="connectedSortable courseCol list" ng-model="semester.classes"
@@ -24,7 +24,7 @@
         <div ng-repeat="c in semester.classes" ng-include="'app/templates/course.html'"> </div>
       </ul>
        <button class="addCourseButton" addcourse>Add</button>
-       <button removesemester>Delete</button>
+       <button ng:click="removeSemester(year,$index)">Delete</button>
      </div>
     </div><!-- row -->
    </div><!-- col -->

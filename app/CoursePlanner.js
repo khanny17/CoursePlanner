@@ -34,11 +34,15 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 
   $scope.removeYear = function(index) {
-    $scope.years.splice(index,1);
+    if(confirm("Delete year \"" + $scope.years[index].title + "\" ?")){
+      $scope.years.splice(index,1);
+    }
   }
 
   $scope.removeSemester = function(year,index) {
-    year.semesters.splice(index,1);
+    if(confirm("Delete semester \"" + index+1 + "\" ?")){
+      year.semesters.splice(index,1);
+    }
   }
 
   $scope.addSemester = function(year) {
@@ -72,20 +76,6 @@ app.directive('addyear', function() {
   };
 });
 
-app.directive('removeyear', function() {
-  return {
-    restrict: 'A',
-    scope:true,
-    link: function(scope,element,attrs) {
-      element.click(function() {
-        if(confirm("Delete this year and classes?")) {
-          scope.$apply("removeYear(element.$index)");
-        }
-      });
-    }
-  };
-});
-
 app.directive('addsemester', function() {
   return {
     restrict: 'A',
@@ -96,21 +86,6 @@ app.directive('addsemester', function() {
         if(scope.year.semesters.length>scope.maxSemesters-1) {
           element.remove();
         }
-      });
-    }
-  };
-});
-
-app.directive('removesemester', function() {
-  return {
-    restrict: 'A',
-    scope:true,
-    link: function(scope,element,attrs) {
-      element.click(function() {
-          if(confirm("Delete this semester and classes?")) {
-            scope.$apply("removeSemester(year,element.$index)");
-          }
-
       });
     }
   };
