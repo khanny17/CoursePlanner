@@ -45,15 +45,15 @@
   outline: none;
   background-color: transparent;
   display:inline;
-  font-size:55%;
+  font-size:63%;
   font-weight:bold;
   text-align:center;
   cursor:text;
 }
 
 .course-name {
-  font-size:69%;
-  line-height:85%;
+  font-size:75%;
+  line-height:89%;
   z-index:20px;
   cursor:text;
 }

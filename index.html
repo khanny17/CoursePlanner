@@ -4,7 +4,7 @@
   <meta charset=utf-8 />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-<!--  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="app/css/CoursePlanner.css">
   <title>Course Planner</title>
 </head>
@@ -13,26 +13,28 @@
 <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
   <div class="year-col" ng-repeat="year in years track by $index">
    <div class="year-header">
-     <h2 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h2>
+     <h3 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h3>
    </div>
-   <button addsemester>Add Semester</button>
-   <button ng:click="removeYear($index)">Remove Year</button>
+   <button class="btn btn-default btn-xs" ng:click="addSemester(year)">Add Semester</button>
+   <button class="btn btn-default btn-xs" ng:click="removeYear($index)">Delete Year</button>
    <div class="row year-row">
     <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
       <ul class="connectedSortable courseCol list" ng-model="semester.classes"
           ui-sortable="{ 'placeholder': 'course', 'connectWith': '.connectedSortable' }">
         <div ng-repeat="c in semester.classes" ng-include="'app/templates/course.html'"> </div>
       </ul>
-       <button class="addCourseButton" addcourse>Add</button>
-       <button ng:click="removeSemester(year,$index)">Delete</button>
+       <button class="addCourseButton btn btn-default btn-xs" addcourse>Add</button>
+       <button class="btn btn-default btn-xs" ng:click="removeSemester(year,$index)">Delete</button>
      </div>
     </div><!-- row -->
    </div><!-- col -->
   <button addyear>Add Year</button>
   </div><!-- row -->
 </div> <!-- container-->
-<downloadplan></downloadplan>
-<loadplan></loadplan>
+<div id="menu">
+  <downloadplan></downloadplan>
+  <loadplan></loadplan>
+</div>
 <p class="error">{{errormsg}}</p>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
