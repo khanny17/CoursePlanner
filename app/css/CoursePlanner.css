@@ -25,6 +25,16 @@ body {
     padding-left:15px;
     vertical-align:top;
     white-space:normal;
+    min-width:150px;
+}
+
+.year-col-placeholder {
+    display:table-cell;
+    padding-left:15px;
+    vertical-align:top;
+    white-space:normal;
+    min-width:150px;
+    background-color:gray;
 }
 
 .semester-col {
@@ -65,6 +75,7 @@ body {
   background-color:#EEE8D5;
   height:50px;
   text-align:center;
+  cursor: url(cursors/openhand.cur), move;
 }
 
 .year-header input {
@@ -74,6 +85,12 @@ body {
   margin:0 auto;
 }
 
+.year-header:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  z-index:10;
+}
 
 
 

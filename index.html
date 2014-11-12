@@ -10,7 +10,7 @@
 </head>
 <body ng-controller="courseCtrl">
 <div class="container">
-<div class="row">
+<div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
   <div class="year-col" ng-repeat="year in years track by $index">
    <div class="year-header">
      <h2 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h2>
