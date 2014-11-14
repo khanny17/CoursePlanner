@@ -3,7 +3,7 @@ var app = angular.module("CoursePlanner", ['ui.sortable']);
 app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   $scope.years = [];
 
-  $http.get('app/files/default.json').success(function(data){
+  $http.get('app/files/SWEN_default.json').success(function(data){
     $scope.years = data;
   });
 
