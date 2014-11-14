@@ -5,9 +5,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-  <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="app/css/CoursePlanner.css">
   <title>Course Planner</title>
@@ -16,7 +14,7 @@
 
 
 <div class="container">
-<div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
+ <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
   <div class="year-col" ng-repeat="year in years track by $index">
    <div class="year-header">
      <h3 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h3>
@@ -35,10 +33,7 @@
     </div><!-- row -->
    </div><!-- col -->
   </div><!-- row -->
-  <div class="row">
-    <div ng-model="trash" id="trash" class="connectedSortable" ui-sortable="sortableOptionsTrash"></div>
-  </div>
-</div> <!-- container-->
+ </div> <!-- container-->
 
 <div id="menu" class="btn-group dropup">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -51,6 +46,8 @@
     <li><a href="#" ng:click="load()">Upload Plan</a></li>
   </ul>
 </div>
+
+<div ng-model="trash" id="trash" class="connectedSortable" ui-sortable="sortableOptionsTrash"></div>
 
 <p class="error">{{errormsg}}</p>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
