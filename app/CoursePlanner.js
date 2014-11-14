@@ -36,8 +36,16 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 
   $scope.load = function(data) {
-    console.log(data);
-    $scope.years = data;
+    var text = prompt("paste json file here");
+    if(text != null) {
+      try {
+        var data = JSON.parse(text);
+        $scope.years = data;
+	  } catch(e) {
+        $scope.setErrorMsg('invalid json file');
+      }
+      $scope.$apply();
+	}
   }
 
   $scope.addYear = function() {
@@ -133,42 +141,6 @@ app.directive('contenteditable',function() {
 
       element.bind("blur keyup change", function() {
         scope.$apply(read);
-      });
-    }
-  };
-});
-
-app.directive('downloadplan',function($http) {
-  return {
-    restrict:'E',
-    template:"<button>Download as JSON</button>",
-    replace:true,
-    link: function(scope,element,attrs) {
-      element.click(function() {
-        scope.save();
-      });
-    }
-  };
-});
-
-app.directive('loadplan',function() {
-  return {
-    restrict:'E',
-    template:"<button>Upload JSON</button>",
-    replace:true,
-    link: function(scope,element,attrs) {
-      element.click(function() {
-        var text = prompt("paste json file here");
-        if(text != null) {
-          try {
-            var data = JSON.parse(text);
-            scope.load(data);
-          } catch(e) {
-            scope.setErrorMsg('invalid json file');
-          }
-
-          scope.$apply();
-        }
       });
     }
   };
