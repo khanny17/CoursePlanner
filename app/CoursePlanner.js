@@ -86,21 +86,6 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 }]);
 
-app.directive('addsemester', function() {
-  return {
-    restrict: 'A',
-    scope:true,
-    link: function(scope,element,attrs) {
-      element.click(function() {
-        scope.$apply("addSemester(year)");
-        if(scope.year.semesters.length>scope.maxSemesters-1) {
-          element.remove();
-        }
-      });
-    }
-  };
-});
-
 app.directive('addcourse', function() {
   return {
     restrict:'A',
