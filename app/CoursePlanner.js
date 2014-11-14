@@ -52,6 +52,8 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
     path = "app/files/" + dept + "_default.json";
     $http.get(path).success(function(data){
       $scope.years = data;
+    }).error(function(data) {
+      $scope.setErrorMsg('Invalid Selection');
     });
   }
 
