@@ -53,6 +53,7 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
       this.title="NEW YEAR";
       this.semesters=[];
     });
+	$scope.$apply();
   }
 
   $scope.removeYear = function(index) {
