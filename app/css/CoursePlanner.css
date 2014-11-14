@@ -122,8 +122,8 @@ body {
 
 #menu {
   position:fixed;
-  bottom:50px;
-  left:50px;
+  bottom:10px;
+  left:10px;
 }
 
 #trash {
