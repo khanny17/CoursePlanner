@@ -132,9 +132,14 @@ body {
   right:50px;
   width:80px;
   height:90px;
+  z-index:100;
   background-image:url('images/trash-closed.png');
 }
 
 #trash:hover {
   background-image:url('images/trash-open.png');
+}
+
+.dropup {
+  z-index:100;
 }
