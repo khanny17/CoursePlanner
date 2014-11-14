@@ -12,13 +12,14 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   $scope.trash = [];
 
   $scope.sortableOptionsCourse = {
-    'placeholder': 'course',
-    'connectWith': '.connectedSortable',
+    //'placeholder': 'course',
+    'connectWith': '.connectedSortable'
+  };
+
+  $scope.sortableOptionsTrash = {
     update: function(event,ui) {
-      if(event.target.id === "trash") {
-        //wipe trash, maybe in the future we could hold on to them
-        $scope.trash = [];
-      }
+      //wipe trash, maybe in the future we could hold on to deleted courses
+      $scope.trash = [];
     }
   };
 
