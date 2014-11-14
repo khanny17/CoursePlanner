@@ -22,7 +22,7 @@
    <div class="row year-row">
     <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
       <ul class="connectedSortable courseCol list" ng-model="semester.classes"
-          ui-sortable="{ 'placeholder': 'course', 'connectWith': '.connectedSortable' }">
+          ui-sortable="sortableOptionsCourse">
         <div ng-repeat="c in semester.classes" ng-include="'app/templates/course.html'"> </div>
       </ul>
        <button class="addCourseButton btn btn-default btn-xs" addcourse>Add</button>
@@ -31,6 +31,9 @@
     </div><!-- row -->
    </div><!-- col -->
   </div><!-- row -->
+  <div class="row">
+    <div ng-model="trash" id="trash" class="connectedSortable" ui-sortable="sortableOptionsCourse"></div>
+  </div>
 </div> <!-- container-->
 
 <button class="addyear btn btn-primary" addyear>Add Year</button>

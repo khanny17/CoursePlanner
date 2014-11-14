@@ -9,6 +9,19 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
 
   $scope.maxSemesters=4;
 
+  $scope.trash = [];
+
+  $scope.sortableOptionsCourse = {
+    'placeholder': 'course',
+    'connectWith': '.connectedSortable',
+    update: function(event,ui) {
+      if(event.target.id === "trash") {
+        //wipe trash, maybe in the future we could hold on to them
+        $scope.trash = [];
+      }
+    }
+  };
+
   $scope.errormsg = "";
   $scope.setErrorMsg = function(text) {
     $scope.errormsg = text;
