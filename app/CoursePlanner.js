@@ -35,7 +35,7 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
     window.focus();
   }
 
-  $scope.load = function(data) {
+  $scope.load = function() {
     var text = prompt("paste json file here");
     if(text != null) {
       try {
@@ -46,6 +46,13 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
       }
       $scope.$apply();
 	}
+  }
+
+  $scope.open = function(dept) {
+    path = "app/files/" + dept + "_default.json";
+    $http.get(path).success(function(data){
+      $scope.years = data;
+    });
   }
 
   $scope.addYear = function() {

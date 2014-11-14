@@ -4,9 +4,12 @@
   <meta charset=utf-8 />
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" href="app/css/CoursePlanner.css">
   <title>Course Planner</title>
 </head>
@@ -44,7 +47,7 @@
     <li class="divider"></li>
     <li><a href="#" ng:click="save()">Download Plan</a></li>
     <li><a href="#" ng:click="load()">Upload Plan</a></li>
-    <li><a href="#" ng:click="loadDefault()">Load a Default Plan</a></li>
+    <li><a href="#" id="loadDefault">Load a Default Plan</a></li>
     <li class="divider"></li>
     <li><a href="#" data-toggle="modal" data-target="#myModal">Help</a></li>
   </ul>
@@ -54,10 +57,46 @@
 <div ng-model="trash" id="trash" class="connectedSortable" ui-sortable="sortableOptionsTrash"></div>
 <!-- Help Modal -->
 <div ng-include="'app/templates/help_modal.html'"></div>
-
+<!-- Default Plan Modal -->
+<div id="dialogA" title="Default Plans">
+  <select class="form-control" id="defaultPlanSelection">
+    <option value="SWEN">SWEN</option>
+    <option value="CSCI">CSCI</option>
+  </select>
+</div>
 
 <p class="error">{{errormsg}}</p>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
 <script src="app/CoursePlanner.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+
+<script>
+$(document).ready(function () {
+  $('#dialogA').dialog({
+    autoOpen: false,
+    height: 300,
+    width: 350,
+    modal: true,
+    buttons: {
+      Open: function() {     
+        deptSelect = document.getElementById("defaultPlanSelection");
+        dept = deptSelect.options[deptSelect.selectedIndex].value;
+        //load the file
+        angular.element('#dialogA').scope().open(dept);
+        $(this).dialog("close"); 
+      }, Cancel: function() {
+        $(this).dialog("close");
+      }
+    }
+  });
+
+  $('#loadDefault').click(function (e) {
+    $('#dialogA').dialog("open");
+  });
+});
+</script>
+
+
 </body>
 </html>
