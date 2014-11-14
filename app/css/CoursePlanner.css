@@ -135,8 +135,8 @@ body {
 
 #trash {
   position:fixed;
-  top:0px;
-  right:0px;
+  top:50px;
+  right:50px;
   width:80px;
   height:90px;
   background-image:url('images/trash-closed.png');
