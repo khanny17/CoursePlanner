@@ -113,8 +113,6 @@ app.directive('course', function() {
     require:"?ngModel",
     link: function(scope,element,attrs,ngModel) {
       element.on('dblclick',function() {
-        console.log("double clicked");
-        console.log(ngModel.$modelValue);
         var course = ngModel.$modelValue;
         var newPopup;
         newPopup = "<div></div>";
