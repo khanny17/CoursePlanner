@@ -9,18 +9,9 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
 
   $scope.maxSemesters=4;
 
-  $scope.trash = [];
-
   $scope.sortableOptionsCourse = {
     //'placeholder': 'course',
     'connectWith': '.connectedSortable'
-  };
-
-  $scope.sortableOptionsTrash = {
-    update: function(event,ui) {
-      //wipe trash, maybe in the future we could hold on to deleted courses
-      $scope.trash = [];
-    }
   };
 
   $scope.errormsg = "";
@@ -91,6 +82,18 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
       this.subj="SUBJ";
       this.num="000";
       this.credits=0;
+    });
+  }
+
+  $scope.deleteCourse = function(course) {
+    $scope.years.forEach(function(year) {
+      year.semesters.forEach(function(semester) {
+        for(i = 0; i < semester.classes.length; ++i) {
+          if(semester.classes[i] == course) {
+            semester.classes.splice(i,1);
+          }
+        }
+      });
     });
   }
 }]);
@@ -169,6 +172,9 @@ app.directive('course', function() {
             </form>';
             $(this).html(markup);
           },
+          close: function() {
+            $(this).dialog('destroy').remove()
+          },
           buttons: {
               Cancel: {
                 text:"Cancel",
@@ -176,8 +182,11 @@ app.directive('course', function() {
                   $(this).dialog('destroy').remove()
                 }
               },
-              Save: function () {
-                $(this).dialog("close");
+              Delete: function() {
+                scope.$apply(scope.deleteCourse(course));
+                $(this).dialog('destroy').remove()
+              },
+              Save: function() {
                 //update model
                 course.subj = $(editedCourseSubject).val();
                 course.name = $(editedCourseName).val();
