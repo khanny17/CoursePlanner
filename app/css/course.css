@@ -27,7 +27,7 @@
 
 .courseInner {
   position:absolute;
-  width:87%;
+  width:88%;
   height:40px;
   margin: auto;
   right: 0;
@@ -46,7 +46,7 @@
   outline: none;
   background-color: transparent;
   display:inline;
-  font-size:63%;
+  font-size:62%;
   font-weight:bold;
   text-align:center;
 }

@@ -98,18 +98,6 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 }]);
 
-app.directive('addcourse', function() {
-  return {
-    restrict:'A',
-    scope:true,
-    link: function(scope,element,attrs) {
-      element.click(function() {
-        scope.$apply("addCourse(semester)");
-      });
-    }
-  };
-});
-
 app.directive('contenteditable',function() {
   return {
     restrict: "A",
