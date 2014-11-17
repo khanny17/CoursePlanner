@@ -1,13 +1,13 @@
-<li class="course {{c.subj}}">
-  <div class="course-name" ng-model="c.name" contenteditable onclick='$(this).focus();'></div>
+<li class="course {{c.subj}}" course ng-model="c">
+  <div class="course-name">{{c.name}}</div>
 
   <div class="courseInner">
-    <div class="course-detail" ng-model="c.subj" contenteditable onclick='$(this).focus();'>
-    </div>-<div class="course-detail" ng-model="c.num" contenteditable onclick='$(this).focus();' ng-maxlength=6>
+    <div class="course-detail">{{c.subj}}
+    </div>-<div class="course-detail">{{c.num}}
     </div>
     <br>
     <small>
-    (</small><div class="course-detail" ng-model="c.credits" contenteditable onclick='$(this).focus();' ng-maxlength=1>
+    (</small><div class="course-detail">{{c.credits}}
     </div><small>)</small>
   </div>
 </li>

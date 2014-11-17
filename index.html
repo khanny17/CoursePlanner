@@ -79,12 +79,12 @@ $(document).ready(function () {
     width: 350,
     modal: true,
     buttons: {
-      Open: function() {     
+      Open: function() {
         deptSelect = document.getElementById("defaultPlanSelection");
         dept = deptSelect.options[deptSelect.selectedIndex].value;
         //load the file
         angular.element('#dialogA').scope().open(dept);
-        $(this).dialog("close"); 
+        $(this).dialog("close");
       }, Cancel: function() {
         $(this).dialog("close");
       }
