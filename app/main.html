@@ -40,7 +40,7 @@
 
 <!-- Menu -->
 <div id="menu" class="btn-group dropup">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
     Menu <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
@@ -53,6 +53,8 @@
     <li><a href="#" data-toggle="modal" data-target="#myModal">Help</a></li>
   </ul>
 </div>
+
+<button class="btn btn-lg btn-primary" id="helpbutton" data-toggle="modal" data-target="#myModal">?</button>
 
 <!-- Help Modal -->
 <div ng-include="'templates/help_modal.html'"></div>

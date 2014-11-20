@@ -126,6 +126,12 @@ body {
   left:10px;
 }
 
+#helpbutton {
+  position:fixed;
+  bottom:10px;
+  right:10px;
+}
+
 #trash {
   position:fixed;
   bottom:50px;
