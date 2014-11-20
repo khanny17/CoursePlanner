@@ -14,13 +14,13 @@
   <title>Course Planner</title>
 </head>
 <body ng-controller="courseCtrl">
-
+<div ng-include="'templates/navbar.html'"></div>
 
 <div class="container">
  <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
   <div class="year-col" ng-repeat="year in years track by $index">
    <div class="year-header">
-     <h3 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h3>
+     <center><h3 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h3></center>
    </div>
    <button class="btn btn-default btn-xs" ng:click="addSemester(year)">Add Semester</button>
    <button class="btn btn-default btn-xs" ng:click="removeYear($index)">Delete Year</button>

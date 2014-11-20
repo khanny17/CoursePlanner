@@ -4,11 +4,13 @@
 html {
   margin:0;
   padding:0;
+  background-color:#DFE2DB;
 }
 
 body {
   margin:0;
   padding:0;
+  background-color:#DFE2DB;
 }
 
 .container {
@@ -74,8 +76,13 @@ body {
 .year-header {
   background-color:#EEE8D5;
   height:50px;
+  border: 2px solid gray;
   text-align:center;
   cursor: url(cursors/openhand.cur), move;
+}
+
+.year-header h3 {
+  display:table-cell;
 }
 
 .year-header input {
