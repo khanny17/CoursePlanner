@@ -3,7 +3,7 @@ var app = angular.module("CoursePlanner", ['ui.sortable']);
 app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   $scope.years = [];
 
-  $http.get('app/files/SWEN_default.json').success(function(data){
+  $http.get('files/SWEN_default.json').success(function(data){
     $scope.years = data;
   });
 
@@ -35,12 +35,12 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
 	  } catch(e) {
         $scope.setErrorMsg('invalid json file');
       }
-      $scope.$apply();
+      //$scope.$apply();
 	}
   }
 
   $scope.open = function(dept) {
-    path = "app/files/" + dept + "_default.json";
+    path = "files/" + dept + "_default.json";
     $http.get(path).success(function(data){
       $scope.years = data;
     }).error(function(data) {

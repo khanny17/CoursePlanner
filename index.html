@@ -1,101 +1,18 @@
 <!DOCTYPE html>
-<html ng-app="CoursePlanner">
+<html>
 <head>
   <meta charset=utf-8 />
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-  <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="app/css/CoursePlanner.css">
-  <title>Course Planner</title>
 </head>
-<body ng-controller="courseCtrl">
-
-
-<div class="container">
- <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
-  <div class="year-col" ng-repeat="year in years track by $index">
-   <div class="year-header">
-     <h3 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h3>
-   </div>
-   <button class="btn btn-default btn-xs" ng:click="addSemester(year)">Add Semester</button>
-   <button class="btn btn-default btn-xs" ng:click="removeYear($index)">Delete Year</button>
-   <div class="row year-row">
-    <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
-      <ul class="connectedSortable courseCol list" ng-model="semester.classes"
-          ui-sortable="sortableOptionsCourse">
-        <div ng-repeat="c in semester.classes" ng-include="'app/templates/course.html'"> </div>
-      </ul>
-       <button class="addCourseButton btn btn-default btn-xs" ng:click="addCourse(semester)">Add</button>
-       <button class="btn btn-default btn-xs" ng:click="removeSemester(year,$index)">Delete</button>
-     </div>
-    </div><!-- row -->
-   </div><!-- col -->
-  </div><!-- row -->
- </div> <!-- container-->
-
-<!-- Menu -->
-<div id="menu" class="btn-group dropup">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    Menu <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="" ng:click="addYear()">Add Year</a></li>
-    <li class="divider"></li>
-    <li><a href="#" ng:click="save()">Download Plan</a></li>
-    <li><a href="#" ng:click="load()">Upload Plan</a></li>
-    <li><a href="#" id="loadDefault">Load a Default Plan</a></li>
-    <li class="divider"></li>
-    <li><a href="#" data-toggle="modal" data-target="#myModal">Help</a></li>
-  </ul>
-</div>
-
-<!-- Help Modal -->
-<div ng-include="'app/templates/help_modal.html'"></div>
-<!-- Default Plan Modal -->
-<div id="dialogA" title="Default Plans">
-  <select class="form-control" id="defaultPlanSelection">
-    <option value="SWEN">SWEN</option>
-    <option value="CSCI">CSCI</option>
-  </select>
-</div>
-
-<p class="error">{{errormsg}}</p>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
-<script src="app/CoursePlanner.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
-
-<script>
-$(document).ready(function () {
-  $('#dialogA').dialog({
-    autoOpen: false,
-    height: 300,
-    width: 350,
-    modal: true,
-    buttons: {
-      Open: function() {
-        deptSelect = document.getElementById("defaultPlanSelection");
-        dept = deptSelect.options[deptSelect.selectedIndex].value;
-        //load the file
-        angular.element('#dialogA').scope().open(dept);
-        $(this).dialog("close");
-      }, Cancel: function() {
-        $(this).dialog("close");
-      }
-    }
-  });
-
-  $('#loadDefault').click(function (e) {
-    $('#dialogA').dialog("open");
-  });
-});
-</script>
-
-
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <h1><a href="app/main.html">"Welcome!</a></h1>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
