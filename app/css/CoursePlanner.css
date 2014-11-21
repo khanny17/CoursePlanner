@@ -15,7 +15,7 @@ body {
   background-color:#DFE2DB;
 }
 
-.container {
+.container-main {
   width:100%;
   /* Firefox */
   height: -moz-calc(100% - 72px);

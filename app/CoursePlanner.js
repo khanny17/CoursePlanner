@@ -3,9 +3,21 @@ var app = angular.module("CoursePlanner", ['ui.sortable']);
 app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   $scope.years = [];
 
-  $http.get('files/SWEN_default.json').success(function(data){
-    $scope.years = data;
-  });
+  //Display help if no years
+  $scope.$watch(
+    //Watch if the years is empty
+    function(scope) {
+      return scope.years.length > 0
+    },
+    //hide div when view is empty
+    function(newValue, oldValue) {
+      if(newValue) {
+        $('#empty-view').hide();
+      } else {
+        $('#empty-view').show();
+      }
+    }
+  );
 
   $scope.maxSemesters=4;
 
@@ -57,13 +69,21 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 
   $scope.removeYear = function(index) {
-    if(confirm("Delete year \"" + $scope.years[index].title + "\" ?")){
+    if($scope.years[index].semesters.length > 0) {
+      if(confirm("Delete year \"" + $scope.years[index].title + "\" ?")){
+        $scope.years.splice(index,1);
+      }
+    } else {
       $scope.years.splice(index,1);
     }
   }
 
   $scope.removeSemester = function(year,index) {
-    if(confirm("Delete semester \"" + index+1 + "\" ?")){
+    if(year.semesters[index].classes > 0) {
+      if(confirm("Delete semester \"" + index+1 + "\" ?")){
+        year.semesters.splice(index,1);
+      }
+    } else {
       year.semesters.splice(index,1);
     }
   }
