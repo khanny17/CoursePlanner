@@ -79,7 +79,7 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 
   $scope.removeSemester = function(year,index) {
-    if(year.semesters[index].classes > 0) {
+    if(year.semesters[index].classes.length > 0) {
       if(confirm("Delete semester \"" + index+1 + "\" ?")){
         year.semesters.splice(index,1);
       }
