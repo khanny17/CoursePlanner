@@ -4,18 +4,27 @@
 html {
   margin:0;
   padding:0;
+  height:100%;
   background-color:#DFE2DB;
 }
 
 body {
   margin:0;
   padding:0;
+  height:100%;
   background-color:#DFE2DB;
 }
 
 .container {
-  display:table;
-  white-space:nowrap;
+  width:100%;
+  /* Firefox */
+  height: -moz-calc(100% - 72px);
+  /* WebKit */
+  height: -webkit-calc(100% - 72px);
+  /* Opera */
+  height: -o-calc(100% - 72px);
+  /* Standard */
+  height: calc(100% - 72px);
 }
 
 .row {

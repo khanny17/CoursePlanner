@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
   <link rel="stylesheet" href="css/CoursePlanner.css">
+  <link rel="stylesheet" href="css/navbar.css">
   <title>Course Planner</title>
 </head>
 <body ng-controller="courseCtrl">
+
 <div ng-include="'templates/navbar.html'"></div>
 
-<div class="container">
+<div class="container" style="overflow-x:scroll;width:100%;">
+  <center>
  <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
   <div class="year-col" ng-repeat="year in years track by $index">
    <div class="year-header">
@@ -35,26 +37,9 @@
      </div>
     </div><!-- row -->
    </div><!-- col -->
-  </div><!-- row -->
- </div> <!-- container-->
-
-<!-- Menu -->
-<div id="menu" class="btn-group dropup">
-  <button type="button" class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    Menu <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="" ng:click="addYear()">Add Year</a></li>
-    <li class="divider"></li>
-    <li><a href="#" ng:click="save()">Download Plan</a></li>
-    <li><a href="#" ng:click="load()">Upload Plan</a></li>
-    <li><a href="#" id="loadDefault">Load a Default Plan</a></li>
-    <li class="divider"></li>
-    <li><a href="#" data-toggle="modal" data-target="#myModal">Help</a></li>
-  </ul>
-</div>
-
-<button class="btn btn-lg btn-primary" id="helpbutton" data-toggle="modal" data-target="#myModal">?</button>
+ </div><!-- row -->
+ </center>
+</div> <!-- container-->
 
 <!-- Help Modal -->
 <div ng-include="'templates/help_modal.html'"></div>
@@ -89,10 +74,6 @@ $(document).ready(function () {
         $(this).dialog("close");
       }
     }
-  });
-
-  $('#loadDefault').click(function (e) {
-    $('#dialogA').dialog("open");
   });
 });
 </script>
