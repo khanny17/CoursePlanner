@@ -15,5 +15,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
+var Plan = mongoose.model('Plan', {
+//  json : String
+});
+
+app.get('/plans', function(req,res) {
+  Plan.find(function(err,plans) {
+    if(err) {
+      res.send(err);
+    }
+    res.json(plans);
+  });
+});
+
+
+
+
 app.listen(8080);
 console.log("App listening on port 8080");
