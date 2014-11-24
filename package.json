@@ -1,10 +1,11 @@
 {
-  "name": "angular-seed",
+  "name": "CoursePlanner",
   "private": true,
-  "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "version": "0.0.1",
+  "description": "An app for planning college courses",
+  "repository": "https://github.com/khanny17/CoursePlanner",
   "license": "MIT",
+  "main": "server.js",
   "devDependencies": {
     "karma": "~0.10",
     "protractor": "^1.1.1",
@@ -12,6 +13,13 @@
     "bower": "^1.3.1",
     "shelljs": "^0.2.6",
     "karma-junit-reporter": "^0.2.2"
+  },
+  "dependencies" : {
+    "express":"~4.7.2",
+    "mongoose":"~3.6.2",
+    "morgan"     : "~1.2.2",
+    "body-parser": "~1.5.2",
+    "method-override": "~2.1.2"
   },
   "scripts": {
     "postinstall": "bower install",
