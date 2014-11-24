@@ -31,6 +31,16 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
     $scope.errormsg = text;
   }
 
+  $scope.serverSave = function() {
+        $http.post('/Planner', $scope.years)
+            .success(function(data) {
+                console.log(data);
+            })
+            .error(function(data) {
+                console.log('Error: ' + data);
+            });
+    };
+
   $scope.save = function() {
     var data = JSON.stringify($scope.years);
     var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
@@ -65,7 +75,6 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
       this.title="NEW YEAR";
       this.semesters=[];
     });
-	$scope.$apply();
   }
 
   $scope.removeYear = function(index) {
