@@ -32,7 +32,7 @@ app.controller('courseCtrl', ['$scope','$http', function($scope,$http) {
   }
 
   $scope.serverSave = function() {
-        $http.post('/Planner', $scope.years)
+        $http.post('/Planner', {years: $scope.years})
             .success(function(data) {
                 console.log(data);
             })
