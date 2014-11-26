@@ -1,0 +1,19 @@
+#sidebar {
+  position:fixed;
+  right:0;
+  bottom:0;
+  height:100%;
+  width:20%;
+  z-index:100px;
+ 
+  border-left: 2px solid gray; 
+  background-color:#EEE8D5;
+}
+
+#sidebar-button {
+  position:fixed;
+  right:0;
+  bottom:0;
+  height:50px;
+  width:50px;
+}
