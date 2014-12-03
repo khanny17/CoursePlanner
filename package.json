@@ -31,7 +31,7 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "node server.js",
+    "start": "node server.js -p $PORT",
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",
