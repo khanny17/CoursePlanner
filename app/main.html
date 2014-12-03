@@ -50,9 +50,11 @@
 <div ng-controller="sidebarCtrl">
   <div id="sidebar">
     <center><h4>{{title}}</h4></center>
+    <div ng-repeat="plan in plans">
+      <p>{{plan.title}}</p>
+    </div>
   </div>
   <!-- Button to toggle display of sidebar -->
-<!--  <button id="sidebar-button"></button>  -->
   <sidebarbutton></sidebarbutton>
 </div>
 
@@ -71,6 +73,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 <script src="js/directives/contenteditable.js"></script>
+<script src="js/services/plans.js"></script>
 <script src="js/controllers/main.js"></script>
 <script src="js/controllers/sidebar.js"></script>
 <script src="js/directives/sidebartoggle.js"></script>

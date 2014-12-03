@@ -20,7 +20,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="#" ng:click="download()">Download Plan</a></li>
             <li><a href="#" ng:click="load()">Upload Plan</a></li>
-            <li><a href="#" ng:click="serverSave()">Save to Server</a></li>
+            <li><a ng-controller="sidebarCtrl" href="#" ng:click="serverSave()">Save to Server</a></li>
             <li class="divider"></li>
             <li><a href="#" onclick="$('#dialogA').dialog('open');">Load a Default Plan</a></li>
             <li><a href="Planner/plans/">View Plans</a></li>

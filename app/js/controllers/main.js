@@ -31,16 +31,6 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
     $scope.errormsg = text;
   }
 
-  $scope.serverSave = function() {
-        $http.post('/Planner', {years: $scope.years})
-            .success(function(data) {
-                console.log(data);
-            })
-            .error(function(data) {
-                console.log('Error: ' + data);
-            });
-    };
-
   $scope.download = function() {
     var data = JSON.stringify($scope.years);
     var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);

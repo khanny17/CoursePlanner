@@ -1,1 +1,1 @@
-angular.module('CoursePlanner', ['courseCtrl','courseDirectives','sidebarController','sidebarDirectives']);
+angular.module('CoursePlanner', ['courseCtrl','courseDirectives','sidebarController','sidebarDirectives','planService']);

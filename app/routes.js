@@ -10,6 +10,7 @@ module.exports = function(app) {
 
   app.post('/Planner', function(req,res) {
     Plan.create({
+      title : req.body.title,
       json : req.body.years,
       done:false
     }, function(err, todo) {
@@ -30,12 +31,7 @@ module.exports = function(app) {
       if(err)
 	res.send(err)
 
-      var last;
-      plans.forEach(function(plan) {
-        last = plan.json
-        console.log(plan.json);
-      });
-      res.json(last); // return all todos in JSON format
+      res.json(plans); // return all todos in JSON format
     });
   });
 

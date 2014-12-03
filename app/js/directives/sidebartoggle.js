@@ -1,6 +1,6 @@
 angular.module('sidebarDirectives',[])
 
-.directive('sidebarbutton',function() {
+.directive('sidebarbutton',function(Plans) {
   return {
     restrict:"AE",
     template:"<button class='sidebar-button'><</button>",
@@ -9,7 +9,7 @@ angular.module('sidebarDirectives',[])
       var showing = false;
       element.on('click',function() {
         $('#sidebar').toggle();
-
+          
         if(showing)
           element.text("<");
         else
