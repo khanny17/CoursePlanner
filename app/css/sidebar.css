@@ -10,10 +10,10 @@
   background-color:#EEE8D5;
 }
 
-#sidebar-button {
+.sidebar-button {
   position:fixed;
   right:0;
   bottom:0;
-  height:50px;
+  height:25px;
   width:50px;
 }

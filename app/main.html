@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="css/navbar.css">
   <title>Course Planner</title>
 </head>
-<body ng-controller="courseCtrl">
+<body ng-controller="mainCtrl">
 
   <div ng-include="'templates/navbar.html'"></div>
 
@@ -45,10 +45,16 @@
   </center>
 </div> <!-- container-->
 
-<div id="sidebar">
-</div>
-  <button id="sidebar-button"></button>
 
+<!-- Sidebar -->
+<div ng-controller="sidebarCtrl">
+  <div id="sidebar">
+    <center><h4>{{title}}</h4></center>
+  </div>
+  <!-- Button to toggle display of sidebar -->
+<!--  <button id="sidebar-button"></button>  -->
+  <sidebarbutton></sidebarbutton>
+</div>
 
 <!-- Help Modal -->
 <div ng-include="'templates/help_modal.html'"></div>
@@ -62,9 +68,13 @@
 
 <p class="error">{{errormsg}}</p>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/g/jquery@1,jquery.ui@1.10%28jquery.ui.core.min.js+jquery.ui.widget.min.js+jquery.ui.mouse.min.js+jquery.ui.sortable.min.js%29,angularjs@1.2,angular.ui-sortable"></script>
-<script src="js/CoursePlanner.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+<script src="js/directives/contenteditable.js"></script>
+<script src="js/controllers/main.js"></script>
+<script src="js/controllers/sidebar.js"></script>
+<script src="js/directives/sidebartoggle.js"></script>
+<script src="js/core.js"></script>
 
 <script>
 $(document).ready(function () {
@@ -85,9 +95,6 @@ $(document).ready(function () {
     }
   });
 
-  $('#sidebar-button').click(function() {
-    $('#sidebar').toggle();
-  });
   $('#sidebar').hide();
 });
 </script>
