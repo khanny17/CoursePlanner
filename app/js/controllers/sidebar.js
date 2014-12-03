@@ -9,13 +9,11 @@ angular.module('sidebarController',[])
   });
 
   $scope.serverSave = function() {
+    var myScope = $scope;
     Plans.create(prompt("Title for your plan?"),$scope.years)
       .success(function(data) {
         console.log("Post Success");
-        console.log(data);
-        $scope.plans = data;
-        console.log("plans:");
-        console.log($scope.plans);
+        myScope.plans = data;
       });  
   };
 });

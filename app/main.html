@@ -49,10 +49,17 @@
 <!-- Sidebar -->
 <div ng-controller="sidebarCtrl">
   <div id="sidebar">
-    <center><h4>{{title}}</h4></center>
-    <div ng-repeat="plan in plans">
-      <p>{{plan.title}}</p>
-    </div>
+    <center>
+      <h4>{{title}}</h4>
+
+      <button href="#" ng:click="serverSave()">
+        Save to Server
+      </button>
+
+      <div ng-repeat="plan in plans">
+        <p>{{plan.title}}</p>
+      </div>
+    </center>
   </div>
   <!-- Button to toggle display of sidebar -->
   <sidebarbutton></sidebarbutton>
