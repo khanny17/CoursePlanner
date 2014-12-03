@@ -3,8 +3,14 @@
   "private": true,
   "version": "0.0.1",
   "description": "An app for planning college courses",
-  "repository": "https://github.com/khanny17/CoursePlanner",
-  "license": "MIT",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khanny17/CoursePlanner"
+  },
+  "license": "BSD-2-Clause",
   "main": "server.js",
   "devDependencies": {
     "karma": "~0.10",
@@ -14,29 +20,28 @@
     "shelljs": "^0.2.6",
     "karma-junit-reporter": "^0.2.2"
   },
-  "dependencies" : {
-    "express":"~4.7.2",
-    "mongoose":"~3.6.2",
-    "morgan"     : "~1.2.2",
+  "dependencies": {
+    "express": "~4.7.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.2.2",
     "body-parser": "~1.5.2",
     "method-override": "~2.1.2"
   },
   "scripts": {
     "postinstall": "bower install",
-
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
-
     "pretest": "npm install",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js  --single-run",
-
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
-
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
-
     "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/khanny17/CoursePlanner/issues"
+  },
+  "author": ""
 }
