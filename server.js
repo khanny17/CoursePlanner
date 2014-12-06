@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride());
 
-
+require('./config/passport')(passport);
 app.use(session({ secret: 'absolutelyandwithoutashredofdoubt' }));
 app.use(passport.initialize());
 app.use(passport.session()); 
