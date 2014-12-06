@@ -1,5 +1,5 @@
-angular.module('CoursePlanner', ['courseCtrl','courseDirectives','sidebarController','sidebarDirectives','planService'])
-
+angular.module('CoursePlanner', ['courseCtrl','courseDirectives','sidebarController','sidebarDirectives','planService']);
+/*
 .config(function($routeProvider, $locationProvider, $httpProvider) {
 
   //Intercept ajax calls
@@ -37,3 +37,4 @@ angular.module('CoursePlanner', ['courseCtrl','courseDirectives','sidebarControl
     });
   };
 });
+*/
