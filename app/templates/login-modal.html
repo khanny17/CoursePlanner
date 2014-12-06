@@ -1,4 +1,4 @@
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" ng-controller="authCtrl" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,17 +9,17 @@
         <div class="modal-body" id="help-body">
 	  <div class="form-group">
             <label for="exampleInputEmail1">Username:</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User">
+            <input type="text" ng-model="username" class="form-control" id="exampleInputEmail1" placeholder="User">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password:</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <input type="password" ng-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>    
         </div>
         <div class="modal-footer">
           <div style="display:inline-block;float:left;">
-            <button type="submit" class="btn btn-default">Login</button>
-            <button class="btn btn-default">Register</button>
+            <button ng:click="login()" class="btn btn-default">Login</button>
+            <button ng:click="signup()" class="btn btn-default">Sign Up</button>
           </div>
           <div style="display:inline-block;float:right;">
             <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>

@@ -5,7 +5,7 @@ module.exports = function(app,passport) {
   });
 
   app.get('/Planner', function(req,res) {
-    res.sendfile('./app/main.html');
+    res.render('main.html');
   });
 
   app.post('/Planner', function(req,res) {

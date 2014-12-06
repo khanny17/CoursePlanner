@@ -1,4 +1,15 @@
-angular.module('CoursePlanner', ['courseCtrl','courseDirectives','sidebarController','sidebarDirectives','planService']);
+angular.module('CoursePlanner', [
+    'courseCtrl',
+    'authController',
+    'courseDirectives',
+    'sidebarController',
+    'sidebarDirectives',
+    'userButtonDirective',
+    'planService'])
+
+.run(function($rootScope, $http){
+  $rootScope.user = 0;
+});
 /*
 .config(function($routeProvider, $locationProvider, $httpProvider) {
 

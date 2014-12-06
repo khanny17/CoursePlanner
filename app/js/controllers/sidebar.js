@@ -4,7 +4,6 @@ angular.module('sidebarController',[])
   $scope.title = "Sidebar";
   
   Plans.get().success(function(data) {
-    console.log("Get Success");
     $scope.plans = data;
   });
 
