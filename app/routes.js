@@ -1,7 +1,7 @@
 var Plan = require('./models/plan');
-module.exports = function(app) {
+module.exports = function(app,passport) {
   app.get('/', function(req,res) {
-    res.sendfile('./index.html');
+    res.render('index.html');
   });
 
   app.get('/Planner', function(req,res) {
@@ -34,5 +34,17 @@ module.exports = function(app) {
       res.json(plans); // return all todos in JSON format
     });
   });
+
+
+
+  app.get('/logout', function(req, res) {
+    req.logout();
+  });
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+      return next();
+    res.redirect('/');
+  }
 
 };

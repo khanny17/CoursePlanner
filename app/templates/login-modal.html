@@ -5,23 +5,27 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h3 class="modal-title" id="myModalLabel">Login</h3>
       </div>
-      <div class="modal-body" id="help-body">
-        <form role="form">
+      <form role="form">
+        <div class="modal-body" id="help-body">
 	  <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
+            <label for="exampleInputEmail1">Username:</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="User">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1">Password:</label>
             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
           </div>    
-	  <button type="submit" class="btn btn-default">Login</button>
-	  <button class="btn btn-default">Register</button>
-	</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <div style="display:inline-block;float:left;">
+            <button type="submit" class="btn btn-default">Login</button>
+            <button class="btn btn-default">Register</button>
+          </div>
+          <div style="display:inline-block;float:right;">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Dismiss</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div> <!-- Modal -->
