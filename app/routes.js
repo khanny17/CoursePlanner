@@ -47,9 +47,9 @@ module.exports = function(app,passport) {
     res.send(req.user); 
   });
 
-  app.post('/logout', function(req, res){ 
+  app.get('/logout', function(req, res){ 
     req.logOut();
-    res.send(200); 
+    res.render('index.html');
   });
 
   var auth = function(req, res, next){ 

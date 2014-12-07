@@ -12,7 +12,6 @@ angular.module('CoursePlanner', [
   $http.get("/loggedin").success(function(user) {
     if(user !== 0) 
       $rootScope.user = user;
-    console.log(user);
   });
 });
 /*
