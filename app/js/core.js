@@ -9,6 +9,11 @@ angular.module('CoursePlanner', [
 
 .run(function($rootScope, $http){
   $rootScope.user = 0;
+  $http.get("/loggedin").success(function(user) {
+    if(user !== 0) 
+      $rootScope.user = user;
+    console.log(user);
+  });
 });
 /*
 .config(function($routeProvider, $locationProvider, $httpProvider) {
