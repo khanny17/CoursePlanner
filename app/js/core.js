@@ -4,7 +4,7 @@ angular.module('CoursePlanner', [
     'courseDirectives',
     'sidebarController',
     'sidebarDirectives',
-    'userButtonDirective',
+    'authDirectives',
     'planService'])
 
 .run(function($rootScope, $http){

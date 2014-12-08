@@ -12,9 +12,10 @@ angular.module('authController',[])
     })
     .success(function(user) {
       $rootScope.user = user;
+      $scope.error = "";
     })
     .error(function() {
-      $scope.error = "User does not exist";
+      $scope.error = "Username or Password Incorrect";
     });
   };
 
@@ -25,6 +26,7 @@ angular.module('authController',[])
     })
     .success(function(user) {
       $rootScope.user = user;
+      $scope.error = "";
     })
     .error(function() {
       $scope.error = "Username already taken";
