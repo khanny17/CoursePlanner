@@ -15,7 +15,7 @@ angular.module('CoursePlanner', [
   });
 
   $rootScope.auth = function() {
-    return $rootScope.user !== 0;
+    return $rootScope.user != 0;
   }
 });
 /*

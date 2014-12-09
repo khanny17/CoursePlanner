@@ -51,10 +51,13 @@
   <div id="sidebar">
     <center>
       <h4>{{title}}</h4>
+      <div ng-switch="auth()">
+        <button href="#" ng-switch-when="true" ng:click="serverSave()">
+          Save to Server
+        </button>
+        <h3 ng-switch-when="false">Login to save your plan</h3>
+      </div>
 
-      <button href="#" ng:click="serverSave()">
-        Save to Server
-      </button>
 
       <div ng-repeat="plan in plans">
         <p>{{plan.title}}</p>
