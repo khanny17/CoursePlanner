@@ -18,6 +18,8 @@ angular.module('CoursePlanner', [
   $rootScope.auth = function() {
     return $rootScope.user != 0;
   }
+
+  $rootScope.error = "";
 });
 /*
 .config(function($routeProvider, $locationProvider, $httpProvider) {

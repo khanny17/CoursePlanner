@@ -3,7 +3,6 @@ angular.module('authController',[])
 .controller('authCtrl',function($scope,$rootScope,$http) {
   $scope.username = "";
   $scope.password = "";
-  $scope.error = "";
 
   $scope.login = function() {
     $http.post('/login', {
@@ -12,10 +11,9 @@ angular.module('authController',[])
     })
     .success(function(user) {
       $rootScope.user = user;
-      $scope.error = "";
     })
     .error(function() {
-      $scope.error = "Username or Password Incorrect";
+      $rootScope.error = "Username or Password Incorrect";
     });
   };
 
@@ -26,10 +24,9 @@ angular.module('authController',[])
     })
     .success(function(user) {
       $rootScope.user = user;
-      $scope.error = "";
     })
     .error(function() {
-      $scope.error = "Username already taken";
+      $rootScope.error = "Username already taken";
     });
   };
 });

@@ -16,4 +16,23 @@ angular.module("authDirectives",[])
       });
     }
   }
+})
+
+
+.directive('errorflyover', function($rootScope) {
+  return {
+    restrict:'E',
+    templateUrl:'templates/error-flyover.html',
+    link:function(scope,element,attr) {
+      var modal = $(element.children()[0]);
+      $rootScope.$watch('error', function (error) {
+        if(error != "") {
+          modal.addClass('in');
+          setTimeout(function() {
+            modal.removeClass('in');
+          },3000);
+        }
+      });
+    }
+  }
 });

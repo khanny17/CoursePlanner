@@ -11,6 +11,7 @@
 
   <link rel="stylesheet" href="css/CoursePlanner.css">
   <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/flyover.css">
   <title>Course Planner</title>
 </head>
 <body ng-controller="mainCtrl">
@@ -63,6 +64,7 @@
 <div ng-include="'templates/help_modal.html'"></div>
 <!-- Login Modal -->
 <loginmodal></loginmodal>
+<errorflyover></errorflyover>
 <!-- Default Plan Modal -->
 <div id="dialogA" title="Default Plans">
   <select class="form-control" id="defaultPlanSelection">
