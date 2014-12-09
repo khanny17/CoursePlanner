@@ -28,6 +28,12 @@ body {
   height: calc(100% - 72px);
 }
 
+.plan-title {
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+}
+
 .row {
   display:table-row;
 }

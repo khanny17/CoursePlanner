@@ -9,10 +9,9 @@ angular.module('sidebarController',[])
 
   $scope.serverSave = function() {
     var myScope = $scope;
-    Plans.create(prompt("Title for your plan?"),$scope.years,$rootScope.user.local.username)
-      .success(function(data) {
-        console.log("Post Success");
-        myScope.plans = data;
-      });
+    Plans.create($scope.title,$scope.years,$rootScope.user.local.username)
+    .success(function(data) {
+      myScope.plans = data;
+    });
   };
 });

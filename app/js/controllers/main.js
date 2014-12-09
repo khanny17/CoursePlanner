@@ -2,6 +2,7 @@ var app = angular.module("courseCtrl", ['ui.sortable']);
 
 app.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
   $scope.years = [];
+  $scope.title = "New Plan";
 
   //Display help if no years
   $scope.$watch(
@@ -44,11 +45,12 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
       try {
         var data = JSON.parse(text);
         $scope.years = data;
-	  } catch(e) {
+        $scope.title = "Pasted JSON";
+	    } catch(e) {
         $scope.setErrorMsg('invalid json file');
       }
       //$scope.$apply();
-	}
+	  }
   }
 
   $scope.open = function(dept) {
@@ -116,4 +118,3 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
     });
   }
 }]);
-

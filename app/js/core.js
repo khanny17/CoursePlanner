@@ -10,9 +10,13 @@ angular.module('CoursePlanner', [
 .run(function($rootScope, $http){
   $rootScope.user = 0;
   $http.get("/loggedin").success(function(user) {
-    if(user !== 0) 
+    if(user !== 0)
       $rootScope.user = user;
   });
+
+  $rootScope.auth = function() {
+    return $rootScope.user !== 0;
+  }
 });
 /*
 .config(function($routeProvider, $locationProvider, $httpProvider) {
@@ -24,7 +28,7 @@ angular.module('CoursePlanner', [
       // Success: just return the response
       function(response){
         return response;
-      }, 
+      },
       // Error: check the error status to get only the 401
       function(response) {
         if (response.status === 401)
@@ -34,21 +38,21 @@ angular.module('CoursePlanner', [
     }
   });
 
-  var checkLoggedin = function($q, $timeout, $http, $location, $rootScope){ 
+  var checkLoggedin = function($q, $timeout, $http, $location, $rootScope){
     // Initialize a new promise
     var deferred = $q.defer();
-    // Make an AJAX call to check if the user is logged in 
+    // Make an AJAX call to check if the user is logged in
     $http.get('/loggedin').success(function(user){
-      // Authenticated 
+      // Authenticated
       if (user !== '0') {
         $timeout(deferred.resolve, 0);
-      } else { 
+      } else {
         $rootScope.message = 'You need to log in.';
         $timeout(function(){
           deferred.reject();
         }, 0);
-        $location.url('/login'); 
-      } 
+        $location.url('/login');
+      }
     });
   };
 });
