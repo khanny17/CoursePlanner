@@ -16,7 +16,6 @@
 <body ng-controller="mainCtrl">
 
   <div ng-include="'templates/navbar.html'"></div>
-  <h1 class="plan-title" ng-model="title" contenteditable></h1>
   <div class="container-main container" style="overflow-x:scroll;width:100%;">
     <center>
 
@@ -51,14 +50,6 @@
   <div id="sidebar">
     <center>
       <h4>{{title}}</h4>
-      <div ng-switch="auth()">
-        <button href="#" ng-switch-when="true" ng:click="serverSave()">
-          Save to Server
-        </button>
-        <h3 ng-switch-when="false">Login to save your plan</h3>
-      </div>
-
-
       <div ng-repeat="plan in plans">
         <p>{{plan.title}}</p>
       </div>
@@ -89,6 +80,7 @@
 <script src="js/controllers/main.js"></script>
 <script src="js/controllers/auth.js"></script>
 <script src="js/controllers/sidebar.js"></script>
+<script src="js/controllers/navbar.js"></script>
 <script src="js/directives/sidebartoggle.js"></script>
 <script src="js/directives/auth.js"></script>
 <script src="js/core.js"></script>

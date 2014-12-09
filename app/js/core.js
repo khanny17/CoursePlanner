@@ -1,5 +1,6 @@
 angular.module('CoursePlanner', [
     'courseCtrl',
+    'navbarController',
     'authController',
     'courseDirectives',
     'sidebarController',
