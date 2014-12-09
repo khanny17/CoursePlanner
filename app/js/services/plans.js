@@ -5,8 +5,8 @@ angular.module('planService',[])
     get : function() {
       return $http.get('/Planner/plans');
     },
-    create :function(title,years) {
-      return $http.post('/Planner', {title: title,years: years});
+    create :function(title,years,username) {
+      return $http.post('/Planner/save', {title: title,years: years,user:username});
     }
   }
 });
