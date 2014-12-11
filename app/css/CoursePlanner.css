@@ -19,19 +19,23 @@ body {
 .container-main {
   width:100%;
   /* Firefox */
-  height: -moz-calc(100% - 72px);
+  height: -moz-calc(100% - 52px);
   /* WebKit */
-  height: -webkit-calc(100% - 72px);
+  height: -webkit-calc(100% - 52px);
   /* Opera */
-  height: -o-calc(100% - 72px);
+  height: -o-calc(100% - 52px);
   /* Standard */
-  height: calc(100% - 72px);
+  height: calc(100% - 52px);
+  padding-top:0;
+  margin-top:0;
 }
 
 .plan-title {
   margin-left:auto;
   margin-right:auto;
   text-align:center;
+  padding-top:2px;
+  margin-top:2px;
 }
 
 .row {
@@ -80,7 +84,7 @@ body {
 .courseCol {
   background-color:#EEE8D5;
   width:80px;
-  min-height:400px;
+  min-height:390px;
   max-height:800px;
   text-align:center;
 }
@@ -143,32 +147,3 @@ body {
   }
 }
 
-#menu {
-  position:fixed;
-  bottom:10px;
-  left:10px;
-}
-
-#helpbutton {
-  position:fixed;
-  bottom:10px;
-  right:10px;
-}
-
-#trash {
-  position:fixed;
-  bottom:50px;
-  right:50px;
-  width:80px;
-  height:90px;
-  z-index:100;
-  background-image:url('images/trash-closed.png');
-}
-
-#trash:hover {
-  background-image:url('images/trash-open.png');
-}
-
-.dropup {
-  z-index:100;
-}

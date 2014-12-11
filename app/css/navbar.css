@@ -1,3 +1,7 @@
+.navbar-nav > li > a { padding-top: 5px !important; padding-bottom: 0 !important; }
+.navbar { min-height: 32px !important; height:32px; padding-bottom:0; margin-bottom:0;}
+.navbar-brand { padding-top: 5px; padding-bottom: 10px; height:32px; padding-left: 10px; }
+
 .navbar-default {
 	background-color: #191919;
 	border-color: #313131;
