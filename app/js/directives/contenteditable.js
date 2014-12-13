@@ -52,6 +52,8 @@ angular.module('courseDirectives',[])
             $(this).html(markup);
           },
           close: function() {
+                  //we update the status with ng-model, change it back if canceled
+                  course.status = original;
             $(this).dialog('destroy').remove()
           },
           buttons: {
