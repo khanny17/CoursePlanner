@@ -33,4 +33,19 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <label for="year" class="control-label input-group" id="editedCourseStatus">Status:</label>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-default" ng-class='{active: c.status == "todo"}'>
+        <input type="radio" name="status" value="todo" >To Do
+      </label>
+      <label class="btn btn-default" ng-class='{active: c.status == "taking"}'>
+        <input type="radio" name="status" value="taking">Taking
+      </label>
+      <label class="btn btn-default" ng-class='{active: c.status == "completed"}'>
+        <input type="radio" name="status" value="completed">Completed
+      </label>
+    </div>
+  </div>
 </form>

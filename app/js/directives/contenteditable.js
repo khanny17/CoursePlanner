@@ -67,7 +67,9 @@ angular.module('courseDirectives',[])
                 course.name = $(editedCourseName).val();
                 course.num = $(editedCourseNum).val();
                 course.credits = $(editedCourseCred).val();
-                course.details = $(editedCourseDetails).val();
+                if(course.details != '')
+                  course.details = $(editedCourseDetails).val();
+                console.log($('#editedCourseStatus input[type="radio"]:checked').val());
                 scope.$apply();
                 $(this).dialog('destroy').remove()
               }
