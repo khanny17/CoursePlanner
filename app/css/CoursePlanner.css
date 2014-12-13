@@ -66,7 +66,7 @@ body {
 }
 
 .addCourseButton {
- margin:auto;
+  margin:auto;
 }
 
 .cap {
@@ -95,7 +95,7 @@ body {
 
 .year-header {
   background-color:#EEE8D5;
-  height:50px;
+  height:auto;
   border: 2px solid gray;
   text-align:center;
   cursor: url(cursors/openhand.cur), move;

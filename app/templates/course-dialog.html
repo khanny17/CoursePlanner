@@ -1,0 +1,36 @@
+<form role="form">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control input-sm" name="name" id="editedCourseName" value="{{c.name}}" />
+      </div>
+            
+      <div class="form-group">
+        <label for="subj">Subject:</label>
+        <input class="form-control input-sm" name="subj" id="editedCourseSubject" value="{{c.subj}}"/>
+      </div>
+    </div><!-- col -->
+
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for="num">Number:</label>
+        <input class="form-control input-sm" name="num" id="editedCourseNum" value="{{c.num}}"/>
+      </div>
+      
+      <div class="form-group">
+        <label for="cred">Credits:</label>
+        <input class="form-control input-sm" name="cred" id="editedCourseCred" value="{{c.credits}}"/>
+      </div>
+    </div><!-- col -->
+  </div> <!-- row -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="cred">Details:</label>
+        <textarea class="form-control" rows="3" name="cred" id="editedCourseDetails" value="{{c.details}}"/>
+      </div>
+    </div>
+  </div>
+</form>

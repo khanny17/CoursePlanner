@@ -57,6 +57,7 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
     path = "files/" + dept + "_default.json";
     $http.get(path).success(function(data){
       $scope.years = data;
+      $scope.title = dept + " Default";
     }).error(function(data) {
       $scope.setErrorMsg('Invalid Selection');
     });
