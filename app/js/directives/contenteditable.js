@@ -37,7 +37,7 @@ angular.module('courseDirectives',[])
           modal: true,
           width:450,
           resizable:false,
-          position: {my: "bottom", at:"center", of: window },
+          position: {my: "top", at:"top", of: window },
           title: "Edit Course",
           open: function () {
             var markup;
