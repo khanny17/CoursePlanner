@@ -29,6 +29,10 @@ angular.module('courseDirectives',[])
       $http.get("/templates/course-dialog.html").success(function(data) {
         $templateCache.put('course-dialog',data);
       });
+      var original = scope.c.status;
+      scope.setStatus = function(status) {
+        scope.c.status = status;
+      };
       element.on('dblclick',function() {
         var course = ngModel.$modelValue;
         var newPopup;
@@ -54,6 +58,8 @@ angular.module('courseDirectives',[])
               Cancel: {
                 text:"Cancel",
                 click: function () {
+                  //we update the status with ng-model, change it back if canceled
+                  course.status = original;
                   $(this).dialog('destroy').remove()
                 }
               },
@@ -69,7 +75,8 @@ angular.module('courseDirectives',[])
                 course.credits = $(editedCourseCred).val();
                 if(course.details != '')
                   course.details = $(editedCourseDetails).val();
-                console.log($('#editedCourseStatus input[type="radio"]:checked').val());
+                //status is updated automatically, update the original though
+                original = scope.c.status;
                 scope.$apply();
                 $(this).dialog('destroy').remove()
               }
