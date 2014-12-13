@@ -54,3 +54,18 @@
   line-height:89%;
   z-index:20px;
 }
+
+.taking {
+  width:200%;
+  z-index=5000;
+
+  position:absolute;
+  left:-50%;
+
+  border-top: 1px solid blue;
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -o-transform: rotate(36deg);
+  -ms-transform: rotate(36deg);
+  transform: rotate(36deg);
+} 

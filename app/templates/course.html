@@ -1,4 +1,7 @@
 <li class="course {{c.subj}}" title="{{c.details}}" course ng-model="c">
+  
+  <div ng-class="{'taking': c.status == 'taking', 'completed': c.status == 'completed'}"></div>
+  
   <div class="course-name">{{c.name}}</div>
 
   <div class="courseInner">
