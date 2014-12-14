@@ -6,16 +6,12 @@
   width:20%;
   max-width:250px;
   z-index:100px;
-  overflow-y:scroll;
-  overflow-x:visible;
+  overflow:visible;
  
   border-left: 2px solid gray; 
   background-color:#EEE8D5;
-}
+  display:inline-block;
 
-.sidebar-base {
-  display:table-row;
-  overflow:visible;
 }
 
 .sidebar-button {
