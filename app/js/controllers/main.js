@@ -101,7 +101,7 @@ app.controller('mainCtrl', ['$scope','$http', function($scope,$http) {
   $scope.addCourse = function(semester) {
     semester.classes.push(new function() {
       this.name="A New Course";
-      this.subj="SUBJ";
+      this.dept="DEPT";
       this.num="000";
       this.credits=0;
     });

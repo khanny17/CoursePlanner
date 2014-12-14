@@ -7,37 +7,37 @@
             "name":"Freshman Seminar",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"101", "credits":1
+            "dept": "SWEN", "num":"101", "credits":1
           },
           {
             "name":"Computer Science I",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "CSCI", "num":"141", "credits":4
+            "dept": "CSCI", "num":"141", "credits":4
           },
           {
             "name":"Project Based Calculus 1",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "MATH", "num":"181", "credits":4
+            "dept": "MATH", "num":"181", "credits":4
           },
           {
             "name":"Foundation Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "FOUND", "num":"000", "credits":3
+            "dept": "FOUND", "num":"000", "credits":3
           },
           {
             "name":"Gen Ed Perspective 1",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "PERSP", "num":"000", "credits":3
+            "dept": "PERSP", "num":"000", "credits":3
           },
           {
             "name":"Year One",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "ACSC", "num":"010", "credits":0
+            "dept": "ACSC", "num":"010", "credits":0
           }
 
 
@@ -47,31 +47,31 @@
             "name":"Personal Software Engineering",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"250", "credits":3
+            "dept": "SWEN", "num":"250", "credits":3
           },
           {
             "name":"Computer Science II",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "CSCI", "num":"142", "credits":4
+            "dept": "CSCI", "num":"142", "credits":4
           },
           {
             "name":"Project Based Calculus 2",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "MATH", "num":"182", "credits":4
+            "dept": "MATH", "num":"182", "credits":4
           },
           {
             "name":"Discrete Mathematics for Computing",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "MATH", "num":"190", "credits":3
+            "dept": "MATH", "num":"190", "credits":3
           },
           {
             "name":"First Year Writing",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "ENGL", "num":"150", "credits":3
+            "dept": "ENGL", "num":"150", "credits":3
           }
         ]}
       ]
@@ -83,31 +83,31 @@
             "name":"Intro to Software Engineering",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"261", "credits":3
+            "dept": "SWEN", "num":"261", "credits":3
           },
           {
             "name":"University Physics I",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "PHYS", "num":"211", "credits":4
+            "dept": "PHYS", "num":"211", "credits":4
           },
           {
             "name":"Intro to CS Theory",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "CSCI", "num":"262", "credits":3
+            "dept": "CSCI", "num":"262", "credits":3
           },
           {
             "name":"Professional Communication",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "COMM", "num":"253", "credits":3
+            "dept": "COMM", "num":"253", "credits":3
           },
           {
             "name":"Gen. Ed. Perspective 2",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "PERSP", "num":"000", "credits":3
+            "dept": "PERSP", "num":"000", "credits":3
           }
         ]},{
         "classes": [
@@ -115,31 +115,31 @@
             "name":"Engineering of Software Subsystems",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"262", "credits":3
+            "dept": "SWEN", "num":"262", "credits":3
           },
           {
             "name":"University Physics II",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "PHYS", "num":"212", "credits":4
+            "dept": "PHYS", "num":"212", "credits":4
           },
           {
             "name":"Applied Statistics",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "STAT", "num":"205", "credits":3
+            "dept": "STAT", "num":"205", "credits":3
           },
           {
             "name":"Math Models of Software",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"220", "credits":3
+            "dept": "SWEN", "num":"220", "credits":3
           },
           {
             "name":"Gen. Ed. Perspective 3",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "PERSP", "num":"000", "credits":3
+            "dept": "PERSP", "num":"000", "credits":3
           }
         ]}
       ]
@@ -151,7 +151,7 @@
             "name":"Coop Fall",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "COOP", "num":"000", "credits":0
+            "dept": "COOP", "num":"000", "credits":0
           }
         ]},{
         "classes": [
@@ -159,31 +159,31 @@
             "name":"SW Process and Project Management",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"256", "credits":3
+            "dept": "SWEN", "num":"256", "credits":3
           },
           {
             "name":"Engineering Secure Software",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"331", "credits":3
+            "dept": "SWEN", "num":"331", "credits":3
           },
           {
             "name":"SE Design Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"000", "credits":3
+            "dept": "SWEN", "num":"000", "credits":3
           },
           {
             "name":"Engineering Found. of Computer Systems",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "CMPE", "num":"240", "credits":4
+            "dept": "CMPE", "num":"240", "credits":4
           },
           {
             "name":"Gen. Ed. Perspective 4",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "PERSP", "num":"000", "credits":3
+            "dept": "PERSP", "num":"000", "credits":3
           }
         ]}
       ]
@@ -195,37 +195,37 @@
             "name":"SE Process Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"000", "credits":3
+            "dept": "SWEN", "num":"000", "credits":3
           },
           {
             "name":"HC Reqts & Design",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"444", "credits":3
+            "dept": "SWEN", "num":"444", "credits":3
           },
           {
             "name":"SW System Reqts & Arch",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"440", "credits":3
+            "dept": "SWEN", "num":"440", "credits":3
           },
           {
             "name":"Application Domain Elective 1",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "APPDM", "num":"000", "credits":3
+            "dept": "APPDM", "num":"000", "credits":3
           },
           {
             "name":"Gen. Ed. Immersion 1",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "IMRSN", "num":"000", "credits":3
+            "dept": "IMRSN", "num":"000", "credits":3
           },
           {
             "name":"Math/Science Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "ELECT", "num":"000", "credits":3
+            "dept": "ELECT", "num":"000", "credits":3
           }
         ]},{
         "classes": [
@@ -233,7 +233,7 @@
             "name":"Coop Spring",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "COOP", "num":"000", "credits":0
+            "dept": "COOP", "num":"000", "credits":0
           }
         ]},{
         "classes": [
@@ -241,7 +241,7 @@
             "name":"Coop Summer",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "COOP", "num":"000", "credits":0
+            "dept": "COOP", "num":"000", "credits":0
           }
         ]}
       ]
@@ -253,31 +253,31 @@
             "name":"SW Engineering Project 1",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"561", "credits":3
+            "dept": "SWEN", "num":"561", "credits":3
           },
           {
             "name":"Engineering Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "ENGEL", "num":"000", "credits":4
+            "dept": "ENGEL", "num":"000", "credits":4
           },
           {
             "name":"Free Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "ELECT", "num":"000", "credits":3
+            "dept": "ELECT", "num":"000", "credits":3
           },
           {
             "name":"Application Domain Elective 2",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "APPDM", "num":"000", "credits":3
+            "dept": "APPDM", "num":"000", "credits":3
           },
           {
             "name":"Gen. Ed. Immersion 2",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "IMRSN", "num":"000", "credits":3
+            "dept": "IMRSN", "num":"000", "credits":3
           }
         ]},{
         "classes": [
@@ -285,31 +285,31 @@
             "name":"SW Engineering Project 2",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "SWEN", "num":"562", "credits":3
+            "dept": "SWEN", "num":"562", "credits":3
           },
           {
             "name":"Engineering Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "ENGEL", "num":"000", "credits":4
+            "dept": "ENGEL", "num":"000", "credits":4
           },
           {
             "name":"Free Elective",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "ELECT", "num":"000", "credits":3
+            "dept": "ELECT", "num":"000", "credits":3
           },
           {
             "name":"Application Domain Elective 3",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "APPDM", "num":"000", "credits":3
+            "dept": "APPDM", "num":"000", "credits":3
           },
           {
             "name":"Gen. Ed. Immersion 3",
             "details":"", "status":"todo",
             "prerequisites":[],
-            "subj": "IMRSN", "num":"000", "credits":3
+            "dept": "IMRSN", "num":"000", "credits":3
           }
         ]}
       ]

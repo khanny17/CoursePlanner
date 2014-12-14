@@ -3,8 +3,8 @@
     <center>
       <h4>{{title}}</h4>
       <input type="text" ng-model="query" />
-      <div ng-repeat="course in courses | filter:query">
-        <p>{{course.name}}</p>
+      <div ng-repeat="c in courses | filter:query" >
+        <div ng-include="'templates/course.html'"> </div>
       </div>
     </center>
     <button ng-click="create()">Create</button>

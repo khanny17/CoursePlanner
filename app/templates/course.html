@@ -1,4 +1,4 @@
-<li class="course {{c.subj}}" title="{{c.details}}" course ng-model="c">
+<li class="course {{c.dept}}" title="{{c.details}}" course ng-model="c">
 
   <div ng-class="{'bottomleft-topright-line': c.status == 'taking' || c.status == 'completed'}"></div>
   <div ng-class="{'topleft-bottomright-line': c.status == 'completed'}"></div>
@@ -6,7 +6,7 @@
   <div class="course-name">{{c.name}}</div>
 
   <div class="courseInner">
-    <div class="course-detail">{{c.subj}}-{{c.num}}</div>
+    <div class="course-detail">{{c.dept}}-{{c.num}}</div>
     <br>
     <div class="course-detail">({{c.credits}})</div>
   </div>

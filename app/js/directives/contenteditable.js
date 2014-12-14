@@ -71,7 +71,7 @@ angular.module('courseDirectives',[])
               },
               Save: function() {
                 //update model
-                course.subj = $(editedCourseSubject).val();
+                course.dept = $(editedCourseSubject).val();
                 course.name = $(editedCourseName).val();
                 course.num = $(editedCourseNum).val();
                 course.credits = $(editedCourseCred).val();

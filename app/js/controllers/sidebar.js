@@ -5,7 +5,6 @@ angular.module('sidebarController',[])
 
   Courses.get().success(function(data) {
     $scope.courses = data;
-    console.log(data);
   });
 
   $scope.create = function() {
