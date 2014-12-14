@@ -1,5 +1,5 @@
 //Defines backend routes for the application
-
+var Year = require('./models/year');
 var Plan = require('./models/plan');
 module.exports = function(app,passport) {
   //The landing page
@@ -16,9 +16,9 @@ module.exports = function(app,passport) {
   app.post('/Planner/save', function(req,res) {
     Plan.create({
       title : req.body.title,
-      json : req.body.years,
-      user : req.body.user,
-      done:false
+      //I removed putting the years in, needs to be changed for the new model
+      user  : req.body.user,
+      done  : false
     }, function(err, todo) {
       if (err)
 	    res.send(err);

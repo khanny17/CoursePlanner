@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
+var Year = mongoose.model('Year');
 
 module.exports = mongoose.model('Plan', {
   title : String,
-  json : String,
+  years : [Year],
   user : String
 });
