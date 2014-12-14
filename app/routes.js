@@ -1,6 +1,7 @@
 //Defines backend routes for the application
-var Year = require('./models/year');
-var Plan = require('./models/plan');
+var Course = require('./models/course');
+var Year   = require('./models/year');
+var Plan   = require('./models/plan');
 module.exports = function(app,passport) {
   //The landing page
   app.get('/', function(req,res) {
@@ -19,17 +20,37 @@ module.exports = function(app,passport) {
       //I removed putting the years in, needs to be changed for the new model
       user  : req.body.user,
       done  : false
-    }, function(err, todo) {
+    }, function(err, plan) {
       if (err)
 	    res.send(err);
 
-      Plan.find(function(err, todos) {
+      Plan.find(function(err, plans) {
 	    if (err)
 	      res.send(err)
-	    res.json(todos);
+	    res.json(plans);
       });
     });
+  });
 
+  app.post('/Planner/create/course',function(req,res) {
+    Course.create({
+      name    : req.body.name,
+      dept    : req.body.dept,
+      num     : req.body.num,
+      cred    : req.body.cred,
+      details : req.body.details,
+      status  : req.body.status,
+      done    : false
+    }, function(err, course) {
+      if(err)
+        res.send(err);
+
+      Course.find(function(err,courses) {
+        if(err)
+          res.send(err);
+        res.json(courses);
+      });
+    });
   });
 
   //Gets json of all plans
@@ -39,6 +60,16 @@ module.exports = function(app,passport) {
 	    res.send(err)
 
       res.json(plans); // return all todos in JSON format
+    });
+  });
+
+  //Gets json of all courses
+  app.get('/Planner/courses', function(req, res) {
+    Course.find(function(err, courses) {
+      if(err)
+	    res.send(err)
+
+      res.json(courses); 
     });
   });
 

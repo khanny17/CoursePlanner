@@ -1,9 +1,9 @@
 angular.module('sidebarController',[])
 
-.controller('sidebarCtrl',function($scope,$http,Plans,$rootScope) {
+.controller('sidebarCtrl',function($scope,$http,Courses,$rootScope) {
   $scope.title = "Sidebar";
 
-  Plans.get().success(function(data) {
-    $scope.plans = data;
+  Courses.get().success(function(data) {
+    $scope.courses = data;
   });
 });

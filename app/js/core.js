@@ -6,7 +6,8 @@ angular.module('CoursePlanner', [
     'sidebarController',
     'sidebarDirectives',
     'authDirectives',
-    'planService'])
+    'planService',
+    'courseService'])
 
 .run(function($rootScope, $http){
   $rootScope.user = 0;
