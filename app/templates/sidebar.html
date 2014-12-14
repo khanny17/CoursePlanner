@@ -1,0 +1,18 @@
+<div ng-controller="sidebarCtrl">
+  <div id="sidebar">
+    <center>
+      <h4>{{title}}</h4>
+      <input type="text" ng-model="query" />
+      <div ng-repeat="plan in plans | filter:query">
+        <p>{{plan.title}}</p>
+      </div>
+    </center>
+  </div>
+  <!-- Button to toggle display of sidebar -->
+  <sidebarbutton></sidebarbutton>
+</div>
+
+<!-- hide the sidebar by default -->
+<script>
+  $('#sidebar').hide();
+</script>

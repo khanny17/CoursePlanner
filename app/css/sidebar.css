@@ -4,7 +4,9 @@
   bottom:0;
   height:100%;
   width:20%;
+  max-width:250px;
   z-index:100px;
+  overflow-y:scroll;
  
   border-left: 2px solid gray; 
   background-color:#EEE8D5;

@@ -50,23 +50,12 @@
 
 
 <!-- Sidebar -->
-<div ng-controller="sidebarCtrl">
-  <div id="sidebar">
-    <center>
-      <h4>{{title}}</h4>
-      <div ng-repeat="plan in plans">
-        <p>{{plan.title}}</p>
-      </div>
-    </center>
-  </div>
-  <!-- Button to toggle display of sidebar -->
-  <sidebarbutton></sidebarbutton>
-</div>
-
+<div ng-include="'templates/sidebar.html'"></div>
 <!-- Help Modal -->
 <div ng-include="'templates/help_modal.html'"></div>
 <!-- Login Modal -->
 <loginmodal></loginmodal>
+<!-- Error Flyover -->
 <errorflyover></errorflyover>
 <!-- Default Plan Modal -->
 <div id="dialogA" title="Default Plans">
@@ -107,7 +96,6 @@ $(document).ready(function () {
     }
   });
 
-  $('#sidebar').hide();
 
   $(document).tooltip();
 });
