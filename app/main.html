@@ -39,7 +39,6 @@
               ui-sortable="sortableOptionsCourse">
                 <div ng-repeat="c in semester.classes" ng-include="'templates/course.html'"> </div>
               </ul>
-              <button class="addCourseButton btn btn-default btn-xs" ng:click="addCourse(semester)">Add</button>
               <button class="btn btn-default btn-xs" ng:click="removeSemester(year,$index)">Delete</button>
             </div>
           </div><!-- row -->

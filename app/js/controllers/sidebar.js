@@ -7,9 +7,8 @@ angular.module('sidebarController',[])
     $scope.courses = data;
   });
 
-  $scope.create = function() {
-    Courses.create(prompt("name"),prompt("dept"),prompt("num"),prompt("cred"),
-                   prompt("details"),prompt("status")).success(function(data) {
+  $scope.create = function(c) {
+    Courses.create(c.name,c.dept,c.num,c.credits,c.details,c.status).success(function(data) {
       $scope.courses = data;
     }).error(function(err) {
       console.log(err);
