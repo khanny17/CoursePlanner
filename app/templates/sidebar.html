@@ -3,9 +3,9 @@
     <center>
       <h4>{{title}}</h4>
       <input type="text" ng-model="query" />
-      <div ng-repeat="c in courses | filter:query" >
-        <div ng-include="'templates/course.html'"> </div>
-      </div>
+      <ul ui-sortable="sortableOptionsCourse" ng-model="courses">
+        <div ng-repeat="c in courses | filter:query" ng-include="'templates/course.html'"> </div>
+      </ul>
     </center>
     <button ng-click="create()">Create</button>
   </div>
