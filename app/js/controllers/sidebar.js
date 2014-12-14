@@ -11,7 +11,7 @@ angular.module('sidebarController',[])
     Courses.create(c.name,c.dept,c.num,c.credits,c.details,c.status).success(function(data) {
       $scope.courses = data;
     }).error(function(err) {
-      console.log(err);
+      alert("Course rejected:\n" + err.errors.details.type + ": " + err.errors.details.value);
     });
   };
 });

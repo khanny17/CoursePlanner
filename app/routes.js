@@ -44,7 +44,9 @@ module.exports = function(app,passport) {
     }, function(err, course) {
       if(err) {
         console.log(err);
+        res.status(406);
         res.send(err);
+        return;
       }
       Course.find(function(err,courses) {
         if(err)
