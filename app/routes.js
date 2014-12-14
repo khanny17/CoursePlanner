@@ -33,18 +33,20 @@ module.exports = function(app,passport) {
   });
 
   app.post('/Planner/create/course',function(req,res) {
+
     Course.create({
       name    : req.body.name,
       dept    : req.body.dept,
       num     : req.body.num,
-      cred    : req.body.cred,
+      credits : req.body.cred,
       details : req.body.details,
       status  : req.body.status,
       done    : false
     }, function(err, course) {
-      if(err)
+      if(err) {
+        console.log(err);
         res.send(err);
-
+      }
       Course.find(function(err,courses) {
         if(err)
           res.send(err);

@@ -5,7 +5,7 @@ var courseSchema = new Schema ({
   name    : { type : String, required : true },
   dept    : { type : String, required : true },
   num     : { type : String, required : true },
-  credits : { type : Number, min : 0, max : 20, required : true },
+  credits : { type : Number, required : true },
   details : String,
   status  : { type : String, enum : ['todo','taking','completed'], default : 'todo' }
 });
