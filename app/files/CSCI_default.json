@@ -2,12 +2,280 @@
   {"title":"Year 1",
     "semesters":[
       {"classes":[
-        {"name":"Computer Science 1","subj":"CSCI","num":"141","credits":"4","$$hashKey":"0A4"},
-        {"name":"Project Based Calculus 1","subj":"MATH","num":"181","credits":"4","$$hashKey":"0A7"},
-        {"name":"Gen Ed First Year Seminar","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AA"},
-        {"name":"Gen Ed Artistic Perspective","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AD"},
-        {"name":"Gen Ed Global Perspective","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AG"},
-        {"name":"Year One","subj":"ACSC","num":"010","credits":"0","$$hashKey":"0AJ"}
+        {
+          "name":"Computer Science 1",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"141","credits":"4","$$hashKey":"0A4"
+        },{
+          "name":"Project Based Calculus 1",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"MATH","num":"181","credits":"4","$$hashKey":"0A7"
+        },{
+          "name":"Gen Ed First Year Seminar",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AA"
+        },{
+          "name":"Gen Ed Artistic Perspective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AD"
+        },{
+          "name":"Gen Ed Global Perspective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AG"
+        },{
+          "name":"Year One",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ACSC","num":"010","credits":"0","$$hashKey":"0AJ"
+        }
       ]},
       {"classes":[
-        {"name":"Computer Science 2","subj":"CSCI","num":"142","credits":"4","$$hashKey":"0AM"},{"name":"Project Based Calculus 2","subj":"MATH","num":"182","credits":"4","$$hashKey":"0AP"},{"name":"Discrete Mathematics for Computing","subj":"MATH","num":"190","credits":"","$$hashKey":"0AS"},{"name":"Gen Ed First Year Writing Course","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AV"},{"name":"Gen Ed Social Perspective","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AY"},{"name":"Wellness Activity","subj":"WREC","num":"000","credits":"0","$$hashKey":"0B1"}]}]},{"title":"Year 2","semesters":[{"classes":[{"name":"The Mechanics of Programming","subj":"CSCI","num":"243","credits":"3","$$hashKey":"0B4"},{"name":"Introduction to Computer Science Theory","subj":"CSCI","num":"262","credits":"3","$$hashKey":"0B7"},{"name":"Probability and Statistics","subj":"MATH","num":"251","credits":"3","$$hashKey":"0BA"},{"name":"Lab Science 1","subj":"ELECT","num":"000","credits":"4","$$hashKey":"0BD"},{"name":"Gen Ed Ethical Perspective","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0BG"},{"name":"Wellness Activity","subj":"WREC","num":"000","credits":"0","$$hashKey":"0BY"}]},{"classes":[{"name":"Concepts of Computer Systems","subj":"CSCI","num":"250","credits":"3","$$hashKey":"0BJ"},{"name":"Introduction to Software Engineering","subj":"SWEN","num":"261","credits":"3","$$hashKey":"0BM"},{"name":"Linear Algebra","subj":"MATH","num":"241","credits":"3","$$hashKey":"0BP"},{"name":"Lab Science 2","subj":"ELECT","num":"000","credits":"4","$$hashKey":"0BS"},{"name":"Gen Ed Scientific Principles Perspective","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0BV"}]},{"classes":[{"name":"Summer CO OP","subj":"SUBJ","num":"000","credits":"","$$hashKey":"0CJ"}]}]},{"title":"Year 3","semesters":[{"classes":[{"name":"Concepts of Parallel and Distributed Systems","subj":"CSCI","num":"251","credits":"3","$$hashKey":"0C1"},{"name":"Principles of Data Manage-ment","subj":"CSCI","num":"320","credits":"3","$$hashKey":"0C4"},{"name":"CS Elective","subj":"CSCI","num":"000","credits":"3","$$hashKey":"0C7"},{"name":"Scientific Elective","subj":"ELECT","num":"000","credits":"3","$$hashKey":"0CA"},{"name":"Gen Ed Immersion","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0CD"}]},{"classes":[{"name":"Semester CO OP","subj":"SUBJ","num":"000","credits":"","$$hashKey":"0CS"}]}]},{"title":"Year 4","semesters":[{"classes":[{"name":"Analysis of Algorithms","subj":"CSCI","num":"261","credits":"3","$$hashKey":"0CV"},{"name":"CS Elective","subj":"CSCI","num":"000","credits":"3","$$hashKey":"0CY"},{"name":"Program-ming Language Concepts","subj":"CSCI","num":"344","credits":"3","$$hashKey":"0D1"},{"name":"Free Elective","subj":"ELECT","num":"000","credits":"3","$$hashKey":"0D4"},{"name":"Professional Communi-ications","subj":"CSCI","num":"471","credits":"3","$$hashKey":"0D7"}]},{"classes":[{"name":"Introduction to Intelligent Systems","subj":"CSCI","num":"331","credits":"3","$$hashKey":"0DA"},{"name":"CS Cluster Elective","subj":"CSCI","num":"000","credits":"3","$$hashKey":"0DD"},{"name":"Science Elective","subj":"ELECT","num":"000","credits":"3","$$hashKey":"0DG"},{"name":"Free Elective","subj":"ELECT","num":"000","credits":"3","$$hashKey":"0DJ"},{"name":"Gen Ed Immersion","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0DM"}]}]},{"title":"Year 5","semesters":[{"classes":[{"name":"Semester CO OP ","subj":"SUBJ","num":"000","credits":0,"$$hashKey":"0DP"}]},{"classes":[{"name":"CS Cluster Elective","subj":"CSCI","num":"000","credits":"3","$$hashKey":"0E4"},{"name":"Gen Ed Immersion","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0E7"},{"name":"Gen Ed Elective","subj":"PERSP","num":"000","credits":"3","$$hashKey":"0EA"},{"name":"Free Elective","subj":"ELECT","num":"000","credits":"3","$$hashKey":"0ED"},{"name":"Free Elective","subj":"ELECT","num":"000","credits":"3","$$hashKey":"0EG"}]}]}]
+        {
+          "name":"Computer Science 2",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"142","credits":"4","$$hashKey":"0AM"
+        },{
+          "name":"Project Based Calculus 2",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"MATH","num":"182","credits":"4","$$hashKey":"0AP"
+        },{
+          "name":"Discrete Mathematics for Computing",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"MATH","num":"190","credits":"","$$hashKey":"0AS"
+        },{
+          "name":"Gen Ed First Year Writing Course",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AV"
+        },{
+          "name":"Gen Ed Social Perspective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0AY"
+        },{
+          "name":"Wellness Activity",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"WREC","num":"000","credits":"0","$$hashKey":"0B1"
+        }
+      ]}
+    ]
+  },{
+    "title":"Year 2",
+    "semesters":[
+      {"classes":[
+        {
+          "name":"The Mechanics of Programming",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"243","credits":"3","$$hashKey":"0B4"
+        },{
+          "name":"Introduction to Computer Science Theory",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"262","credits":"3","$$hashKey":"0B7"
+        },{
+          "name":"Probability and Statistics",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"MATH","num":"251","credits":"3","$$hashKey":"0BA"
+        },{
+          "name":"Lab Science 1",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"4","$$hashKey":"0BD"
+        },{
+          "name":"Gen Ed Ethical Perspective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0BG"
+        },{
+          "name":"Wellness Activity",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"WREC","num":"000","credits":"0","$$hashKey":"0BY"
+        }
+      ]},
+      {"classes":[
+        {
+          "name":"Concepts of Computer Systems",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"250","credits":"3","$$hashKey":"0BJ"
+        },{
+          "name":"Introduction to Software Engineering",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"SWEN","num":"261","credits":"3","$$hashKey":"0BM"
+        },{
+          "name":"Linear Algebra",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"MATH","num":"241","credits":"3","$$hashKey":"0BP"
+        },{
+          "name":"Lab Science 2",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"4","$$hashKey":"0BS"
+        },{
+          "name":"Gen Ed Scientific Principles Perspective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0BV"
+        }
+      ]},
+      {"classes":[
+        {
+          "name":"Summer CO OP",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"SUBJ","num":"000","credits":"","$$hashKey":"0CJ"
+        }
+      ]}
+    ]},
+    {"title":"Year 3",
+    "semesters":[
+      {"classes":[
+        {
+          "name":"Concepts of Parallel and Distributed Systems",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"251","credits":"3","$$hashKey":"0C1"
+        },{
+          "name":"Principles of Data Management",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"320","credits":"3","$$hashKey":"0C4"
+        },{
+          "name":"CS Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"000","credits":"3","$$hashKey":"0C7"
+        },{
+          "name":"Scientific Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"3","$$hashKey":"0CA"
+        },{
+          "name":"Gen Ed Immersion",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0CD"
+        }
+      ]},
+      {"classes":[
+        {
+          "name":"Semester CO OP",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"SUBJ","num":"000","credits":"","$$hashKey":"0CS"
+        }
+      ]}
+    ]},
+    {"title":"Year 4",
+    "semesters":[
+      {"classes":[
+        {
+          "name":"Analysis of Algorithms",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"261","credits":"3","$$hashKey":"0CV"
+        },{
+          "name":"CS Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"000","credits":"3","$$hashKey":"0CY"
+        },{
+          "name":"Programming Language Concepts",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"344","credits":"3","$$hashKey":"0D1"
+        },{
+          "name":"Free Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"3","$$hashKey":"0D4"
+        },{
+          "name":"Professional Communications",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"471","credits":"3","$$hashKey":"0D7"
+        }
+      ]},
+      {"classes":[
+        {
+          "name":"Introduction to Intelligent Systems",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"331","credits":"3","$$hashKey":"0DA"
+        },{
+          "name":"CS Cluster Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"000","credits":"3","$$hashKey":"0DD"
+        },{
+          "name":"Science Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"3","$$hashKey":"0DG"
+        },{
+          "name":"Free Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"3","$$hashKey":"0DJ"
+        },{
+          "name":"Gen Ed Immersion",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0DM"
+        }
+      ]}
+    ]},
+    {"title":"Year 5",
+    "semesters":[
+      {"classes":[
+        {
+          "name":"Semester CO OP ",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"SUBJ","num":"000","credits":0,"$$hashKey":"0DP"
+        }
+      ]},
+      {"classes":[
+        {
+          "name":"CS Cluster Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"CSCI","num":"000","credits":"3","$$hashKey":"0E4"
+        },{
+          "name":"Gen Ed Immersion",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0E7"
+        },{
+          "name":"Gen Ed Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"PERSP","num":"000","credits":"3","$$hashKey":"0EA"
+        },{
+          "name":"Free Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"3","$$hashKey":"0ED"
+        },{
+          "name":"Free Elective",
+          "details":"", "status":"todo",
+          "prerequisites":[],
+          "subj":"ELECT","num":"000","credits":"3","$$hashKey":"0EG"
+        }
+      ]}
+    ]}
+  ]
