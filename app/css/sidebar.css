@@ -13,6 +13,11 @@
   background-color:#EEE8D5;
 }
 
+.sidebar-base {
+  display:table-row;
+  overflow:visible;
+}
+
 .sidebar-button {
   position:fixed;
   right:0;
