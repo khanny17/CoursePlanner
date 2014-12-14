@@ -25,12 +25,9 @@ angular.module('sidebarDirectives',[])
   return {
     restrict:'AE',
     link: function(scope,element,attrs,ngModel) {
-      $http.get("/templates/course-dialog.html").success(function(data) {
-        $templateCache.put('course-dialog',data);
+      $http.get("/templates/course-create-dialog.html").success(function(data) {
+        $templateCache.put('course-create-dialog',data);
       });
-      scope.setStatus = function(status) {
-        scope.c.status = status;
-      };
       element.on('click',function() {
         scope.c = {
           name    : "A New Course",
@@ -52,7 +49,7 @@ angular.module('sidebarDirectives',[])
           open: function () {
             var markup;
             scope.$apply(function() {
-              markup = $templateCache.get('course-dialog');
+              markup = $templateCache.get('course-create-dialog');
               markup = $compile(markup)(scope);
             });
             $(this).html(markup);
@@ -79,8 +76,10 @@ angular.module('sidebarDirectives',[])
                 course.name = $(editedCourseName).val();
                 course.num = $(editedCourseNum).val();
                 course.credits = $(editedCourseCred).val();
-                if(course.details != '')
-                  course.details = $(editedCourseDetails).val();
+                
+                var details = $(editedCourseDetails).val();
+                if(details != course.details)
+                  course.details = details;
                 scope.$apply();
                 scope.create(scope.c);
                 $(this).dialog('destroy').remove()
