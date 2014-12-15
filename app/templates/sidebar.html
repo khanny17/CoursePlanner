@@ -5,14 +5,14 @@
       <input class="form-control" placeholder="Search" type="text" ng-model="query" />
       <br/>
       <button createbutton>Create</button>
-      <div class="row">
+      <div class="row search-results-container">
         <div class="col-md-6" ng-hide="evenEmpty()">
-          <ul class="semester-col list leftlist" ui-sortable="sortableOptionsCourse" ng-model="courses">
+          <ul class="semester-col sidebar-list leftlist" ui-sortable="sortableOptionsCourse" ng-model="courses">
             <div ng-repeat="c in evencourses" ng-include="'templates/course.html'"> </div>
           </ul>
         </div>
         <div class="col-md-6" ng-hide="oddEmpty()">
-          <ul class="semester-col list rightlist" ui-sortable="sortableOptionsCourse" ng-model="courses">
+          <ul class="semester-col sidebar-list rightlist" ui-sortable="sortableOptionsCourse" ng-model="courses">
             <div ng-repeat="c in oddcourses" ng-include="'templates/course.html'"> </div>
           </ul>
         </div>
