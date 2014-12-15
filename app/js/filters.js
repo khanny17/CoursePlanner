@@ -7,21 +7,25 @@ angular.module('myFilters',[])
     query = query.toLowerCase();
     //split the query to see if it matches DEPT-NUM form
     var splitQ = query.split(/[\s\-]+/);
-    var item;
+    var item,dept,num;
     for(var i = 0; i < items.length; ++i) {
       item = items[i];
+      dept = item.dept.toLowerCase();
+      num  = item.num.toLowerCase();
       if(~item.name.toLowerCase().indexOf(query))
         filtered.push(item);
-      else if(~item.dept.toLowerCase().indexOf(query))
+      else if(~dept.indexOf(query))
         filtered.push(item);
-      else if(~item.num.toLowerCase().indexOf(query))
+      else if(~num.indexOf(query))
         filtered.push(item);
       else if(~item.details.toLowerCase().indexOf(query))
         filtered.push(item);
+      //check DEPTNUM form
+      else if( ~(dept+num).indexOf(query))
+        filtered.push(item);
       //check DEPT-NUM form
-      else if(splitQ.length === 2 &&
-              ~item.dept.toLowerCase().indexOf(splitQ[0]) &&
-              ~item.num.toLowerCase().indexOf(splitQ[1]))
+      else if(splitQ.length === 2 && ~dept.indexOf(splitQ[0])
+              && ~num.indexOf(splitQ[1]))
         filtered.push(item);
     }
 
