@@ -14,7 +14,7 @@ angular.module('sidebarController',[])
     },
     //hide div when view is empty
     function(newValue, oldValue) {
-      $scope.courses = $filter('filter')($scope.allcourses,newValue);
+      $scope.courses = $filter('courseSearch')($scope.allcourses,newValue);
     }
   );
 
