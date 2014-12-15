@@ -1,9 +1,26 @@
 angular.module('sidebarController',[])
 
-.controller('sidebarCtrl',function($scope,$http,Courses,$rootScope) {
+.controller('sidebarCtrl',function($filter,$scope,$http,Courses,$rootScope) {
   $scope.title = "Courses";
+  $scope.query = "";
+  $scope.allcourses = {};
+  $scope.courses = {};
+
+  //Update list from query
+  $scope.$watch(
+    //Watch the query
+    function(scope) {
+      return scope.query;
+    },
+    //hide div when view is empty
+    function(newValue, oldValue) {
+      $scope.courses = $filter('filter')($scope.allcourses,newValue);
+    }
+  );
 
   Courses.get().success(function(data) {
+    data = $filter('orderBy')(data, 'dept',false);
+    $scope.allcourses = data;
     $scope.courses = data;
   });
 

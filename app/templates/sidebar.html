@@ -6,7 +6,7 @@
       <br/>
       <button createbutton>Create</button>
       <ul class="semester-col list" ui-sortable="sortableOptionsCourse" ng-model="courses">
-        <div ng-repeat="c in courses | filter:query" ng-include="'templates/course.html'"> </div>
+        <div ng-repeat="c in courses" ng-include="'templates/course.html'"> </div>
       </ul>
     </center>
   </div>
