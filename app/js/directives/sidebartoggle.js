@@ -1,26 +1,5 @@
 angular.module('sidebarDirectives',[])
 
-.directive('sidebarbutton',function(Plans) {
-  return {
-    restrict:"AE",
-    template:"<button class='sidebar-button'><</button>",
-    replace:true,
-    link: function(scope,element,attrs) {
-      var showing = false;
-      element.on('click',function() {
-        $('#sidebar').toggle();
-          
-        if(showing)
-          element.text("<");
-        else
-          element.text(">");
-
-        showing = !showing;
-      });
-    }
-  };
-})
-
 .directive('createbutton', function($http,$compile,$templateCache) {
   return {
     restrict:'AE',
@@ -76,7 +55,7 @@ angular.module('sidebarDirectives',[])
                 course.name = $(editedCourseName).val();
                 course.num = $(editedCourseNum).val();
                 course.credits = $(editedCourseCred).val();
-                
+
                 var details = $(editedCourseDetails).val();
                 if(details != course.details)
                   course.details = details;
