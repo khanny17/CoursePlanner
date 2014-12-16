@@ -4,7 +4,6 @@ angular.module('sidebarController',[])
   $scope.title = "Courses";
   $scope.query = "";
   $scope.allcourses = {};
-  $scope.courses = {};
   //for the double column display
   $scope.evencourses = [];
   $scope.oddcourses = [];
@@ -17,14 +16,14 @@ angular.module('sidebarController',[])
     },
     //hide div when view is empty
     function(newValue, oldValue) {
-      $scope.courses = $filter('courseSearch')($scope.allcourses,newValue);
+      var data = $filter('courseSearch')($scope.allcourses,newValue);
       //rest lists
       $scope.evencourses = [];
       $scope.oddcourses = [];
       //loop through alternating back and forth
-      for(var i = 0; i < $scope.courses.length; ++i) {
-        i%2===0 ? $scope.evencourses.push($scope.courses[i]) :
-                  $scope.oddcourses.push($scope.courses[i]);
+      for(var i = 0; i < data.length; ++i) {
+        i%2===0 ? $scope.evencourses.push(data[i]) :
+                  $scope.oddcourses.push(data[i]);
       }
     }
   );
@@ -32,15 +31,16 @@ angular.module('sidebarController',[])
   Courses.get().success(function(data) {
     data = $filter('orderBy')(data, 'dept',false);
     $scope.allcourses = data;
-    $scope.courses = data;
     //reset lists just in case
     $scope.evencourses = [];
     $scope.oddcourses = [];
     var item;
     for(var i = 0; i < data.length; ++i) {
       item = data[i];
-      i%2===0 ? $scope.evencourses.push(item) :
-                $scope.oddcourses.push(item);
+      if(i%2==0)
+        $scope.evencourses.push(item);
+      else
+        $scope.oddcourses.push(item);
     }
   });
 

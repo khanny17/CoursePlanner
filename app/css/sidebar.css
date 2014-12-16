@@ -16,8 +16,8 @@
 
   overflow:visible;
 
-  border-left: 5px solid gray;
-  background-color:#999999;
+  border-left: 5px solid #919191;
+  background-color:#DEDEDE;
   display:inline-block;
 
 }
@@ -33,14 +33,13 @@
 .sidebar-list {
   list-style: none outside none;
   margin: 10px 0 30px;
-  margin: 10px 10px 0 0;
-  padding: 5px;
+  padding: 3px;
 }
 
-
 .search-results-container {
-  margin: 10px 0 30px;
-  border: 2px solid black;
-  margin: 10px 10px 0 0;
-  padding: 5px;
+  background:#DDDDDD;
+}
+
+.query {
+  margin-bottom:5px;
 }

@@ -1,22 +1,22 @@
 <div ng-controller="sidebarCtrl">
   <div id="sidebar">
     <center>
-      <h4>{{title}}</h4>
-      <input class="form-control" placeholder="Search" type="text" ng-model="query" />
-      <br/>
-      <button createbutton>Create</button>
+      <h3>{{title}}</h3>
+      <input class="form-control query" placeholder="Search" type="text" ng-model="query" />
       <div class="row search-results-container">
         <div class="col-md-6" ng-hide="evenEmpty()">
-          <ul class="semester-col sidebar-list leftlist" ui-sortable="sortableOptionsCourse" ng-model="courses">
+          <ul class="semester-col list leftlist" ui-sortable="sortableOptionsCourse" ng-model="evencourses">
             <div ng-repeat="c in evencourses" ng-include="'templates/course.html'"> </div>
           </ul>
         </div>
         <div class="col-md-6" ng-hide="oddEmpty()">
-          <ul class="semester-col sidebar-list rightlist" ui-sortable="sortableOptionsCourse" ng-model="courses">
+          <ul class="semester-col list rightlist" ui-sortable="sortableOptionsCourse" ng-model="oddcourses">
             <div ng-repeat="c in oddcourses" ng-include="'templates/course.html'"> </div>
           </ul>
         </div>
       </div>
+      <h4>Couldn't find what you were looking for?</h4>
+      <button class="btn btn-default" createbutton>Create a Course</button>
     </center>
   </div>
   <!-- Button to toggle display of sidebar -->
