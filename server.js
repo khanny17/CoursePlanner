@@ -11,6 +11,9 @@ var bodyParser     = require('body-parser');
 var methodOverride = require('method-override');
 var session        = require('express-session');
 
+var courseService  = require('./services/course');
+var planService    = require('./services/plan');
+
 var database = require('./config/database');
 mongoose.connect(database.url);
 
@@ -31,6 +34,14 @@ app.use(session({ secret: 'absolutelyandwithoutashredofdoubt' }));
 app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash());
+
+//route application
+var routeMe = function(service, path){
+	service.init.route(app);
+};
+
+routeMe(courseService);
+routeMe(planService);
 
 require('./routes')(app,passport);
 
