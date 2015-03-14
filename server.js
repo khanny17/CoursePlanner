@@ -14,9 +14,9 @@ var session        = require('express-session');
 var database = require('./config/database');
 mongoose.connect(database.url);
 
-app.use(express.static(path.join(__dirname + '/app')));
+app.use(express.static(path.join(__dirname + '/public')));
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/app');
+app.set('views', __dirname + '/public');
 app.engine('html', require('ejs').renderFile);
 
 app.use(morgan('dev'));
@@ -32,7 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session()); 
 app.use(flash());
 
-require('./app/routes')(app,passport);
+require('./routes')(app,passport);
 
 var port = process.env.PORT || 8080;
 app.listen(port);
