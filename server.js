@@ -36,12 +36,14 @@ app.use(passport.session());
 app.use(flash());
 
 //route application
-var routeMe = function(service, path){
-	service.init.route(app);
+var routeMe = function(path, service){
+	var router = express.Router();
+	service.init.route(router);
+	app.use('/api/' + path, router);
 };
 
-routeMe(courseService);
-routeMe(planService);
+routeMe('course', courseService);
+routeMe('plan', planService);
 
 require('./routes')(app,passport);
 

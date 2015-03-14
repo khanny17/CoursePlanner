@@ -30,8 +30,9 @@ var endpoints = {
 
 var init = {
 	route: function(router) {
-		router.get('/Planner/plans', endpoints.getAll);
-		router.post('/Planner/save', endpoints.save);
+		//Mounted on '/api/plan'
+		router.get('/getAll', endpoints.getAll);
+		router.post('/save', endpoints.save);
 	}
 };
 

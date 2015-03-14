@@ -10,7 +10,7 @@ var endpoints = {
     	});	
 	},
 
-	create: function(req,res) {
+	create: function(req, res) {
 		Course.create({
   			name    : req.body.name,
   			dept    : req.body.dept,
@@ -35,9 +35,10 @@ var endpoints = {
 };
 
 var init = {
-	route: function(route){
-		route.get('/Planner/courses', endpoints.getAll);
-		route.post('/Planner/create/course', endpoints.create);
+	route: function(router){
+		//Mounted on '/api/course'
+		router.get('/get', endpoints.getAll);
+		router.post('/create', endpoints.create);
 	}
 }
 
