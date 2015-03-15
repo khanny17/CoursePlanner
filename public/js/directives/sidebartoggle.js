@@ -1,5 +1,25 @@
 angular.module('sidebarDirectives',[])
 
+.directive('sidebarcourse', function(){
+  return {
+    restrict: 'AE',
+    link: function(scope, element, attrs){
+      element.mousedown(function(){
+        $('#sidebar').css({
+          'overflow': 'visible',
+          'border-right': '8px solid grey'
+        });
+      }).mouseup(function(){
+        $('#sidebar').css({
+          'overflow-y': 'scroll',
+          'overflow-x': 'hide',
+          'padding-right': '5px',
+          'border-right': 'none'
+        });
+      })
+    }
+  }
+})
 .directive('createbutton', function($http,$compile,$templateCache) {
   return {
     restrict:'AE',

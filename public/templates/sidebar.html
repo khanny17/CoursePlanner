@@ -6,12 +6,12 @@
       <div class="row search-results-container">
         <div class="col-md-6" ng-hide="evenEmpty()">
           <ul class="semester-col list leftlist" ui-sortable="sortableOptionsCourse" ng-model="evencourses">
-            <div ng-repeat="c in evencourses" ng-include="'templates/course.html'"> </div>
+            <div ng-repeat="c in evencourses" ng-include="'templates/course.html'" sidebarcourse> </div>
           </ul>
         </div>
         <div class="col-md-6" ng-hide="oddEmpty()">
           <ul class="semester-col list rightlist" ui-sortable="sortableOptionsCourse" ng-model="oddcourses">
-            <div ng-repeat="c in oddcourses" ng-include="'templates/course.html'"> </div>
+            <div ng-repeat="c in oddcourses" ng-include="'templates/course.html'" sidebarcourse> </div>
           </ul>
         </div>
       </div>
