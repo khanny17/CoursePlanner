@@ -1,52 +1,60 @@
-var express        = require('express');
-var app            = express();
-var passport       = require('passport');
-var flash          = require('connect-flash');
-var path           = require ('path');
+(function(){
+    'use strict';
 
-var mongoose       = require('mongoose');
-var morgan         = require('morgan');
-var cookieParser   = require('cookie-parser');
-var bodyParser     = require('body-parser');
-var methodOverride = require('method-override');
-var session        = require('express-session');
+    //Load environment variables
+    require('dotenv').load();
 
-var courseService  = require('./services/course');
-var planService    = require('./services/plan');
+    // Modules 
+    var config         = require(__dirname + '/config/config');
+    var express        = require('express');
+    var app            = express();
+    var bodyParser     = require('body-parser');
+    var methodOverride = require('method-override');
+    var mongoose       = require('mongoose');
+    var passport       = require('passport');
+    require('./config/passport')(passport);
 
-var database = require('./config/database');
-mongoose.connect(database.url);
 
-app.use(express.static(path.join(__dirname + '/public')));
-app.set('view engine', 'ejs');
-app.set('views', __dirname + '/public');
-app.engine('html', require('ejs').renderFile);
 
-app.use(morgan('dev'));
-app.use(cookieParser());
-app.use(bodyParser.urlencoded({'extended':'true'}));
-app.use(bodyParser.json());
-app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-app.use(methodOverride());
+    // Configuration
 
-require('./config/passport')(passport);
-app.use(session({ secret: 'absolutelyandwithoutashredofdoubt' }));
-app.use(passport.initialize());
-app.use(passport.session()); 
-app.use(flash());
+    //DB
+    mongoose.connect(config.db.url, {authMechanism: 'ScramSHA1'}); 
 
-//route application
-var routeMe = function(path, service){
-	var router = express.Router();
-	service.init.route(router);
-	app.use('/api/' + path, router);
-};
+    // Server port
+    var port = process.env.PORT || 8080; 
 
-routeMe('course', courseService);
-routeMe('plan', planService);
+    // get all data/stuff of the body (POST) parameters
+    // parse application/json 
+    app.use(bodyParser.json()); 
 
-require('./routes')(app,passport);
+    // parse application/vnd.api+json as json
+    app.use(bodyParser.json({ type: 'application/vnd.api+json' })); 
 
-var port = process.env.PORT || 8080;
-app.listen(port);
-console.log("App listening on port "+port);
+    // parse application/x-www-form-urlencoded
+    app.use(bodyParser.urlencoded({ extended: true })); 
+
+    // override with the X-HTTP-Method-Override header in the request. simulate DELETE/PUT
+    app.use(methodOverride('X-HTTP-Method-Override')); 
+
+    // set the static files location /public/img will be /img for users
+    app.use(express.static(__dirname + '/public')); 
+
+    //tell express to use passport
+    app.use(passport.initialize());
+
+
+
+    //Set up the api endpoints
+    require(__dirname + '/app/api/api').init(express, app); 
+
+    //Default route
+    app.get('*', function(req, res) {
+        res.sendfile(__dirname + '/public/index.html'); // load our public/index.html file
+    });
+
+    // Start App 
+    app.listen(port);               
+
+    console.log('Server running on ' + port);
+}());
