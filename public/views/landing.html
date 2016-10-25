@@ -3,10 +3,12 @@
         <center>
             <h1>Course Planner</h1>
         </center>
-        
-        <input type="text" class="form-control" placeholder="Username" />
-        <input type="text" class="form-control" placeholder="Password" />
-        <button class="btn btn-small btn-primary">Login</button>
-        <button class="btn btn-small btn-default pull-right">Register</button>
+
+        <div class="col-sm-4 col-sm-offset-4">
+            <input type="text" class="form-control" placeholder="Username" />
+            <input type="password" class="form-control" placeholder="Password" />
+            <button class="btn btn-small btn-primary" ng-click="login()">Login</button>
+            <button class="btn btn-small btn-default pull-right" ng-click="register()">Register</button>
+        </div>
     </div>
 </div>

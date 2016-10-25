@@ -1,7 +1,10 @@
 angular.module('CoursePlanner', [
     'CoursePlannerRoutes',
     'HomeController',
+    'LandingController',
     'AuthService',
+
+
     'navbarController',
     'authController',
     'courseDirectives',

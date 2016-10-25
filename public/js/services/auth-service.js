@@ -4,7 +4,7 @@
     angular.module('AuthService', [])
 
         .service('authService', function($q, $http) {
-            var LOCAL_TOKEN_KEY = 'yourTokenKey';
+            var LOCAL_TOKEN_KEY = 'CoursePlannerTokenKey';
             var isAuthenticated = false;
             var authToken;
 
