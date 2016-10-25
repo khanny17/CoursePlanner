@@ -1,11 +1,13 @@
 {
-    "name": "courseplanner",
-    "version": "1.1.0",
-    "dependencies": {
-        "bootstrap": "latest",
-        "font-awesome": "latest",
-        "angular": "latest",
-        "angular-ui-router": "latest",
-        "angular-animate": "^1.5.8"
-    }
+  "name": "courseplanner",
+  "version": "1.1.0",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "angular": "latest",
+    "angular-ui-router": "latest",
+    "angular-animate": "^1.5.8",
+    "angular-bootstrap": "^2.2.0",
+    "angular-ui-sortable": "^0.15.0"
+  }
 }

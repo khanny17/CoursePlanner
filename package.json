@@ -44,13 +44,11 @@
     "passport": "~0.1.17",
     "passport-jwt": "^2.1.0",
     "passport-local": "~0.1.6",
+    "q": "^1.4.1",
     "stream-series": "^0.1.1"
   },
   "scripts": {
-    "prestart": "npm install",
     "start": "node dist/server.js -p $PORT",
-    "pretest": "npm install",
-    "preupdate-webdriver": "npm install",
     "postinstall": "gulp && bower install"
   },
   "bugs": {

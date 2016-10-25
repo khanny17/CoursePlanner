@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('CoursePlannerRoutes', ['ui.router'])
+    angular.module('CoursePlannerRoutes', ['ui.router', 'AuthService'])
 
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
             function( $stateProvider,   $urlRouterProvider,   $locationProvider) {
@@ -12,12 +12,12 @@
                 $stateProvider
                     .state('landing', {
                         url: '/welcome',
-                        templateUrl: 'templates/landing.html',
+                        templateUrl: 'views/landing.html',
                         controller: 'landingController'
                     })
                     .state('home', {
                         url: '/', //The url for the state
-                        templateUrl: 'landing/home.html', //The path to the html template
+                        templateUrl: 'views/home.html', //The path to the html template
                         controller: 'homeController' //The path to the angular controller
                     });
             }])

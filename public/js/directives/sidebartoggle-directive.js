@@ -16,9 +16,9 @@ angular.module('sidebarDirectives',[])
           'padding-right': '5px',
           'border-right': 'none'
         });
-      })
+      });
     }
-  }
+  };
 })
 .directive('createbutton', function($http,$compile,$templateCache) {
   return {
@@ -87,5 +87,5 @@ angular.module('sidebarDirectives',[])
         });
       });
     }
-  };
+  }
 });

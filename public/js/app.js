@@ -1,6 +1,7 @@
 angular.module('CoursePlanner', [
     'CoursePlannerRoutes',
-    'courseCtrl',
+    'HomeController',
+    'AuthService',
     'navbarController',
     'authController',
     'courseDirectives',
@@ -9,22 +10,7 @@ angular.module('CoursePlanner', [
     'authDirectives',
     'planService',
     'courseService',
-    'AuthService' 
 ])
-
-.run(function($rootScope, $http){
-  $rootScope.user = 0;
-  $http.get("/loggedin").success(function(user) {
-    if(user !== 0)
-      $rootScope.user = user;
-  });
-
-  $rootScope.auth = function() {
-    return $rootScope.user != 0;
-  }
-
-  $rootScope.error = "";
-})
 
 //filters by name, dept, dept-num, num, and description
 .filter('courseSearch',function() {

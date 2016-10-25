@@ -16,20 +16,6 @@ body {
   background-color:#DFE2DB;
 }
 
-.container-main {
-  width:100%;
-  /* Firefox */
-  height: -moz-calc(100% - 34px);
-  /* WebKit */
-  height: -webkit-calc(100% - 34px);
-  /* Opera */
-  height: -o-calc(100% - 34px);
-  /* Standard */
-  height: calc(100% - 34px);
-  padding-top:0;
-  margin-top:0;
-}
-
 .plan-title {
   margin-left:auto;
   margin-right:auto;
