@@ -48,10 +48,10 @@
   },
   "scripts": {
     "prestart": "npm install",
-    "start": "node server.js -p $PORT",
+    "start": "node dist/server.js -p $PORT",
     "pretest": "npm install",
     "preupdate-webdriver": "npm install",
-    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+    "postinstall": "gulp && bower install"
   },
   "bugs": {
     "url": "https://github.com/khanny17/CoursePlanner/issues"
