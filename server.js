@@ -14,9 +14,6 @@
     var morgan         = require('morgan');
     var passport       = require('passport');
 
-    require('./config/passport')(passport);
-
-
 
     // Configuration
 
@@ -47,9 +44,10 @@
     //tell express to use passport
     app.use(passport.initialize());
 
-    app.use(morgan('combined'));
+    app.use(morgan('dev'));
 
 
+    require('./config/passport')(passport);
 
     //Set up the api endpoints
     require(__dirname + '/app/api/api').init(express, app); 

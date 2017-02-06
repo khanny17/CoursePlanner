@@ -75,7 +75,7 @@ angular.module('courseDirectives',[])
                                 course.name = $(editedCourseName).val();
                                 course.num = $(editedCourseNum).val();
                                 course.credits = $(editedCourseCred).val();
-                                if(course.details != '');
+                                if(course.details !== '');
                                 course.details = $(editedCourseDetails).val();
                                 //status is updated automatically, update the original though
                                 original = scope.c.status;

@@ -12,5 +12,5 @@ angular.module('PlanService',[])
             title: title,
             years: years
         });
-    }
+    };
 }]);

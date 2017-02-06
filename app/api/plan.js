@@ -2,7 +2,7 @@ var passport = require('passport');
 var Plan = require('../models/plan');
 
 var endpoints = {
-    getAll: function(req, res) {
+    get: function(req, res) {
         Plan.find({
             user: req.body.user 
         }, function(err, plans) {
