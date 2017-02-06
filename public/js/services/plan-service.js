@@ -1,12 +1,14 @@
-angular.module('planService',[])
+angular.module('PlanService',[])
 
-.factory('Plans', function($http) {
-    return {
-        get : function() {
-            return $http.get('/api/plan/getAll');
-        },
-        create :function(title,years,username) {
-            return $http.post('/api/plan/save', {title: title,years: years,user:username});
-        }
+.service('planService', ['$http', function($http) {
+    this.get = function() {
+        return $http.get('/api/plan/get');
     };
-});
+
+    this.save = function(title,years,username) {
+        return $http.post('/api/plan/save', {
+            title: title,
+            years: years
+        });
+    }
+}]);

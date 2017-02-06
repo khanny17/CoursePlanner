@@ -1,11 +1,13 @@
-angular.module('navbarController',[])
+angular.module('NavbarController',['PlanService'])
 
-.controller('navCtrl',function($scope,$http,Plans,$rootScope) {
-  $scope.serverSave = function() {
-    var myScope = $scope;
-    Plans.create($scope.title,$scope.years,$rootScope.user.local.username)
-    .success(function(data) {
-      myScope.plans = data;
-    });
-  };
-});
+.controller('navCtrl', ['$scope', '$http', 'planService', '$rootScope',
+function($scope, $http, planService, $rootScope) {
+
+    $scope.savePlan = function() {
+        planService.create($scope.title, $scope.years)
+        .success(function(data) {
+            console.log('Plan Saved', data);
+        });
+    };
+
+}]);

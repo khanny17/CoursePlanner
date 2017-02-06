@@ -8,6 +8,7 @@
     "angular-ui-router": "latest",
     "angular-animate": "^1.5.8",
     "angular-bootstrap": "^2.2.0",
-    "angular-ui-sortable": "^0.15.0"
+    "angular-ui-sortable": "^0.15.0",
+    "labeled-inputs": "^0.0.5"
   }
 }
