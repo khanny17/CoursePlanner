@@ -28,5 +28,5 @@ angular.module('LandingController',['AuthService'])
             err.fields.forEach(function(field){
                 $scope.errors[field] = true;
             });
-        };
+        }
     }]);

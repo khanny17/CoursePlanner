@@ -8,10 +8,10 @@ angular.module('CoursePlanner', [
 
     'NavbarDirective',
     'authController',
-    'courseDirectives',
-    'sidebarController',
+    'ContentEditableDirective',
     'sidebarDirectives',
     'authDirectives',
+    'CourseDirective'
 ])
 
 //filters by name, dept, dept-num, num, and description
@@ -38,8 +38,7 @@ angular.module('CoursePlanner', [
             else if( ~(dept+num).indexOf(query))
                 filtered.push(item);
             //check DEPT-NUM form
-            else if(splitQ.length === 2 && ~dept.indexOf(splitQ[0])
-                && ~num.indexOf(splitQ[1]))
+            else if(splitQ.length === 2 && ~dept.indexOf(splitQ[0]) && ~num.indexOf(splitQ[1]))
                 filtered.push(item);
         }
 

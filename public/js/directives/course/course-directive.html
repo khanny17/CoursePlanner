@@ -1,0 +1,14 @@
+<li class="course {{course.dept}}" title="{{course.details}}">
+
+<div ng-class="{'bottomleft-topright-line': course.status == 'taking' || course.status == 'completed'}"></div>
+<div ng-class="{'topleft-bottomright-line': course.status == 'completed'}"></div>
+
+<div class="course-name">{{course.name}}</div>
+
+<div class="courseInner">
+    <div class="course-detail">{{course.dept}}-{{course.num}}</div>
+    <br>
+    <div class="course-detail">({{course.credits}})</div>
+</div>
+</li>
+

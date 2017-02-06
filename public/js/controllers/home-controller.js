@@ -14,18 +14,18 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
     $scope.errormsg = "";
     $scope.setErrorMsg = function(text) {
         $scope.errormsg = text;
-    }
+    };
 
     $scope.download = function() {
         var data = JSON.stringify($scope.years);
         var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
         window.open(url, '_blank');
         window.focus();
-    }
+    };
 
     $scope.load = function() {
         var text = prompt("paste json file here");
-        if(text != null) {
+        if(text !== null) {
             try {
                 var data = JSON.parse(text);
                 $scope.years = data;
@@ -35,7 +35,7 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
             }
             //$scope.$apply();
         }
-    }
+    };
 
     $scope.open = function(dept) {
         path = "files/" + dept + "_default.json";
@@ -45,14 +45,14 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
         }).error(function(data) {
             $scope.setErrorMsg('Invalid Selection');
         });
-    }
+    };
 
     $scope.addYear = function() {
         $scope.years.push(new function() {
             this.title="NEW YEAR";
             this.semesters=[];
         });
-    }
+    };
 
     $scope.removeYear = function(index) {
         if($scope.years[index].semesters.length > 0) {
@@ -62,7 +62,7 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
         } else {
             $scope.years.splice(index,1);
         }
-    }
+    };
 
     $scope.removeSemester = function(year,index) {
         if(year.semesters[index].classes.length > 0) {
@@ -72,7 +72,7 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
         } else {
             year.semesters.splice(index,1);
         }
-    }
+    };
 
     $scope.addSemester = function(year) {
         if(year.semesters.length < $scope.maxSemesters) {
@@ -80,7 +80,7 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
                 this.classes=[];
             });
         }
-    }
+    };
 
     $scope.addCourse = function(semester) {
         semester.classes.push(new function() {
@@ -89,7 +89,7 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
             this.num="000";
             this.credits=0;
         });
-    }
+    };
 
     $scope.deleteCourse = function(course) {
         $scope.years.forEach(function(year) {
@@ -101,5 +101,5 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
                 }
             });
         });
-    }
+    };
 }]);

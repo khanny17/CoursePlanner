@@ -17,7 +17,10 @@
                         <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
                             <ul class="connectedSortable courseCol list" ng-model="semester.classes"
                                 ui-sortable="sortableOptionsCourse">
-                                <div ng-repeat="c in semester.classes" ng-include="'views/course.html'"> </div>
+                                <course ng-repeat="c in semester.classes" course="c" delete="deleteCourse"></course>
+                                <button class="btn btn-default" ng-click="addCourse(semester)">
+                                    <i class="fa fa-plus" aria-hidden="true" margin-top="5px"></i>
+                                </button>
                             </ul>
                             <button class="btn btn-default btn-xs" ng:click="removeSemester(year,$index)">Delete</button>
                         </div>

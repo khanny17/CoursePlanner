@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "dependencies": {
     "bootstrap": "latest",
-    "font-awesome": "latest",
+    "font-awesome": "^4.7.0",
     "angular": "latest",
     "angular-ui-router": "latest",
     "angular-animate": "^1.5.8",

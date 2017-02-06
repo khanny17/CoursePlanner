@@ -5,7 +5,7 @@ function($http, planService) {
     return {
         replace: true,
         restrict: 'E',
-        templateUrl: 'js/directives/navbar-directive/navbar-directive.html',
+        templateUrl: 'js/directives/navbar/navbar-directive.html',
         link: function(scope) {
 
         }
