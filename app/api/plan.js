@@ -1,3 +1,4 @@
+var passport = require('passport');
 var Plan = require('../models/plan');
 
 var endpoints = {

@@ -6,7 +6,7 @@ angular.module('CoursePlanner', [
     'AuthService',
 
 
-    'NavbarController',
+    'NavbarDirective',
     'authController',
     'courseDirectives',
     'sidebarController',

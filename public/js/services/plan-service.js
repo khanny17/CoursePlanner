@@ -1,8 +1,10 @@
 angular.module('PlanService',[])
 
 .service('planService', ['$http', function($http) {
-    this.get = function() {
-        return $http.get('/api/plan/get');
+    this.plan = {};
+
+    this.load = function() {
+        return $http.get('/api/plan/load');
     };
 
     this.save = function(title,years,username) {
