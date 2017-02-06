@@ -7,7 +7,7 @@ var q = require('q');
 //Set up a mongoose model
 
 var UserSchema = new Schema({
-    name: {
+    username: {
         type: String,
         required: true 
     },

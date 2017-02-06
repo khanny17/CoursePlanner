@@ -11,7 +11,9 @@
     var bodyParser     = require('body-parser');
     var methodOverride = require('method-override');
     var mongoose       = require('mongoose');
+    var morgan         = require('morgan');
     var passport       = require('passport');
+
     require('./config/passport')(passport);
 
 
@@ -19,7 +21,9 @@
     // Configuration
 
     //DB
-    mongoose.connect(config.db.url, {authMechanism: 'ScramSHA1'}); 
+    mongoose.connect(config.db.url, function(err) {
+        console.log(err || 'Mongoose Connected Successfully'); //TODO on error, close application
+    });//, {authMechanism: 'ScramSHA1'}); 
 
     // Server port
     var port = process.env.PORT || 8080; 
@@ -42,6 +46,8 @@
 
     //tell express to use passport
     app.use(passport.initialize());
+
+    app.use(morgan('combined'));
 
 
 

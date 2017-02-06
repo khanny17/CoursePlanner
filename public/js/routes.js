@@ -11,12 +11,12 @@
                 //Define States here
                 $stateProvider
                     .state('landing', {
-                        url: '/welcome',
+                        url: '/',
                         templateUrl: 'views/landing.html',
                         controller: 'landingController'
                     })
                     .state('home', {
-                        url: '/', //The url for the state
+                        url: '/home', //The url for the state
                         templateUrl: 'views/home.html', //The path to the html template
                         controller: 'homeController' //The path to the angular controller
                     });

@@ -17,16 +17,16 @@
     var endpoints = {
 
         register: function(req, res) {
-            if (!req.body.email || !req.body.password) {
-                return res.json({success: false, msg: 'Please pass email and password.'});
+            if (!req.body.username || !req.body.password) {
+                var msg = 'Please pass username and password.';
+                console.log(msg);
+                return res.json({success: false, msg: msg});
             }
 
             UserModel.create({
-                FirstName: req.body.firstName,
-                LastName: req.body.lastName,
-                Email:req.body.email,
-                Password: UserModel.hashPassword(req.body.password)
-            }).then(function(err) {
+                username:req.body.username,
+                password: req.body.password
+            }, function(err) {
                 if (err) {
                     return res.json({success: false, msg: 'Username already exists.'});
                 }
@@ -37,32 +37,41 @@
 
         authenticate: function(req, res) {
             UserModel.findOne({
-                name: req.body.name
+                username: req.body.username
             }, function(err, user) {
-                if (err) {
-                    throw err;
-                }
-                if (!user) {
-                    var msg = 'Authentication failed. User not found.';
-                    res.send({success: false, msg: msg, field: 'name'});
+                if (err || !user) {
+                    var msg = err || 'Authentication failed. User not found.';
+                    res.send({ 
+                        success: false, 
+                        msg: msg, 
+                        fields: ['username']
+                    });
                     console.log(msg);
-                } else {
-                    // check if password matches
-                    user.comparePassword(req.body.password, 
-                        function (err, isMatch) {
-                            if (isMatch && !err) {
-                                // if user is found and password is right create a token
-                                var token = jwt.encode(user, config.db.secret);
-                                // return the information including token as JSON
-                                res.json({success: true, token: 'JWT ' + token});
-                                console.log(req.body.name + ' authenticated');
-                            } else {
-                                var msg = 'Authentication failed. Wrong password.';
-                                console.log(msg);
-                                res.send({success: false, msg: msg, field: 'password'});
-                            }
-                        });
+                    return;
                 }
+
+                // check if password matches
+                user.comparePassword(req.body.password, 
+                    function (err, isMatch) {
+                        if (isMatch && !err) {
+                            // if user is found and password is right create a token
+                            var token = jwt.encode(user, config.db.secret);
+                            // return the information including token as JSON
+                            res.json({
+                                success: true, 
+                                token: 'JWT ' + token
+                            });
+                            console.log(req.body.username + ' authenticated');
+                        } else {
+                            var msg = 'Authentication failed. Wrong password.';
+                            res.send({
+                                success: false, 
+                                msg: msg, 
+                                fields: ['password']
+                            });
+                            console.log(msg);
+                        }
+                    });
             });
         }
 

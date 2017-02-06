@@ -41,7 +41,7 @@
                         if (result.data.success) {
                             resolve(result.data.msg);
                         } else {
-                            reject(result.data.msg);
+                            reject({ msg: result.data.msg, fields: result.data.fields });
                         }
                     });
                 });
@@ -54,7 +54,7 @@
                             storeUserCredentials(result.data.token);
                             resolve(result.data.msg);
                         } else {
-                            reject(result.data.msg);
+                            reject({ msg: result.data.msg, fields: result.data.fields });
                         }
                     });
                 });
