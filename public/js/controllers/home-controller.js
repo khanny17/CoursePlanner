@@ -48,14 +48,22 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
     };
 
     $scope.addYear = function() {
-        $scope.years.push(new function() {
-            this.title="NEW YEAR";
-            this.semesters=[];
+        $scope.years.push({
+            title: 'Year ' + ($scope.years.length + 1),
+            semesters: [{ classes: [] }, { classes: [] }] //initialize with two semesters
         });
     };
 
     $scope.removeYear = function(index) {
-        if($scope.years[index].semesters.length > 0) {
+        //Show a warning if there are classes in any of the semesters
+        var danger = false;
+        $scope.years[index].semesters.forEach(function(semester){
+            if(semester.classes.length > 0) {
+                danger = true;
+            }
+        });
+
+        if(danger) {
             if(confirm("Delete year \"" + $scope.years[index].title + "\" ?")){
                 $scope.years.splice(index,1);
             }

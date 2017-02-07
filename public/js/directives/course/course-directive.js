@@ -17,6 +17,7 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
                     templateUrl: 'js/directives/course/course-edit-modal.html',
                     animation: false,
                     backdrop: false,
+                    size: 'sm',
                     controller: ['$scope', function(modalScope) {
                         modalScope.c = scope.course;
 

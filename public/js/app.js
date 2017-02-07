@@ -3,11 +3,11 @@ angular.module('CoursePlanner', [
     'CoursePlannerRoutes',
     'HomeController',
     'LandingController',
+    'RegisterController',
     'AuthService',
 
 
     'NavbarDirective',
-    'authController',
     'ContentEditableDirective',
     'sidebarDirectives',
     'authDirectives',

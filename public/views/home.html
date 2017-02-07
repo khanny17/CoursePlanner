@@ -6,7 +6,7 @@
             <!-- Display for when there are no years -->
             <div ng-if="years.length === 0" ng-include="'views/empty-view.html'"></div>
 
-            <div ng-if="years.length !== 0" class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
+            <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
                 <div class="year-col" ng-repeat="year in years track by $index">
                     <div class="year-header">
                         <center><h3 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h3></center>
@@ -18,7 +18,7 @@
                             <ul class="connectedSortable courseCol list" ng-model="semester.classes"
                                 ui-sortable="sortableOptionsCourse">
                                 <course ng-repeat="c in semester.classes" course="c" delete="deleteCourse"></course>
-                                <button class="btn btn-default" ng-click="addCourse(semester)">
+                                <button class="btn btn-default" ng-click="addCourse(semester)" style="margin-top:5px">
                                     <i class="fa fa-plus" aria-hidden="true" margin-top="5px"></i>
                                 </button>
                             </ul>
@@ -26,6 +26,7 @@
                         </div>
                     </div><!-- row -->
                 </div><!-- col -->
+                <button class="btn btn-default" ng-click="addYear()" style="margin-left:15px">Add Year</button>
             </div><!-- row -->
         </center>
     </div> <!-- container-->

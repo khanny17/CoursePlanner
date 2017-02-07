@@ -3,29 +3,29 @@
 @import url("sidebar.css");
 
 html {
-  margin:0;
-  padding:0;
-  height:100%;
-  background-color:#DFE2DB;
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color:#DFE2DB;
 }
 
 body {
-  margin:0;
-  padding:0;
-  height:100%;
-  background-color:#DFE2DB;
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color:#DFE2DB;
 }
 
 .plan-title {
-  margin-left:auto;
-  margin-right:auto;
-  text-align:center;
-  padding-top:2px;
-  margin-top:2px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    padding-top:2px;
+    margin-top:2px;
 }
 
 .row {
-  display:table-row;
+    display:table-row;
 }
 
 .year-col {
@@ -46,89 +46,97 @@ body {
 }
 
 .semester-col {
-  display:table-cell;
-  padding-left:10px;
-  vertical-align:top;
+    display:table-cell;
+    padding-left:10px;
+    vertical-align:top;
 }
 
 .addCourseButton {
-  margin:auto;
+    margin:auto;
 }
 
 .cap {
-  text-transform:uppercase;
+    text-transform:uppercase;
 }
 
 .list {
-  list-style: none outside none;
-  margin: 10px 0 30px;
-  border: 2px solid gray;
-  margin: 10px 10px 0 0;
-  padding: 5px;
+    list-style: none outside none;
+    margin: 10px 0 30px;
+    border: 2px solid gray;
+    margin: 10px 10px 0 0;
+    padding: 5px;
 }
 
 .courseCol {
-  background-color:#EEE8D5;
-  width:80px;
-  min-height:390px;
-  max-height:800px;
-  text-align:center;
+    background-color:#EEE8D5;
+    width:80px;
+    min-height:390px;
+    max-height:800px;
+    text-align:center;
 }
 
 .year-row {
-  margin-top:20px;
+    margin-top:20px;
 }
 
 .year-header {
-  background-color:#EEE8D5;
-  height:auto;
-  border: 2px solid gray;
-  text-align:center;
-  cursor: url(cursors/openhand.cur), move;
+    background-color:#EEE8D5;
+    height:auto;
+    border: 2px solid gray;
+    text-align:center;
+    cursor: url(cursors/openhand.cur), move;
 }
 
 .year-header h3 {
-  display:table-cell;
+    display:table-cell;
 }
 
 .year-header input {
-  text-align:center;
-  background:#EEE8D5;
-  display:block;
-  margin:0 auto;
+    text-align:center;
+    background:#EEE8D5;
+    display:block;
+    margin:0 auto;
 }
 
 .year-header:active {
-  cursor: grabbing;
-  cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
-  z-index:10;
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    z-index:10;
 }
 
 .error {
-  color:red;
+    color:red;
 
-  -moz-animation: cssAnimation 0s ease-in 9s forwards;
-  /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 9s forwards;
-  /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 9s forwards;
-  /* Opera */
-  animation: cssAnimation 0s ease-in 9s forwards;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+    -moz-animation: cssAnimation 0s ease-in 9s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 9s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 9s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 9s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 @keyframes cssAnimation {
-  to {
-      width:0;
-      height:0;
-      overflow:hidden;
-  }
+    to {
+        width:0;
+        height:0;
+        overflow:hidden;
+    }
 }
 @-webkit-keyframes cssAnimation {
-  to {
-      width:0;
-      height:0;
-      visibility:hidden;
-  }
+    to {
+        width:0;
+        height:0;
+        visibility:hidden;
+    }
+}
+
+
+.course-edit-modal {
+    .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

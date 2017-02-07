@@ -8,7 +8,8 @@
             <labeled-text name="'Username'" model="user.username"></labeled-text>
             <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
             <button class="btn btn-small btn-primary" ng-click="login()">Login</button>
-            <button class="btn btn-small btn-default pull-right" ng-click="register()">Register</button>
+            <a href="#" ui-sref="register" style="padding:6px 12px">Register</a>
+            <button class="btn btn-small btn-default pull-right" ui-sref="home">Use as Guest</button>
         </div>
     </div>
 </div>
