@@ -57,9 +57,14 @@
                             // if user is found and password is right create a token
                             var token = jwt.encode(user, config.db.secret);
                             // return the information including token as JSON
+                            // Also include user data, but NOT the sensitive stuff!
+                            var cleanedUser = user.toJSON();
+                            delete cleanedUser.password;
+
                             res.json({
                                 success: true, 
-                                token: 'JWT ' + token
+                                token: 'JWT ' + token,
+                                user: cleanedUser
                             });
                             console.log(req.body.username + ' authenticated');
                         } else {

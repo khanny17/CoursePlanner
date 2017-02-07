@@ -1,20 +1,67 @@
-angular.module('NavbarDirective',['PlanService', 'AuthService'])
+angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService'])
 
-.directive('navbar', ['$http', 'planService', 'authService',
-function($http, planService, authService) {
+.directive('navbar', ['$http', '$uibModal', 'planService', 'authService',
+function($http, $uibModal, planService, authService) {
     return {
         replace: true,
         restrict: 'E',
         templateUrl: 'js/directives/navbar/navbar-directive.html',
         link: function(scope) {
             scope.isAuthenticated = authService.isAuthenticated;
+
+            scope.getAuthedUser = authService.authenticatedUser;
             
             scope.logout = function() {
                 authService.logout();
             };
 
             scope.login = function() {
-                prompt('Gotta make this show the login modal bub');
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'js/directives/navbar/navbar-login-modal.html',
+                    animation: false,
+                    backdrop: false,
+                    size: 'sm',
+                    controller: ['$scope', function(modalScope) {
+                        modalScope.user = {};
+
+                        modalScope.login = function(){
+                            authService.login(modalScope.user)
+                            .then(function(){
+                                modalInstance.close();  
+                            });
+                        };
+
+                        modalScope.cancel = function(){
+                            modalInstance.close();
+                        };
+                    }]
+                });
+            };
+
+            scope.register = function() {
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'js/directives/navbar/navbar-register-modal.html',
+                    animation: false,
+                    backdrop: false,
+                    size: 'sm',
+                    controller: ['$scope', function(modalScope) {
+                        modalScope.user = {};
+
+                        modalScope.register = function(){
+                            authService.register(modalScope.user)
+                            .then(function(){
+                                return authService.login(modalScope.user);
+                            })
+                            .then(function(){
+                                modalInstance.close();  
+                            });
+                        };
+
+                        modalScope.cancel = function(){
+                            modalInstance.close();
+                        };
+                    }]
+                });
             };
         }
     };

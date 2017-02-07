@@ -1,0 +1,15 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Login</h3>
+    </div>
+    <div class="modal-body">
+        <labeled-text name="'Username'" model="user.username"></labeled-text>
+        <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="login()">Login</button>
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+
+
