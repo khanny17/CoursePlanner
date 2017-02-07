@@ -2,9 +2,9 @@ var passport = require('passport');
 var Plan = require('../models/plan');
 
 var endpoints = {
-    get: function(req, res) {
+    getPlans: function(req, res) {
         Plan.find({
-            user: req.body.user 
+            user: req.user._id
         }, function(err, plans) {
             if(err) {
                 res.status(500).send(err)
@@ -37,7 +37,7 @@ var endpoints = {
 
 var init = function(router) {
     //Mounted on '/api/plan'
-    router.get('/get', passport.authenticate('jwt', { session: false }), endpoints.get);
+    router.get('/getPlans', passport.authenticate('jwt', { session: false }), endpoints.getPlans);
     router.post('/save', passport.authenticate('jwt', { session: false }), endpoints.save);
 };
 

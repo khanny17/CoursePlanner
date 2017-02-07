@@ -63,6 +63,8 @@ function($http, $uibModal, planService, authService) {
                     }]
                 });
             };
+
+            scope.savePlan = planService.save;
         }
     };
 }]);
