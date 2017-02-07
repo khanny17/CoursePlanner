@@ -65,6 +65,23 @@ function($http, $uibModal, planService, authService) {
             };
 
             scope.savePlan = planService.save;
+
+            scope.openPlan = function() {
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'js/directives/navbar/navbar-open-plan-modal.html',
+                    animation: false,
+                    backdrop: false,
+                    size: 'sm',
+                    controller: ['$scope', function(modalScope) {
+                        planService.getMine()
+                        .then(function(plans) {
+                            modalScope.plans = plans;
+                        });
+
+                        modalScope.openPlan = planService.load;
+                    }]
+                });
+            };
         }
     };
 }]);

@@ -1,8 +1,7 @@
-var app = angular.module("HomeController", ['ui.sortable']);
+var app = angular.module("HomeController", ['ui.sortable', 'PlanService']);
 
-app.controller('homeController', ['$scope','$http', function($scope,$http) {
-    $scope.years = [];
-    $scope.title = "New Plan";
+app.controller('homeController', ['$scope','$http', 'planService', function($scope, $http, planService) {
+    $scope.plan = planService.plan;
 
     $scope.maxSemesters=4;
 
@@ -16,13 +15,16 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
         $scope.errormsg = text;
     };
 
+    /* Move to planService
     $scope.download = function() {
         var data = JSON.stringify($scope.years);
         var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
         window.open(url, '_blank');
         window.focus();
     };
+    */
 
+    /* Move to planService
     $scope.load = function() {
         var text = prompt("paste json file here");
         if(text !== null) {
@@ -36,7 +38,9 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
             //$scope.$apply();
         }
     };
+    */
 
+    /* Move to planService
     $scope.open = function(dept) {
         path = "files/" + dept + "_default.json";
         $http.get(path).success(function(data){
@@ -46,10 +50,11 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
             $scope.setErrorMsg('Invalid Selection');
         });
     };
+    */
 
     $scope.addYear = function() {
-        $scope.years.push({
-            title: 'Year ' + ($scope.years.length + 1),
+        $scope.plan.years.push({
+            title: 'Year ' + ($scope.plan.years.length + 1),
             semesters: [{ classes: [] }, { classes: [] }] //initialize with two semesters
         });
     };
@@ -57,18 +62,18 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
     $scope.removeYear = function(index) {
         //Show a warning if there are classes in any of the semesters
         var danger = false;
-        $scope.years[index].semesters.forEach(function(semester){
+        $scope.plan.years[index].semesters.forEach(function(semester){
             if(semester.classes.length > 0) {
                 danger = true;
             }
         });
 
         if(danger) {
-            if(confirm("Delete year \"" + $scope.years[index].title + "\" ?")){
-                $scope.years.splice(index,1);
+            if(confirm("Delete year \"" + $scope.plan.years[index].title + "\" ?")){
+                $scope.plan.years.splice(index,1);
             }
         } else {
-            $scope.years.splice(index,1);
+            $scope.plan.years.splice(index,1);
         }
     };
 
@@ -100,7 +105,7 @@ app.controller('homeController', ['$scope','$http', function($scope,$http) {
     };
 
     $scope.deleteCourse = function(course) {
-        $scope.years.forEach(function(year) {
+        $scope.plan.years.forEach(function(year) {
             year.semesters.forEach(function(semester) {
                 for(i = 0; i < semester.classes.length; ++i) {
                     if(semester.classes[i] == course) {

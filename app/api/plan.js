@@ -13,24 +13,21 @@ var endpoints = {
             res.json(plans);
         });
     },
+
+    // Saves plan to db and returns created plan
     save: function(req, res) {
-        console.log('save called');
-        console.log(req.user);
-        return;
-
         Plan.create({
-            title : req.body.title,
-            json  : req.body.years,
-            user  : req.user._id
+            title  : req.body.title,
+            years  : req.body.years,
+            public : req.body.public,
+            school : req.user.school,
+            user   : req.user._id
         }, function(err, plan) {
-            if (err)
-                res.send(err);
+            if (err) {
+                res.status(500).send(err);
+            }
 
-            Plan.find(function(err, plans) {
-                if (err)
-                    res.send(err)
-                res.json(plans);
-            });
+            res.json(plan);
         });
     }
 };

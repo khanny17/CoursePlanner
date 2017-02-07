@@ -2,14 +2,14 @@
     <navbar></navbar>
     <div class="container">
         <center>
-            <h2 class="plan-title" contenteditable ng-model="title"></h2>
+            <h2 class="plan-title" contenteditable ng-model="plan.title"></h2>
             <!-- Display for when there are no years -->
-            <div ng-if="years.length === 0" ng-include="'views/empty-view.html'"></div>
+            <div ng-if="plan.years.length === 0" ng-include="'views/empty-view.html'"></div>
 
-            <div class="row" ng-model="years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
-                <div class="year-col" ng-repeat="year in years track by $index">
+            <div class="row" ng-model="plan.years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
+                <div class="year-col" ng-repeat="year in plan.years track by $index">
                     <div class="year-header">
-                        <center><h3 ng-model="years[$index].title" contenteditable onclick='$(this).focus();'></h3></center>
+                        <center><h3 ng-model="year.title" contenteditable onclick='$(this).focus();'></h3></center>
                     </div>
                     <button class="btn btn-default btn-xs" ng-click="addSemester(year)">Add Semester</button>
                     <button class="btn btn-default btn-xs" ng-click="removeYear($index)">Delete Year</button>
