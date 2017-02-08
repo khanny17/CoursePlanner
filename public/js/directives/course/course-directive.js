@@ -19,7 +19,7 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
                     backdrop: false,
                     size: 'sm',
                     controller: ['$scope', function(modalScope) {
-                        modalScope.c = scope.course;
+                        modalScope.c = JSON.parse(JSON.stringify(scope.course)); //clone object so it doesnt bind
 
                         modalScope.save = function(){
                             for (var property in modalScope.c) {

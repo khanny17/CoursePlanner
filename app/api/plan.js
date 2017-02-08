@@ -36,11 +36,14 @@ var endpoints = {
         //If it has an _id, it probably is already in our db
         if(req.body._id){
             return Plan.findOneAndUpdate({
-                _id: req.body._id
+                _id: req.body._id,
+                user: req.user._id //can only save it if it is theirs
             }, {
                 title : req.body.title,
                 years : req.body.years,
                 public: req.body.public
+            }, {
+                new: true //return the updated object
             }, function(err, plan) {
                 if(err) {
                     return res.status(500).send(err);
