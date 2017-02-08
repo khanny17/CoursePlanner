@@ -64,6 +64,8 @@ function($http, $uibModal, planService, authService) {
                 });
             };
 
+            scope.newPlan = planService.makeNew;
+
             scope.savePlan = planService.save;
 
             scope.openPlan = function() {

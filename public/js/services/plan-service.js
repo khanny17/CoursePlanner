@@ -8,6 +8,16 @@ angular.module('PlanService',['NotificationService'])
         public: false
     };
 
+    self.makeNew = function(){
+        self.plan = {
+            years: [],
+            title: 'New Plan',
+            public: false
+        };
+
+        notificationService.notify('plan-changed');
+    };
+
     //TODO auto load the most recently edited plan
 
     self.getMine = function(){

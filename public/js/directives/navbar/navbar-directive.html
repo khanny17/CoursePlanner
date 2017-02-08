@@ -15,6 +15,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav">
                 <li>
+                <a href="#" ng-click="newPlan()" ng-switch-when="true">
+                    <i class="fa fa-fw fa-file-o"></i>New
+                </a>
+                </li>
+
+                <li>
                 <a href="#" ng-click="savePlan()" ng-switch-when="true">
                     <i class="fa fa-fw fa-floppy-o"></i>Save
                 </a>
