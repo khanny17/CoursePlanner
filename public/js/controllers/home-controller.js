@@ -1,7 +1,12 @@
-var app = angular.module("HomeController", ['ui.sortable', 'PlanService']);
+var app = angular.module("HomeController", ['ui.sortable', 'PlanService', 'NotificationService']);
 
-app.controller('homeController', ['$scope','$http', 'planService', function($scope, $http, planService) {
+app.controller('homeController', ['$scope','$http', 'planService', 'notificationService',
+function($scope, $http, planService, notificationService) {
+    
     $scope.plan = planService.plan;
+    notificationService.on('plan-changed', function(){
+        $scope.plan = planService.plan;
+    });
 
     $scope.maxSemesters=4;
 

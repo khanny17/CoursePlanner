@@ -11,14 +11,20 @@ angular.module('PlanService',['NotificationService'])
     //TODO auto load the most recently edited plan
 
     self.getMine = function(){
-        return $http.get('/api/plan/getMine');
+        return $http.get('/api/plan/getMine')
+        .then(function(response){
+            if(response.status !== 200) {
+                throw 'Response status: ' + response.status;
+            }
+            return response.data;
+        });
     };
 
-    self.load = function() {
-        return $http.get('/api/plan/load')
+    self.load = function(plan) {
+        return $http.get('/api/plan/load', { params: { planId: plan._id } })
         .then(function(response){
             self.plan = response.data;
-            notificationService.notify('plan-save-success');
+            notificationService.notify('plan-changed');
         });
     };
 
@@ -26,7 +32,7 @@ angular.module('PlanService',['NotificationService'])
         return $http.post('/api/plan/save', self.plan)
         .then(function(response){
             self.plan = response.data;
-            notificationService.notify('plan-save-success');
+            notificationService.notify('plan-changed');
         });
     };
 }]);

@@ -15,7 +15,11 @@ angular.module('NotificationService', [])
     };
 
     this.notify = function(eventName, param) {
-        _.forEach(callbacks[eventName], function(cb){
+        if(!callbacks[eventName]) {
+            return;
+        }
+
+        callbacks[eventName].forEach(function(cb){
             cb(param);
         });
     };

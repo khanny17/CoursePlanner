@@ -75,10 +75,27 @@ function($http, $uibModal, planService, authService) {
                     controller: ['$scope', function(modalScope) {
                         planService.getMine()
                         .then(function(plans) {
+                            modalScope.selectedPlan = null;
                             modalScope.plans = plans;
                         });
 
-                        modalScope.openPlan = planService.load;
+                        modalScope.selected = function(plan){
+                            modalScope.selectedPlan = plan;
+                        };
+
+                        modalScope.open = function() {
+                            if(!modalScope.selectedPlan) {
+                                return console.log('HOW?');
+                            }
+                            planService.load(modalScope.selectedPlan)
+                            .then(function(){
+                                modalInstance.close();
+                            });
+                        };
+
+                        modalScope.cancel = function(){
+                            modalInstance.close();
+                        };
                     }]
                 });
             };
