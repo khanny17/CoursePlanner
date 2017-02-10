@@ -21,7 +21,7 @@
         </div>
 
         <ul class="list-group">
-            <li class="list-group-item prereq" ng-repeat="prereq in c.prereqs">
+            <li class="list-group-item deletable-list-item" ng-repeat="prereq in c.prereqs">
                 <p>{{prereq.dept + '-' + prereq.num}}</p>
                 <i class="fa fa-fw fa-lg fa-times text-danger" ng-click="removePrereq(prereq)"></i>
             </li>

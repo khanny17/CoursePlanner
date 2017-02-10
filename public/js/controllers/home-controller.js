@@ -121,4 +121,71 @@ function($scope, $http, planService, notificationService) {
             });
         });
     };
+
+    $scope.hasPrereqs = function(course) {
+
+        //This is ugly
+        //Go through all the courses, year by year, semester by semester
+        //Find the passed course's semester, and it's prereq's semesters
+        //If a prereq comes after the course, we have a problem
+        //If it isnt found at all, thats also a problem
+        //if the passed course isnt found... idek really...
+        //Probably a bad thing though
+        var courseYear = -1;
+        var courseSemester = -1;
+        var prereqTimes = [];
+        $scope.plan.years.forEach(function(year, yearIndex){
+            if(prereqTimes.length === course.prereqs.length &&
+               courseYear !== -1 && courseSemester !== -1) {
+                return false; //Stop looping
+            }
+
+            year.semesters.forEach(function(semester, semesterIndex){
+                semester.classes.forEach(function(c) {
+                    if(c === course) {
+                        courseYear = yearIndex;
+                        courseSemester = semesterIndex;
+                    } else if(function(prereqs, searchingFor){
+                        var result = false;
+                        prereqs.forEach(function(p){
+                            if(p.dept === searchingFor.dept && p.num === searchingFor.num) {
+                                result = true;
+                            }
+
+                        });
+                        return result;
+                    }(course.prereqs, c)) {
+                        prereqTimes.push({
+                            prereq: c,
+                            year: yearIndex,
+                            semester: semesterIndex
+                        });
+                    }
+                });
+            });
+        });
+
+
+        if(courseYear === -1 || courseSemester === -1) {
+            console.log('da fuq');
+            return true;
+        }
+
+        if(prereqTimes.length !== course.prereqs.length) {
+            return false;
+        }
+
+        var result = true;
+        prereqTimes.forEach(function(pT){
+            if(pT.year > courseYear) {
+                result = false;
+                return false; //This exits loop early
+            } else if(pT.year === courseYear && pT.semester >= courseSemester) {
+                result = false;
+                return false; //This exits loop early
+            }
+        });
+        return result;
+    };
+
 }]);

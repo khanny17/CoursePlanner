@@ -168,29 +168,28 @@ body {
             border-right: 0;
         }
     }
+}
 
-    .prereq {
-        display: table;
-        width: 100%;
-        vertical-align: middle;
-        font-size: medium;
+.deletable-list-item {
+    display: table;
+    width: 100%;
+    vertical-align: middle;
 
+    i {
+        display: none;
+        cursor: pointer;
+        vertical-align: inherit;
+    }
+
+    p {
+        margin: 0;
+    }
+
+
+    &:hover {
         i {
-            display: none;
-            cursor: pointer;
-            vertical-align: inherit;
-        }
-
-        p {
-            margin: 0;
-            font-size: inherit;
-        }
-
-
-        &:hover {
-            i {
-                display: table-cell;
-            }
+            display: table-cell;
         }
     }
 }
+
