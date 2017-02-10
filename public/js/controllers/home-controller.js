@@ -8,7 +8,7 @@ function($scope, $http, planService, notificationService) {
         $scope.plan = planService.plan;
     });
 
-    $scope.maxSemesters=4;
+    $scope.maxSemesters=4; //TODO config?
 
     $scope.sortableOptionsCourse = {
         //'placeholder': 'course',
@@ -94,18 +94,19 @@ function($scope, $http, planService, notificationService) {
 
     $scope.addSemester = function(year) {
         if(year.semesters.length < $scope.maxSemesters) {
-            year.semesters.push(new function() {
-                this.classes=[];
+            year.semesters.push({
+                classes: []
             });
         }
     };
 
     $scope.addCourse = function(semester) {
-        semester.classes.push(new function() {
-            this.name="A New Course";
-            this.dept="DEPT";
-            this.num="000";
-            this.credits=0;
+        semester.classes.push({
+            name: "A New Course",
+            dept: "DEPT",
+            num: "000",
+            credits: 0,
+            prereqs: []
         });
     };
 
