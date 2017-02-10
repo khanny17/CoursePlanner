@@ -142,6 +142,7 @@ body {
 
     .prereq-form {
         display: flex;
+        margin-bottom: 5px;
 
         input {
             flex: 1;
@@ -165,6 +166,31 @@ body {
 
         .no-right-border {
             border-right: 0;
+        }
+    }
+
+    .prereq {
+        display: table;
+        width: 100%;
+        vertical-align: middle;
+        font-size: medium;
+
+        i {
+            display: none;
+            cursor: pointer;
+            vertical-align: inherit;
+        }
+
+        p {
+            margin: 0;
+            font-size: inherit;
+        }
+
+
+        &:hover {
+            i {
+                display: table-cell;
+            }
         }
     }
 }

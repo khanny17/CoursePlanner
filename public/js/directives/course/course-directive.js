@@ -29,6 +29,11 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
                             modalScope.prereq = {}; //clear prereq form
                         };
 
+                        modalScope.removePrereq = function(prereq){
+                            var index = modalScope.c.prereqs.indexOf(prereq);
+                            modalScope.c.prereqs.splice(index, 1);
+                        };
+
                         modalScope.save = function(){
                             for (var property in modalScope.c) {
                                 if (modalScope.c.hasOwnProperty(property)) {

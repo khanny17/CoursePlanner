@@ -14,13 +14,18 @@
         <div class="prereq-form">
             <input type="text" class="form-control left-side no-right-border" ng-model="prereq.dept" />
             <input type="text" class="form-control no-right-border" ng-model="prereq.num" />
-            <button class="btn btn-default right-side" ng-click="addPrereq()">
+            <button class="btn btn-default right-side" ng-click="addPrereq()"
+                ng-disabled="!prereq.dept || !prereq.num">
                 <i class="fa fa-plus"></i>
             </button>
         </div>
-        <div ng-repeat="prereq in c.prereqs">
-            <p>{{prereq.dept + '-' + prereq.num}}</p>
-        </div>
+
+        <ul class="list-group">
+            <li class="list-group-item prereq" ng-repeat="prereq in c.prereqs">
+                <p>{{prereq.dept + '-' + prereq.num}}</p>
+                <i class="fa fa-fw fa-lg fa-times text-danger" ng-click="removePrereq(prereq)"></i>
+            </li>
+        </ul>
         
     </div>
     <div class="modal-footer">
