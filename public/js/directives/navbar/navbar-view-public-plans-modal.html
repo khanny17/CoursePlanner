@@ -1,0 +1,20 @@
+<div>
+    <div class="modal-header">
+        <h3 class="modal-title">Public Plans</h3>
+    </div>
+    <div class="modal-body">
+        <input type="text" class="form-control" ng-model="query.title" />
+
+        <ul class="list-group">
+            <a class="list-group-item" ng-repeat="plan in plans | filter:query" 
+            ng-class="{ active: $parent.selectedPlan === plan }"
+            ng-click="$parent.selectedPlan = plan">{{plan.title}}</a>
+        </ul>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="load()" ng-disabled="!selectedPlan">Load</button>
+        <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+
