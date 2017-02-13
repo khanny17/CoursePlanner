@@ -5,8 +5,8 @@
     <div class="modal-body">
         <labeled-text name="'Username'" model="user.username"></labeled-text>
         <labeled-text name="'School'" model="user.school"></labeled-text>
-        <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
-        <input type="password" class="form-control" placeholder="Repeat Password" ng-model="repeatedPassword" />
+        <labeled-pass name="'Password'" model="user.password"></labeled-pass>
+        <labeled-pass name="'Repeat Password'" model="repeatedPassword"></labeled-pass>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" ng-click="register()">Register</button>

@@ -7,8 +7,8 @@
         <div class="col-sm-4 col-sm-offset-4">
             <labeled-text name="'Username'" model="user.username"></labeled-text>
             <labeled-text name="'School'" model="user.school"></labeled-text>
-            <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
-            <input type="password" class="form-control" placeholder="Repeat Password" ng-model="repeatedPassword" />
+            <labeled-pass name="'Password'" model="user.password"></labeled-pass>
+            <labeled-pass name="'Repeat Password'" model="repeatedPassword"></labeled-pass>
             <button class="btn btn-small btn-primary" ng-click="register()">Register</button>
             <a ui-sref="landing" class="pull-right" style="padding:6px 12px">Back</a>
         </div>
