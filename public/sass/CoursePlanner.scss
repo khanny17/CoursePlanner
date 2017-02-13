@@ -77,9 +77,7 @@ body {
 
 .year-header {
     background-color:#EEE8D5;
-    height:auto;
     border: 2px solid gray;
-    text-align:center;
     cursor: url(cursors/openhand.cur), move;
     
     h3 {
@@ -160,8 +158,13 @@ body {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        justify-content: center;
 
         text-align: center;
         overflow: auto;
+
+        .add-year-btn {
+            max-height: 40px;
+        }
     }
 }
