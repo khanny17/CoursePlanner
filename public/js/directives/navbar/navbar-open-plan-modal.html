@@ -5,8 +5,10 @@
     <div class="modal-body">
 
         <ul class="list-group">
-            <a class="list-group-item" ng-repeat="plan in plans" ng-class="{ active: $parent.selectedPlan === plan }"
-            ng-click="$parent.selectedPlan = plan">{{plan.title}}</a>
+            <a class="list-group-item" ng-repeat="plan in plans"
+            ng-class="{ active: $parent.selectedPlan === plan }" ng-click="$parent.selectedPlan = plan">
+                {{plan.title}}
+            </a>
         </ul>
 
     </div>
