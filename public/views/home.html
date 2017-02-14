@@ -18,7 +18,8 @@
                     <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
                         <ul class="connectedSortable courseCol list" ng-model="semester.classes"
                             ui-sortable="sortableOptionsCourse">
-                            <course ng-repeat="c in semester.classes" course="c" delete="deleteCourse"></course>
+                            <course ng-repeat="c in semester.classes" course="c" delete="deleteCourse"
+                            ng-class="{ 'course-warning': !hasPrereqs(c) }"> </course>
                             <button class="btn btn-default" ng-click="addCourse(semester)" style="margin-top:5px">
                                 <i class="fa fa-plus" aria-hidden="true" margin-top="5px"></i>
                             </button>

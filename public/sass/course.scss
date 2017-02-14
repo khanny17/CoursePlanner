@@ -13,6 +13,12 @@
   overflow:hidden;
 }
 
+.course-warning {
+    .course {
+        border: 1px solid red;
+    }
+}
+
 .course p,input {
   text-align:center
 }
