@@ -8,6 +8,7 @@
             <labeled-text name="'Username'" model="user.username"></labeled-text>
             <label for="school">School</label>
             <input type="text" id="school" placeholder="School" ng-model="user.school" class="form-control" 
+            typeahead-editable="false"
             uib-typeahead="school.name for school in schools | filter:$viewValue | limitTo:3" />
             <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
             <input type="password" class="form-control" placeholder="Repeat Password" ng-model="repeatedPassword" />
