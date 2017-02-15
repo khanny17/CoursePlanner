@@ -120,6 +120,43 @@ function($http, $uibModal, planService, authService) {
                     }]
                 });
             };
+
+            scope.viewPublicPlans = function() {
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'js/directives/navbar/navbar-view-public-plans-modal.html',
+                    animation: false,
+                    backdrop: false,
+                    size: 'sm',
+                    controller: ['$scope', function(modalScope) {
+                        modalScope.query = {};
+
+                        planService.getPublic()
+                        .then(function(plans) {
+                            modalScope.selectedPlan = null;
+                            modalScope.plans = plans;
+                        });
+
+                        modalScope.selected = function(plan){
+                            modalScope.selectedPlan = plan;
+                        };
+
+                        modalScope.load = function() {
+                            if(!modalScope.selectedPlan) {
+                                return console.log('HOW?');
+                            }
+
+                            planService.copyPublicPlan(modalScope.selectedPlan)
+                            .then(function(){
+                                modalInstance.close();
+                            });
+                        };
+
+                        modalScope.cancel = function(){
+                            modalInstance.close();
+                        };
+                    }]
+                });
+            };
         }
     };
 }]);

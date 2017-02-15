@@ -15,6 +15,19 @@ var endpoints = {
         });
     },
 
+    getPublic: function(req, res) {
+        Plan.find({
+            school: req.user.school,
+            public: true
+        }, function(err, plans) {
+            if(err) {
+                res.status(500).send(err)
+            }
+            
+            res.json(plans);
+        });
+    },
+
     load: function(req, res) {
         Plan.findOne({
             _id: req.query.planId
@@ -72,6 +85,7 @@ var endpoints = {
 var init = function(router) {
     //Mounted on '/api/plan'
     router.get('/getMine', passport.authenticate('jwt', { session: false }), endpoints.getMine);
+    router.get('/getPublic', passport.authenticate('jwt', { session: false }), endpoints.getPublic);
     router.get('/load', passport.authenticate('jwt', { session: false }), endpoints.load);
     router.post('/save', passport.authenticate('jwt', { session: false }), endpoints.save);
 };
