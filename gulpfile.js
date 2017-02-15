@@ -34,6 +34,7 @@ var sources = {
     configDev: 'config/config.dev.js',
     configProd: 'config/config.prod.js',
     env: '.env',
+    files: 'public/files/*',
     index: 'public/index.html',
     injectedJs:  ['public/js/**/*.js', '!public/js/app.js'],
     libs: 'public/libs/**/*',
@@ -52,6 +53,7 @@ var dest = {
     css: 'dist/public/css',
     dist: 'dist/',
     env: 'dist',
+    files: 'dist/public/files',
     angularFiles: 'dist/public/js',
     libs: 'dist/public/libs',
     node: 'dist/app',
@@ -104,6 +106,11 @@ gulp.task('angularFiles', function(){
     .pipe(gulp.dest(dest.angularFiles));
 });
 
+gulp.task('files', function(){
+    return gulp.src(sources.files)
+    .pipe(gulp.dest(dest.files));
+});
+
 //Move env file
 gulp.task('env', function(){
     return gulp.src(sources.env)
@@ -130,7 +137,8 @@ gulp.task('config-passport', function(){
     .pipe(gulp.dest(dest.config));
 });
 
-gulp.task('move', ['libs', 'views', 'server', 'angularFiles', 'node', 'env', 'config', 'config-passport']);
+gulp.task('move', ['libs', 'views', 'server', 'angularFiles', 'node', 'env',
+                   'files', 'config', 'config-passport']);
 
 // ------------------
 

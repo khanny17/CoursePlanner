@@ -1,9 +1,14 @@
-angular.module('RegisterController',['AuthService'])
+angular.module('RegisterController',['AuthService', 'SchoolService'])
 
-.controller('registerController', ['$scope', '$state', 'authService',
-function($scope, $state, authService) {
+.controller('registerController', ['$scope', '$state', 'authService', 'schoolService',
+function($scope, $state, authService, schoolService) {
 
     $scope.user = {};
+
+    schoolService.getSchools()
+    .then(function(schools) {
+        $scope.schools = schools;
+    });
 
     $scope.register = function(){ 
         if($scope.user.password !== $scope.repeatedPassword) {

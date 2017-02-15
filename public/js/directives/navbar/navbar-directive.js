@@ -1,4 +1,4 @@
-angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService'])
+angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService', 'SchoolService'])
 
 .directive('navbar', ['$http', '$uibModal', 'planService', 'authService',
 function($http, $uibModal, planService, authService) {
@@ -44,8 +44,13 @@ function($http, $uibModal, planService, authService) {
                     animation: false,
                     backdrop: false,
                     size: 'sm',
-                    controller: ['$scope', function(modalScope) {
+                    controller: ['$scope', 'schoolService', function(modalScope, schoolService) {
                         modalScope.user = {};
+
+                        schoolService.getSchools()
+                        .then(function(schools) {
+                            modalScope.schools = schools;
+                        });
 
                         modalScope.register = function(){
                             authService.register(modalScope.user)
@@ -106,6 +111,17 @@ function($http, $uibModal, planService, authService) {
                         modalScope.cancel = function(){
                             modalInstance.close();
                         };
+                    }]
+                });
+            };
+
+            scope.help = function() {
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'views/help_modal.html',
+                    animation: false,
+                    backdrop: false,
+                    controller: ['$scope', function(modalScope){
+                        modalScope.close = modalInstance.close;
                     }]
                 });
             };
