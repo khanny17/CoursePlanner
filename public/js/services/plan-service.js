@@ -1,6 +1,6 @@
 angular.module('PlanService',['NotificationService'])
 
-.service('planService', ['$http', 'notificationService', function($http, notificationService) {
+.service('planService', ['$http', '$q', 'notificationService', function($http, $q, notificationService) {
     var self = this;
     self.plan = {
         years: [],
@@ -30,12 +30,32 @@ angular.module('PlanService',['NotificationService'])
         });
     };
 
+    self.getPublic = function(){
+        return $http.get('/api/plan/getPublic')
+        .then(function(response){
+            if(response.status !== 200) {
+                throw 'Response status: ' + response.status;
+            }
+            return response.data;
+        });
+    };
+
     self.load = function(plan) {
         return $http.get('/api/plan/load', { params: { planId: plan._id } })
         .then(function(response){
             self.plan = response.data;
             notificationService.notify('plan-changed');
         });
+    };
+
+    self.copyPublicPlan = function(planToCopy) {
+        //TODO probably want to check if their plan wasn't saved
+        //before we erase their work here
+        self.makeNew();
+        self.plan.years = planToCopy.years;
+        self.plan.title = 'Copy of ' + planToCopy.title;
+        notificationService.notify('plan-changed');
+        return $q.when();//return empty promise that is instantly resolved
     };
 
     self.save = function(title, years, public) {
