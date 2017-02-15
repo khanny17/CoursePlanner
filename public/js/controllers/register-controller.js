@@ -12,7 +12,7 @@ function($scope, $state, authService, schoolService) {
 
     $scope.register = function(){ 
         if($scope.user.password !== $scope.repeatedPassword) {
-            prompt('Passwords do not match (please make this not a popup soon kevin)')
+            prompt('Passwords do not match (please make this not a popup soon kevin)');
             return;
         }
 

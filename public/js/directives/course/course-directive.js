@@ -21,6 +21,19 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
                     controller: ['$scope', function(modalScope) {
                         modalScope.c = JSON.parse(JSON.stringify(scope.course)); //clone object so it doesnt bind
 
+                        modalScope.addPrereq = function(){
+                            modalScope.c.prereqs.push({
+                                dept: modalScope.prereq.dept,
+                                num: modalScope.prereq.num
+                            });
+                            modalScope.prereq = {}; //clear prereq form
+                        };
+
+                        modalScope.removePrereq = function(prereq){
+                            var index = modalScope.c.prereqs.indexOf(prereq);
+                            modalScope.c.prereqs.splice(index, 1);
+                        };
+
                         modalScope.save = function(){
                             for (var property in modalScope.c) {
                                 if (modalScope.c.hasOwnProperty(property)) {
