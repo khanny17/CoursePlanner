@@ -44,8 +44,8 @@
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="#" ng-click="download()">Download Plan</a></li>
                     <li><a href="#" ng-click="load()">Upload Plan</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#" ng-click="togglePublic()">{{ isPublic() ? 'Make Private' : 'Make Public'; }}</a></li>
+                    <li class="divider" ng-switch-when="true"></li>
+                    <li ng-switch-when="true"><a href="#" ng-click="togglePublic()">{{ isPublic() ? 'Make Private' : 'Make Public'; }}</a></li>
                 </ul>
                 </li>
 
@@ -61,7 +61,7 @@
                     <li><a href="#" ng-click="logout()">Logout</a></li>
                 </ul>
                 </li>
-                <li><a href="#" id="help-modal-toggle" data-toggle="modal" data-target="#helpModal">Help</a></li>
+                <li><a href="#" ng-click="help()">Help</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
