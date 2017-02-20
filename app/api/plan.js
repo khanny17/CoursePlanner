@@ -79,6 +79,37 @@ var endpoints = {
 
             res.json(plan);
         });
+    },
+
+    makePrivate: function(req, res) {
+        helpers.setPublic(req, res, false);
+    },
+
+    makePublic: function(req, res) {
+        helpers.setPublic(req, res, true);
+    }
+};
+
+var helpers = {
+    setPublic: function(req, res, newPublicValue) {
+        if(req.body._id) {
+            return Plan.findOneAndUpdate({
+                _id: req.body._id,
+                user: req.user._id
+            }, {
+                public: newPublicValue
+            }, {
+                new: true //return the updated object
+            }, function(err, plan) {
+                if(err) {
+                    res.status(500).send(err);
+                }
+
+                res.send(plan);
+            });
+        }
+
+        res.status(500).send('No Plan id provided');
     }
 };
 
@@ -88,6 +119,8 @@ var init = function(router) {
     router.get('/getPublic', passport.authenticate('jwt', { session: false }), endpoints.getPublic);
     router.get('/load', passport.authenticate('jwt', { session: false }), endpoints.load);
     router.post('/save', passport.authenticate('jwt', { session: false }), endpoints.save);
+    router.post('/makePrivate', passport.authenticate('jwt', { session: false }), endpoints.makePrivate);
+    router.post('/makePublic', passport.authenticate('jwt', { session: false }), endpoints.makePublic);
 };
 
 module.exports = {

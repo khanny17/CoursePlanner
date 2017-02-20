@@ -29,11 +29,7 @@ body {
 }
 
 .year-col {
-    display:table-cell;
     padding-left:15px;
-    vertical-align:top;
-    white-space:normal;
-    min-width:190px;
 }
 
 .year-col-placeholder {
@@ -81,22 +77,20 @@ body {
 
 .year-header {
     background-color:#EEE8D5;
-    height:auto;
     border: 2px solid gray;
-    text-align:center;
     cursor: url(cursors/openhand.cur), move;
+    
+    h3 {
+        margin: 0;
+    }    
 }
 
-.year-header h3 {
-    display:table-cell;
-}
-
-.year-header input {
-    text-align:center;
-    background:#EEE8D5;
-    display:block;
-    margin:0 auto;
-}
+//.year-header input {
+//    text-align:center;
+//    background:#EEE8D5;
+//    display:block;
+//    margin:0 auto;
+//}
 
 .year-header:active {
     cursor: grabbing;
@@ -166,6 +160,39 @@ body {
 
         .no-right-border {
             border-right: 0;
+        }
+    }
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+
+    .navbar {
+        flex: 0 0 auto;
+    }
+
+    .content {
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+
+    .years {
+        flex: 1;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        text-align: center;
+        overflow: auto;
+
+        .add-year-btn {
+            max-height: 40px;
         }
     }
 }

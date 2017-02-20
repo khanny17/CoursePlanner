@@ -1,5 +1,6 @@
 angular.module('CoursePlanner', [
     'labeled-inputs',
+    'gg.editableText',
     'CoursePlannerRoutes',
     'HomeController',
     'LandingController',

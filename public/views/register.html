@@ -10,8 +10,8 @@
             <input type="text" id="school" placeholder="School" ng-model="user.school" class="form-control" 
             typeahead-editable="false"
             uib-typeahead="school.name for school in schools | filter:$viewValue | limitTo:3" />
-            <input type="password" class="form-control" placeholder="Password" ng-model="user.password" />
-            <input type="password" class="form-control" placeholder="Repeat Password" ng-model="repeatedPassword" />
+            <labeled-pass name="'Password'" model="user.password"></labeled-pass>
+            <labeled-pass name="'Repeat Password'" model="repeatedPassword"></labeled-pass>
             <button class="btn btn-small btn-primary" ng-click="register()">Register</button>
             <a ui-sref="landing" class="pull-right" style="padding:6px 12px">Back</a>
         </div>

@@ -1,34 +1,34 @@
 <div class="home">
     <navbar></navbar>
-    <div class="container">
-        <center>
-            <h2 class="plan-title" contenteditable ng-model="plan.title"></h2>
-            <!-- Display for when there are no years -->
-            <div ng-if="plan.years.length === 0" ng-include="'views/empty-view.html'"></div>
+    <div class="content">
+        <h2 class="plan-title" editable-text="plan.title"></h2>
+        <!-- Display for when there are no years -->
+        <div ng-if="plan.years.length === 0" ng-include="'views/empty-view.html'"></div>
 
-            <div class="row" ng-model="plan.years" ui-sortable="{ 'placeholder': 'year-col', 'connectWith': '.year-col-placeholder' }">
-                <div class="year-col" ng-repeat="year in plan.years track by $index">
-                    <div class="year-header">
-                        <center><h3 ng-model="year.title" contenteditable onclick='$(this).focus();'></h3></center>
+        <div class="years" ng-model="plan.years" 
+            ui-sortable="{'placeholder': 'year-col', 'connectWith': '.year-col-placeholder'}">
+
+            <div class="year-col" ng-repeat="year in plan.years track by $index">
+                <div class="year-header">
+                    <h3 editable-text="year.title"></h3>
+                </div>
+                <button class="btn btn-default btn-xs" ng-click="addSemester(year)">Add Semester</button>
+                <button class="btn btn-default btn-xs" ng-click="removeYear($index)">Delete Year</button>
+                <div class="row year-row">
+                    <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
+                        <ul class="connectedSortable courseCol list" ng-model="semester.classes"
+                            ui-sortable="sortableOptionsCourse">
+                            <course ng-repeat="c in semester.classes" course="c" delete="deleteCourse"
+                            ng-class="{ 'course-warning': !hasPrereqs(c) }"> </course>
+                            <button class="btn btn-default" ng-click="addCourse(semester)" style="margin-top:5px">
+                                <i class="fa fa-plus" aria-hidden="true" margin-top="5px"></i>
+                            </button>
+                        </ul>
+                        <button class="btn btn-default btn-xs" ng-click="removeSemester(year,$index)">Delete</button>
                     </div>
-                    <button class="btn btn-default btn-xs" ng-click="addSemester(year)">Add Semester</button>
-                    <button class="btn btn-default btn-xs" ng-click="removeYear($index)">Delete Year</button>
-                    <div class="row year-row">
-                        <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
-                            <ul class="connectedSortable courseCol list" ng-model="semester.classes"
-                                ui-sortable="sortableOptionsCourse">
-                                <course ng-repeat="c in semester.classes" course="c" delete="deleteCourse"
-                                ng-class="{ 'course-warning': !hasPrereqs(c) }"> </course>
-                                <button class="btn btn-default" ng-click="addCourse(semester)" style="margin-top:5px">
-                                    <i class="fa fa-plus" aria-hidden="true" margin-top="5px"></i>
-                                </button>
-                            </ul>
-                            <button class="btn btn-default btn-xs" ng:click="removeSemester(year,$index)">Delete</button>
-                        </div>
-                    </div><!-- row -->
-                </div><!-- col -->
-                <button class="btn btn-default" ng-click="addYear()" style="margin-left:15px">Add Year</button>
-            </div><!-- row -->
-        </center>
-    </div> <!-- container-->
+                </div><!-- row -->
+            </div><!-- col -->
+            <button class="btn btn-default add-year-btn" ng-click="addYear()" style="margin-left:15px">Add Year</button>
+        </div>
+    </div> <!-- content -->
 </div>
