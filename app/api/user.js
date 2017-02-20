@@ -25,7 +25,8 @@
 
             UserModel.create({
                 username:req.body.username,
-                password: req.body.password
+                password: req.body.password,
+                school: req.body.school
             }, function(err) {
                 if (err) {
                     return res.json({success: false, msg: 'Username already exists.'});

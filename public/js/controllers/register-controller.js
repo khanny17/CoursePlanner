@@ -10,12 +10,22 @@ function($scope, $state, authService, schoolService) {
         $scope.schools = schools;
     });
 
+    var missingFields = function(user) {
+        return !user.school || !user.username || !user.password || !user.repeatedPassword;
+    };
+
     $scope.register = function(){ 
-        if($scope.user.password !== $scope.repeatedPassword) {
-            prompt('Passwords do not match (please make this not a popup soon kevin)');
+        if(missingFields($scope.user)) {
+            alert('Missing Fields');
             return;
         }
 
+        if($scope.user.password !== $scope.user.repeatedPassword) {
+            alert('Passwords do not match (please make this not a popup soon kevin)');
+            return;
+        }
+
+        $scope.user.school = $scope.user.school._id;
         authService.register($scope.user)
         .then(function() {
             return authService.login($scope.user);

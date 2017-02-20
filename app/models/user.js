@@ -16,6 +16,11 @@ var UserSchema = new Schema({
         type: String,
         required: true
     }, 
+    school: { 
+        type: Schema.Types.ObjectId, 
+        ref: 'School' ,
+        required: true
+    },
 });
 
 

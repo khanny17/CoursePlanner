@@ -12,6 +12,7 @@ angular.module('CoursePlanner', [
     'ContentEditableDirective',
     'sidebarDirectives',
     'authDirectives',
+    'RegisterDirective',
     'CourseDirective'
 ])
 

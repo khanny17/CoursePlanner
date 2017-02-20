@@ -11,7 +11,7 @@ mongoose.connect(config.db.url, function(err) {
     console.log(err || 'Mongoose Connected Successfully'); //TODO on error, close application
 });//, {authMechanism: 'ScramSHA1'}); 
 
-var School = require(__dirname + '/../models/school.js');
+var School = require(__dirname + '/../models/school');
 
 var fs = require('fs');
 var schools;
