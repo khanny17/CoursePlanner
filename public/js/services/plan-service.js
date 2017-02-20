@@ -65,4 +65,14 @@ angular.module('PlanService',['NotificationService'])
             notificationService.notify('plan-changed');
         });
     };
+
+    self.setPublic = function(newPublicValue) {
+        var url = newPublicValue ? '/api/plan/makePublic' : '/api/plan/makePrivate';
+
+        return $http.post(url, self.plan)
+        .then(function(response){
+            self.plan = response.data;
+            notificationService.notify('plan-changed');
+        });
+    };
 }]);

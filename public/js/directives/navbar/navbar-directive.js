@@ -65,7 +65,7 @@ function($http, $uibModal, planService, authService) {
             };
 
             scope.togglePublic = function() {
-                planService.plan.public = !planService.plan.public;
+                planService.setPublic(!planService.plan.public);
             };
 
             scope.isPublic = function() {
