@@ -110,6 +110,17 @@ function($http, $uibModal, planService, authService) {
                 });
             };
 
+            scope.help = function() {
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'views/help_modal.html',
+                    animation: false,
+                    backdrop: false,
+                    controller: ['$scope', function(modalScope){
+                        modalScope.close = modalInstance.close;
+                    }]
+                });
+            };
+
             scope.viewPublicPlans = function() {
                 var modalInstance = $uibModal.open({
                     templateUrl: 'js/directives/navbar/navbar-view-public-plans-modal.html',
