@@ -13,7 +13,8 @@
         <div class="row year-row">
             <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
                 <div class="courseCol list">
-                    <ul class="courses" data-as-sortable="sortableOptions" data-ng-model="semester.classes">
+                    <ul class="courses" data-as-sortable="sortableOptions" data-ng-model="semester.classes"
+                        data-is-disabled="::readonly">
                         <li data-ng-repeat="c in semester.classes" data-as-sortable-item>
                         <div data-as-sortable-item-handle>
                             <course course="c" delete="deleteCourse" readonly="readonly"
