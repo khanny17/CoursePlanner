@@ -4,12 +4,15 @@
   "dependencies": {
     "bootstrap": "latest",
     "font-awesome": "^4.7.0",
-    "angular": "^1.6.2",
+    "angular": "latest",
     "angular-ui-router": "latest",
     "angular-animate": "^1.5.8",
     "angular-bootstrap": "^2.2.0",
     "angular-ui-sortable": "^0.15.0",
     "angular-editable-text": "^1.1.2",
     "labeled-inputs": "^0.0.8"
+  },
+  "resolutions": {
+    "angular": "1.6.2"
   }
 }
