@@ -118,6 +118,8 @@ angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService', 
                         });
                     });
                 };
+
+                scope.download = planService.downloadPDF;
             }
         };
     }]);

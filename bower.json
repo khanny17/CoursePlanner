@@ -10,7 +10,8 @@
     "angular-bootstrap": "^2.2.0",
     "angular-editable-text": "^1.1.2",
     "labeled-inputs": "^0.0.8",
-    "ng-sortable": "^1.3.7"
+    "ng-sortable": "^1.3.7",
+    "html2canvas": "^0.4.1"
   },
   "resolutions": {
     "angular": "1.6.2"

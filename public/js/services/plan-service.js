@@ -75,4 +75,22 @@ angular.module('PlanService',['NotificationService'])
             notificationService.notify('plan-changed');
         });
     };
+
+    self.downloadPDF = function() {
+        var tag = document.getElementById('the-plan');
+        html2canvas(tag, {
+            onrendered: function(canvas) {
+                document.body.appendChild(canvas);
+                var image = new Image();
+                image.src = canvas.toDataURL("image/png");
+
+                var doc = new jsPDF({
+                    orientation: 'landscape'
+                });
+
+                doc.addImage(image, 'PNG', 0, 0);
+                doc.save(self.plan.title + '.pdf');
+            }
+        });
+    };
 }]);
