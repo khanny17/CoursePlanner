@@ -78,9 +78,9 @@ angular.module('PlanService',['NotificationService'])
 
     self.downloadPDF = function() {
         var tag = document.getElementById('the-plan');
+        //TODO we need to not crop this when we make the image
         html2canvas(tag, {
             onrendered: function(canvas) {
-                document.body.appendChild(canvas);
                 var image = new Image();
                 image.src = canvas.toDataURL("image/png");
 
@@ -88,7 +88,7 @@ angular.module('PlanService',['NotificationService'])
                     orientation: 'landscape'
                 });
 
-                doc.addImage(image, 'PNG', 0, 0);
+                doc.addImage(image, 'PNG', 0, 0, 296, 210);
                 doc.save(self.plan.title + '.pdf');
             }
         });
