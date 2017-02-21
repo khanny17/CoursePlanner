@@ -79,7 +79,7 @@ body {
     background-color:#EEE8D5;
     border: 2px solid gray;
     cursor: url(cursors/openhand.cur), move;
-    
+
     h3 {
         margin: 0;
     }    
@@ -183,17 +183,19 @@ body {
 
     .years {
         flex: 1;
+    }
+}
 
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+.years {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 
-        text-align: center;
-        overflow: auto;
+    text-align: center;
+    overflow: auto;
 
-        .add-year-btn {
-            max-height: 40px;
-        }
+    .add-year-btn {
+        max-height: 40px;
     }
 }
 
@@ -220,3 +222,17 @@ body {
     }
 }
 
+.view-public-plans {
+    .modal-body {
+        display: flex;
+    }
+
+    .plan-list {
+        flex: 0 0 auto;
+    }
+
+    .plan-preview {
+        flex: 1;
+        overflow-x: auto;
+    }
+}

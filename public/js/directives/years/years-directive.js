@@ -6,9 +6,19 @@ angular.module('YearsDirective', [])
         templateUrl: 'js/directives/years/years-directive.html',
         scope: {
             plan: '=',
+            readonly: '='
         },
         link: function(scope, elem, attrs) {
+            if(scope.readonly === true) {
+                return; //Don't config any of the functions
+            }
+
             scope.maxSemesters=4; //TODO config?
+
+            scope.sortableOptionsYear = {
+                placeholder: 'year-col', 
+                connectWith: '.year-col-placeholder'
+            };
 
             scope.sortableOptionsCourse = {
                 //'placeholder': 'course',
