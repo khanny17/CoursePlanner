@@ -15,7 +15,7 @@
                 <ul class="connectedSortable courseCol list" ng-model="semester.classes"
                     ui-sortable="sortableOptionsCourse">
                     <course ng-repeat="c in semester.classes" course="c" delete="deleteCourse"
-                    ng-class="{ 'course-warning': !hasPrereqs(c) }"> </course>
+                    ng-class="{ 'course-warning': !hasPrereqs(c) }" readonly="readonly"></course>
                     <button ng-if="::!readonly" class="btn btn-default" ng-click="addCourse(semester)" 
                         style="margin-top:5px">
                         <i class="fa fa-plus" aria-hidden="true" margin-top="5px"></i>

@@ -6,9 +6,14 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
         templateUrl: 'js/directives/course/course-directive.html',
         scope: {
             course: '=',
-            deleteCourse: '=delete'
+            deleteCourse: '=delete',
+            readonly: '='
         },
         link: function(scope, element, attrs) {
+            if(scope.readonly === true) {
+                return; //If readonly, don't allow double click
+            }
+
             element.on('dblclick',function() {
                 //If this modal is someday needed somewhere else, abstract this to a modal service
                 //and call courseEditModal.open(course);

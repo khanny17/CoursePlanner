@@ -9,7 +9,17 @@ angular.module('YearsDirective', [])
             readonly: '='
         },
         link: function(scope, elem, attrs) {
+            //Handle readonly version
             if(scope.readonly === true) {
+                scope.sortableOptionsYear = {
+                    disabled: true
+                };
+
+                scope.sortableOptionsCourse = {
+                    disabled: true
+                };
+
+                scope.hasPrereqs = function() { return true; }; //squelch prereq errors
                 return; //Don't config any of the functions
             }
 
