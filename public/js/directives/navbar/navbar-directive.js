@@ -131,7 +131,7 @@ function($http, $uibModal, planService, authService) {
                     templateUrl: 'js/directives/navbar/navbar-view-public-plans-modal.html',
                     animation: false,
                     backdrop: false,
-                    size: 'sm',
+                    size: 'lg',
                     controller: ['$scope', function(modalScope) {
                         modalScope.query = {};
 

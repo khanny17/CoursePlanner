@@ -13,6 +13,7 @@ angular.module('CoursePlanner', [
     'sidebarDirectives',
     'authDirectives',
     'RegisterDirective',
+    'YearsDirective',
     'CourseDirective'
 ])
 
