@@ -10,8 +10,8 @@
         <button class="btn btn-default btn-xs" ng-click="removeYear($index)" ng-if="::!readonly">
             Delete Year
         </button>
-        <div class="row year-row">
-            <div ng-repeat="semester in year.semesters track by $index" class="semester-col">
+        <div class="semesters">
+            <div ng-repeat="semester in year.semesters track by $index" class="semester">
                 <div class="courseCol list">
                     <ul class="courses" data-as-sortable="sortableOptions" data-ng-model="semester.classes"
                         data-is-disabled="::readonly">
