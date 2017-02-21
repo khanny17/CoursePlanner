@@ -33,7 +33,6 @@ angular.module('YearsDirective', ['as.sortable'])
                     },
                     orderChanged: function(event) {//Do what you want
                     },
-                    containment: '.connectedSortable'
                 };
 
                 scope.sortableOptionsCourse = {

@@ -71,6 +71,20 @@ body {
     text-align:center;
 }
 
+.courses {
+    padding: 0;
+    text-align: center;
+
+    .empty-item-holder-hack {
+        visibility: hidden;
+    }
+}
+
+.add-class-btn {
+    margin-top: 5px;
+    width: 65px; //TODO config
+}
+
 .year-row {
     margin-top:20px;
 }
