@@ -38,31 +38,39 @@
 
                 <li ng-switch-when="false"><a href="#" ng-click="login()">Login</a></li>
                 <li ng-switch-when="false"><a href="#" ng-click="register()">Register</a></li>
-                <li><a href="#" ng-click="viewPublicPlans()">Browse</a></li>
+                <li ng-switch-when="true"><a href="#" ng-click="viewPublicPlans()">
+                    <i class="fa fa-fw fa-book" aria-hidden="true"></i>Browse
+                </a></li>
 
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Plan<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#" ng-click="download()">Download Plan</a></li>
-                    <li><a href="#" ng-click="load()">Upload Plan</a></li>
+                    <li ng-disabled="true"><a href="#" ng-click="download()">Download Plan</a></li>
+                    <li ng-disabled="true"><a href="#" ng-click="load()">Upload Plan</a></li>
                     <li class="divider" ng-switch-when="true"></li>
-                    <li ng-switch-when="true"><a href="#" ng-click="togglePublic()">{{ isPublic() ? 'Make Private' : 'Make Public'; }}</a></li>
+                    <li ng-switch-when="true">
+                        <a href="#" ng-click="togglePublic()">
+                            {{ isPublic() ? 'Make Private' : 'Make Public'; }}
+                        </a>
+                    </li>
                 </ul>
                 </li>
 
                 <li class="dropdown" ng-switch-when="true">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    {{getAuthedUser().username}}<span class="caret"></span>
+                    <i class="fa fa-fw fa-user"></i>{{getAuthedUser().username}}<span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
+                    <li ng-disabled="true"><a href="#">Edit Info</a></li>
                     <li class="divider"></li>
-                    <li><a href="#" ng-click="logout()">Logout</a></li>
+                    <li><a href="#" ng-click="logout()">
+                        <i class="fa fa-fw fa-sign-out" aria-hidden="true"></i>Logout
+                    </a></li>
                 </ul>
                 </li>
-                <li><a href="#" ng-click="help()">Help</a></li>
+                <li><a href="#" ng-click="help()">
+                    <i class="fa fa-fw fa-question-circle"></i>Help
+                </a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
