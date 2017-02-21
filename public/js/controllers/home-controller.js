@@ -1,4 +1,4 @@
-var app = angular.module("HomeController", ['ui.sortable', 'PlanService', 'NotificationService']);
+var app = angular.module("HomeController", ['PlanService', 'NotificationService']);
 
 app.controller('homeController', ['$scope','$http', 'planService', 'notificationService',
 function($scope, $http, planService, notificationService) {
