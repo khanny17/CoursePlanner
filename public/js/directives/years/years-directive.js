@@ -11,10 +11,6 @@ angular.module('YearsDirective', ['as.sortable'])
             link: function(scope, elem, attrs) {
                 //Handle readonly version
                 if(scope.readonly === true) {
-                    scope.sortableOptionsYear = {
-                        disabled: true
-                    };
-
                     scope.sortableOptions = {
                         disabled: true
                     };
