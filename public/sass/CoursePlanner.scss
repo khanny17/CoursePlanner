@@ -200,16 +200,18 @@ body {
     .years {
         flex: 1;
     }
+
+    years {
+        margin: 0 auto;
+    }
 }
 
 .years {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
-
+    //justify-content: center;
     text-align: center;
-    overflow: auto;
 
     .add-year-btn {
         max-height: 40px;
