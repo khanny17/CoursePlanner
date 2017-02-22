@@ -1,6 +1,8 @@
 <div class="years">
-    <div class="year-col" ng-repeat="year in plan.years track by $index">
-        <div class="year-header">
+    <ol class="year-col" data-as-sortable="sortableOptions" data-ng-model="plan.years"
+        data-is-disabled="::readonly">
+        <li class="year-li" data-ng-repeat="year in plan.years" data-as-sortable-item>
+        <div class="year-header" data-as-sortable-item-handle>
             <h3 ng-if="::!readonly" editable-text="year.title"></h3>
             <h3 ng-if="::readonly">{{::year.title}}</h3>
         </div>
@@ -30,7 +32,8 @@
                 <button ng-if="::!readonly" class="btn btn-default btn-xs" ng-click="removeSemester(year,$index)">Delete</button>
             </div>
         </div>
-    </div>
+        </li>
+    </ol>
 
     <button ng-if="::!readonly" class="btn btn-default add-year-btn"
         ng-click="addYear()" style="margin-left:15px">Add Year</button>

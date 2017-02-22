@@ -206,15 +206,29 @@ body {
     }
 }
 
+.year-placeholder {
+    float: left;
+}
+
 .years {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    //justify-content: center;
     text-align: center;
 
     .add-year-btn {
         max-height: 40px;
+    }
+
+    .year-li {
+        float: left;
+    }
+}
+
+li {
+    &.as-sortable-item {
+        background: none;
+        border: none;
     }
 }
 
