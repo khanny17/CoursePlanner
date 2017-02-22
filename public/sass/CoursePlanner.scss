@@ -24,11 +24,8 @@ body {
     margin-top:2px;
 }
 
-.row {
-    display:table-row;
-}
-
 .year-col {
+    flex: 0 0 auto;
     padding-left:15px;
 }
 
@@ -41,8 +38,11 @@ body {
     background-color:gray;
 }
 
-.semester-col {
-    display:table-cell;
+.semesters {
+    display: flex;
+}
+
+.semester {
     padding-left:10px;
     vertical-align:top;
 }
@@ -194,23 +194,41 @@ body {
         flex-direction: column;
         flex-wrap: nowrap;
         text-align: center;
+        overflow: auto;
     }
 
     .years {
         flex: 1;
     }
+
+    years {
+        margin: 0 auto;
+    }
+}
+
+.year-placeholder {
+    float: left;
 }
 
 .years {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-
     text-align: center;
-    overflow: auto;
 
     .add-year-btn {
         max-height: 40px;
+    }
+
+    .year-li {
+        float: left;
+    }
+}
+
+li {
+    &.as-sortable-item {
+        background: none;
+        border: none;
     }
 }
 

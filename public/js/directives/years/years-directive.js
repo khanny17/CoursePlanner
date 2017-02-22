@@ -11,10 +11,6 @@ angular.module('YearsDirective', ['as.sortable'])
             link: function(scope, elem, attrs) {
                 //Handle readonly version
                 if(scope.readonly === true) {
-                    scope.sortableOptionsYear = {
-                        disabled: true
-                    };
-
                     scope.sortableOptions = {
                         disabled: true
                     };
@@ -27,17 +23,36 @@ angular.module('YearsDirective', ['as.sortable'])
 
                 scope.sortableOptions = {
                     accept: function (sourceItemHandleScope, destSortableScope) {
+                        //This function makes sure the courses cant be placed into the year
+                        //list and the years cant be placed into the semesters
+                        var limit = 5; //This keeps us from checking too high up
+                        var jumps = 0;
+                        var parentChain = sourceItemHandleScope.$parent.$parent.$parent;
+                        while(parentChain && jumps < limit) {
+                            if(destSortableScope === parentChain) {
+                                return false;
+                            }
+                            parentChain = parentChain.$parent;
+                            jumps++;
+                        }
+
+                        var childChain = destSortableScope.$parent.$parent;
+                        while(childChain && jumps < limit) {
+                            if(sourceItemHandleScope === childChain) {
+                                return false;
+                            }
+                            childChain = childChain.$parent;
+                            jumps++;
+                        }
+
+
                         return true;
                     },//override to determine drag is allowed or not. default is true.
                     itemMoved: function (event) {//Do what you want
                     },
                     orderChanged: function(event) {//Do what you want
                     },
-                };
-
-                scope.sortableOptionsCourse = {
-                    //'placeholder': 'course',
-                    'connectWith': '.connectedSortable'
+                    additionalPlaceholderClass: 'year-placeholder'
                 };
 
                 scope.addYear = function() {
