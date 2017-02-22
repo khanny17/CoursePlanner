@@ -3,7 +3,7 @@
 
     angular.module('AuthService', [])
 
-        .service('authService', function($q, $http) {
+        .service('authService', ['$q', '$http', function($q, $http) {
             var LOCAL_TOKEN_KEY = 'CoursePlannerTokenKey';
             var AUTH_USER = 'authUser';
             var isAuthenticated = false;
@@ -80,7 +80,7 @@
                 authenticatedUser: function () {return authUser;},
                 isAuthenticated: function() {return isAuthenticated;},
             };
-        })
+        }])
 
         .factory('AuthInterceptor', function ($rootScope, $q) {
             return {

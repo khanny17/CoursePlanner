@@ -25,5 +25,18 @@
                         templateUrl: 'views/home.html', //The path to the html template
                         controller: 'homeController' //The path to the angular controller
                     });
+            }])
+
+        .run(['$rootScope', '$state', 'authService', 
+            function ($rootScope, $state, authService) {
+                $rootScope.$on('$stateChangeStart', function (event,next) {
+                    //If user is authed, send them into the app - prevent landing page access
+                    if (authService.isAuthenticated()) {
+                        if (next.name !== 'home') {
+                            event.preventDefault();
+                            $state.go('home');
+                        }
+                    }
+                });
             }]);
 }());

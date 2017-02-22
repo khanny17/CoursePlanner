@@ -1,7 +1,7 @@
 angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService', 'SchoolService', 'OpenPlanModalService'])
 
-.directive('navbar', ['$http', '$uibModal', 'planService', 'authService', 'openPlanModal',
-    function($http, $uibModal, planService, authService, openPlanModal) {
+.directive('navbar', ['$http', '$state', '$uibModal', 'planService', 'authService', 'openPlanModal',
+    function($http, $state, $uibModal, planService, authService, openPlanModal) {
         return {
             replace: true,
             restrict: 'E',
@@ -12,7 +12,9 @@ angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService', 
                 scope.getAuthedUser = authService.authenticatedUser;
 
                 scope.logout = function() {
+                    planService.makeNew();
                     authService.logout();
+                    $state.go('landing');
                 };
 
                 scope.login = function() {
