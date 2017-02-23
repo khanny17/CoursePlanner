@@ -1,6 +1,6 @@
-angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
+angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanService'])
 
-.directive('course', ['$uibModal', function($uibModal) {
+.directive('course', ['$uibModal', 'planService', function($uibModal, planService) {
     return {
         restrict:'E',
         templateUrl: 'js/directives/course/course-directive.html',
@@ -41,11 +41,23 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
                         };
 
                         modalScope.save = function(){
+                            //First, check if dept changed - if it did, tell the planService to update
+                            var needToUpdateColors = false;
+                            if(scope.course.dept !== modalScope.c.dept) {
+                                //We cant update here - save a flag and update after
+                                needToUpdateColors = true;
+                            }
                             for (var property in modalScope.c) {
                                 if (modalScope.c.hasOwnProperty(property)) {
                                     scope.course[property] = modalScope.c[property];      
                                 }
                             }
+
+                            //Here we update if we need to
+                            if(needToUpdateColors) {
+                                planService.updateColors();
+                            }
+
                             modalInstance.close();
                         };
 
