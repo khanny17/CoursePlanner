@@ -270,13 +270,15 @@ li {
     }
 }
 
-color-picker {
-    position: absolute;
-    margin-top: -1px;
-    span {
-        display: inline-block !important;
-        width: 15px !important;
-        height: 15px !important;
-        padding: 0 !important;
+.course-edit-modal {
+    color-picker {
+        position: absolute;
+        margin-top: -1px;
+        span {
+            display: inline-block !important;
+            width: 15px !important;
+            height: 15px !important;
+            padding: 0 !important;
+        }
     }
 }
