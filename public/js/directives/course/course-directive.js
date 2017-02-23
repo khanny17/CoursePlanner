@@ -27,6 +27,8 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanServic
                     controller: ['$scope', function(modalScope) {
                         modalScope.c = JSON.parse(JSON.stringify(scope.course)); //clone object so it doesnt bind
 
+                        modalScope.deptColor = scope.colorscheme[scope.course.dept];
+
                         modalScope.addPrereq = function(){
                             modalScope.c.prereqs.push({
                                 dept: modalScope.prereq.dept,
@@ -59,6 +61,9 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanServic
                             if(needToUpdateColors) {
                                 planService.updateColors();
                             }
+
+                            //Update the current dept's color if the user changed it
+                            scope.colorscheme[scope.course.dept] = modalScope.deptColor;
 
                             modalInstance.close();
                         };

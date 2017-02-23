@@ -1,4 +1,4 @@
-angular.module('EditColorschemeModal', ['ui.bootstrap'])
+angular.module('EditColorschemeModal', ['ui.bootstrap', 'color.picker'])
 
 .service('editColorschemeModal', ['$uibModal', function($uibModal) {
     var self = this;
@@ -8,7 +8,7 @@ angular.module('EditColorschemeModal', ['ui.bootstrap'])
             templateUrl: 'js/modals/edit-colorscheme/edit-colorscheme-modal.html',
             animation: false,
             backdrop: false,
-            size: 'lg',
+            size: 'sm',
             controller: ['$scope', function(modalScope) {
                 modalScope.title = 'Edit Colors';
 
@@ -29,6 +29,7 @@ angular.module('EditColorschemeModal', ['ui.bootstrap'])
                     modalScope.newColorscheme.forEach(function(deptColorPair) {
                         colorscheme[deptColorPair.dept] = deptColorPair.color;
                     });
+                    modalInstance.close();
                 };
 
                 modalScope.cancel = function(){

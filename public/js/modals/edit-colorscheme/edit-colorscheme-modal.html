@@ -5,7 +5,7 @@
     <div class="modal-body">
         <div class="color-def" ng-repeat="pair in newColorscheme">
             <b>{{::pair.dept}}:</b>
-            <input type="text" class="form-control" ng-model="pair.color" />
+            <color-picker ng-model="pair.color"></color-picker>
         </div>
     </div>
     <div class="modal-footer">
