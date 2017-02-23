@@ -47,6 +47,8 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanServic
                                 //We cant update here - save a flag and update after
                                 needToUpdateColors = true;
                             }
+
+                            //Copy the properties over
                             for (var property in modalScope.c) {
                                 if (modalScope.c.hasOwnProperty(property)) {
                                     scope.course[property] = modalScope.c[property];      

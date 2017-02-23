@@ -1,7 +1,21 @@
-angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService', 'SchoolService', 'OpenPlanModalService'])
+angular.module('NavbarDirective',[
+    'ui.bootstrap', 
+    'PlanService', 
+    'AuthService', 
+    'SchoolService', 
+    'OpenPlanModalService',
+    'EditColorschemeModal'
+])
 
-.directive('navbar', ['$http', '$state', '$uibModal', 'planService', 'authService', 'openPlanModal',
-    function($http, $state, $uibModal, planService, authService, openPlanModal) {
+.directive('navbar', [
+    '$http', 
+    '$state', 
+    '$uibModal', 
+    'planService', 
+    'authService', 
+    'openPlanModal', 
+    'editColorschemeModal',
+    function($http, $state, $uibModal, planService, authService, openPlanModal, editColorschemeModal) {
         return {
             replace: true,
             restrict: 'E',
@@ -123,6 +137,10 @@ angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService', 
                 };
 
                 scope.download = planService.downloadPDF;
+
+                scope.editColorscheme = function() {
+                    editColorschemeModal.open(planService.plan.colorscheme);
+                };
             }
         };
     }]);
