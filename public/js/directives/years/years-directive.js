@@ -143,6 +143,10 @@ angular.module('YearsDirective', ['as.sortable'])
                                 if(c === course) {
                                     courseYear = yearIndex;
                                     courseSemester = semesterIndex;
+
+                                    //This next line 
+                                    //is an inline function that is immediately called
+                                    //Ew, right?
                                 } else if(function(prereqs, searchingFor){
                                     var result = false;
                                     prereqs.forEach(function(p){
