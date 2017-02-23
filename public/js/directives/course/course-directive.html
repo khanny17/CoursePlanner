@@ -1,4 +1,4 @@
-<li class="course {{course.dept}}" title="{{course.details}}">
+<li class="course" title="{{course.details}}" ng-style="{ 'background-color': colorscheme[course.dept] }">
 
 <div ng-class="{'bottomleft-topright-line': course.status == 'taking' || course.status == 'completed'}"></div>
 <div ng-class="{'topleft-bottomright-line': course.status == 'completed'}"></div>

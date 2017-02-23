@@ -5,6 +5,7 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
         restrict:'E',
         templateUrl: 'js/directives/course/course-directive.html',
         scope: {
+            colorscheme: '=',
             course: '=',
             deleteCourse: '=delete',
             readonly: '='

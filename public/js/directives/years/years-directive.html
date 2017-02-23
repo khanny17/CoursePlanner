@@ -19,8 +19,9 @@
                         data-is-disabled="::readonly">
                         <li data-ng-repeat="c in semester.classes" data-as-sortable-item>
                         <div data-as-sortable-item-handle>
-                            <course course="c" delete="deleteCourse" readonly="readonly"
-                            ng-class="{ 'course-warning': !hasPrereqs(c) }"></course>
+                            <course course="c" delete="deleteCourse" readonly="readonly" 
+                                    colorscheme="plan.colorscheme"
+                                    ng-class="{ 'course-warning': !hasPrereqs(c) }"></course>
                         </div>
                         </li>
                         <button ng-if="::!readonly" class="btn btn-default add-class-btn" data-as-sortable-item

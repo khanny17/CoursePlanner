@@ -12,6 +12,7 @@ angular.module('NavbarDirective',['ui.bootstrap', 'PlanService', 'AuthService', 
                 scope.getAuthedUser = authService.authenticatedUser;
 
                 scope.logout = function() {
+                    //Clear current plan, log em out, and boot em!
                     planService.makeNew();
                     authService.logout();
                     $state.go('landing');
