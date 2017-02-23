@@ -54,7 +54,8 @@ var endpoints = {
             }, {
                 title : req.body.title,
                 years : req.body.years,
-                public: req.body.public
+                public: req.body.public,
+                colorscheme: req.body.colorscheme
             }, {
                 new: true //return the updated object
             }, function(err, plan) {
@@ -71,6 +72,7 @@ var endpoints = {
             years  : req.body.years,
             public : req.body.public,
             school : req.user.school,
+            colorscheme: req.body.colorscheme,
             user   : req.user._id
         }, function(err, plan) {
             if (err) {

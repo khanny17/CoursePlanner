@@ -1,10 +1,11 @@
-angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
+angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanService'])
 
-.directive('course', ['$uibModal', function($uibModal) {
+.directive('course', ['$uibModal', 'planService', function($uibModal, planService) {
     return {
         restrict:'E',
         templateUrl: 'js/directives/course/course-directive.html',
         scope: {
+            colorscheme: '=',
             course: '=',
             deleteCourse: '=delete',
             readonly: '='
@@ -26,6 +27,8 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
                     controller: ['$scope', function(modalScope) {
                         modalScope.c = JSON.parse(JSON.stringify(scope.course)); //clone object so it doesnt bind
 
+                        modalScope.deptColor = scope.colorscheme[scope.course.dept];
+
                         modalScope.addPrereq = function(){
                             modalScope.c.prereqs.push({
                                 dept: modalScope.prereq.dept,
@@ -40,11 +43,28 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs'])
                         };
 
                         modalScope.save = function(){
+                            //First, check if dept changed - if it did, tell the planService to update
+                            var needToUpdateColors = false;
+                            if(scope.course.dept !== modalScope.c.dept) {
+                                //We cant update here - save a flag and update after
+                                needToUpdateColors = true;
+                            }
+
+                            //Copy the properties over
                             for (var property in modalScope.c) {
                                 if (modalScope.c.hasOwnProperty(property)) {
                                     scope.course[property] = modalScope.c[property];      
                                 }
                             }
+
+                            //Here we update if we need to
+                            if(needToUpdateColors) {
+                                planService.updateColors();
+                            }
+
+                            //Update the current dept's color if the user changed it
+                            scope.colorscheme[scope.course.dept] = modalScope.deptColor;
+
                             modalInstance.close();
                         };
 

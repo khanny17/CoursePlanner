@@ -5,7 +5,13 @@
     <div class="modal-body">
         <div class="main-course-info">
             <labeled-text name="'Name'" model="c.name" style="flex:1 0 100%"></labeled-text>
-            <labeled-text name="'Department'" model="c.dept" style="flex:1"></labeled-text>
+            <div class="form-group" style="flex:1">
+                <label for="deptInput">Department</label>
+                <color-picker ng-model="deptColor" options="{ swatchOnly: true }"></color-picker>
+                <input type="text" class="form-control" id="deptInput" 
+                       placeholder="Department<" ng-model="c.dept" />
+            </div>
+
             <labeled-text name="'Number'" model="c.num" style="flex:1"></labeled-text>
             <labeled-text name="'Credits'" model="c.credits" style="flex:0 0 50px"></labeled-text>
         </div>
