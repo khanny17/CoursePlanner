@@ -5,6 +5,7 @@
     require('dotenv').load();
 
   
+       
     // Modules 
     var config         = require(__dirname + '/config/config.dev.js');
     var express        = require('express');
@@ -17,11 +18,15 @@
 
 
     // Configuration
-
+	
+  // Determines production or local database url
+  // TODO make this a passable argument
+	const DB_URL = config.db.local_url || config.db.production_url;
+  
     //DB
-    mongoose.connect(config.db.url, function(err) {
+    mongoose.connect(DB_URL, function(err) {
         console.log(err || 'Mongoose Connected Successfully'); //TODO on error, close application
-    });//, {authMechanism: 'ScramSHA1'}); 
+    });
 
     // Server port
     var port = process.env.PORT || 8080; 
