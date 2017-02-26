@@ -4,8 +4,9 @@
     //Load environment variables
     require('dotenv').load();
 
+  
     // Modules 
-    var config         = require(__dirname + '/config/config');
+    var config         = require(__dirname + '/config/config.dev.js');
     var express        = require('express');
     var app            = express();
     var bodyParser     = require('body-parser');
