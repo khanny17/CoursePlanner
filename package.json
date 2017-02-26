@@ -40,6 +40,8 @@
     "stream-series": "^0.1.1"
   },
   "scripts": {
+    "build": "gulp",
+    "buildstart": "npm run build && start",
     "start": "node dist/server.js -p $PORT",
     "postinstall": "gulp && bower install"
   },
