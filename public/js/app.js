@@ -3,8 +3,6 @@ angular.module('CoursePlanner', [
     'gg.editableText',
     'CoursePlannerRoutes',
     'HomeController',
-    'LandingController',
-    'RegisterController',
     'AuthService',
 
 

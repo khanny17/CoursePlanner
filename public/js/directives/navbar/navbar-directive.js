@@ -9,13 +9,12 @@ angular.module('NavbarDirective',[
 
 .directive('navbar', [
     '$http', 
-    '$state', 
     '$uibModal', 
     'planService', 
     'authService', 
     'openPlanModal', 
     'editColorschemeModal',
-    function($http, $state, $uibModal, planService, authService, openPlanModal, editColorschemeModal) {
+    function($http, $uibModal, planService, authService, openPlanModal, editColorschemeModal) {
         return {
             replace: true,
             restrict: 'E',
@@ -29,7 +28,6 @@ angular.module('NavbarDirective',[
                     //Clear current plan, log em out, and boot em!
                     planService.makeNew();
                     authService.logout();
-                    $state.go('landing');
                 };
 
                 scope.login = function() {
