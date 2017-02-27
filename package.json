@@ -48,9 +48,14 @@
   },
   "author": "",
   "devDependencies": {
+    "angular-mocks": "^1.6.2",
+    "browserify": "^14.1.0",
     "jasmine-core": "^2.5.2",
     "karma": "^1.5.0",
+    "karma-browserify": "^5.1.1",
     "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.1.0"
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.1.0",
+    "watchify": "^3.9.0"
   }
 }
