@@ -5,11 +5,7 @@ angular.module('CoursePlanner', [
     'HomeController',
     'AuthService',
 
-
     'NavbarDirective',
-    'ContentEditableDirective',
-    'sidebarDirectives',
-    'authDirectives',
     'RegisterDirective',
     'YearsDirective',
     'CourseDirective'

@@ -15,6 +15,9 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanServic
                 return; //If readonly, don't allow double click
             }
 
+            //TODO move this to somewhere more efficient
+            planService.updateColors();
+
             element.on('dblclick',function() {
                 //If this modal is someday needed somewhere else, abstract this to a modal service
                 //and call courseEditModal.open(course);
@@ -28,6 +31,17 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanServic
                         modalScope.c = JSON.parse(JSON.stringify(scope.course)); //clone object so it doesnt bind
 
                         modalScope.deptColor = scope.colorscheme[scope.course.dept];
+
+                        modalScope.$watch('c.dept', function(newVal, oldVal){
+                            if(newVal === oldVal) {
+                                return;
+                            }
+
+                            //If the user hasn't changed the color, set the color to the new dept's color
+                            if(modalScope.deptColor === scope.colorscheme[oldVal]) {
+                                modalScope.deptColor = scope.colorscheme[newVal] || randomColor();                                
+                            }
+                        });
 
                         modalScope.addPrereq = function(){
                             modalScope.c.prereqs.push({
@@ -43,13 +57,6 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanServic
                         };
 
                         modalScope.save = function(){
-                            //First, check if dept changed - if it did, tell the planService to update
-                            var needToUpdateColors = false;
-                            if(scope.course.dept !== modalScope.c.dept) {
-                                //We cant update here - save a flag and update after
-                                needToUpdateColors = true;
-                            }
-
                             //Copy the properties over
                             for (var property in modalScope.c) {
                                 if (modalScope.c.hasOwnProperty(property)) {
@@ -57,12 +64,7 @@ angular.module('CourseDirective', ['ui.bootstrap', 'labeled-inputs', 'PlanServic
                                 }
                             }
 
-                            //Here we update if we need to
-                            if(needToUpdateColors) {
-                                planService.updateColors();
-                            }
-
-                            //Update the current dept's color if the user changed it
+                            //Pick a new color if we need to, otherwise set it based on the user's choice
                             scope.colorscheme[scope.course.dept] = modalScope.deptColor;
 
                             modalInstance.close();
