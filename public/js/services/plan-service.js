@@ -2,11 +2,6 @@ angular.module('PlanService',['NotificationService'])
 
 .service('planService', ['$http', '$q', 'notificationService', function($http, $q, notificationService) {
     var self = this;
-    self.plan = {
-        years: [],
-        title: 'New Plan',
-        public: false
-    };
 
     self.makeNew = function(){
         self.plan = {
@@ -18,6 +13,8 @@ angular.module('PlanService',['NotificationService'])
 
         notificationService.notify('plan-changed');
     };
+
+    self.makeNew(); //Start with a clean plan
 
     //TODO auto load the most recently edited plan
 
