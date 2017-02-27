@@ -9,6 +9,9 @@ module.exports = mongoose.model('Plan', {
     years  : {
         type: Object,
     },
+    colorscheme  : {
+        type: Object,
+    },
     public: {
         type: Boolean,
     },

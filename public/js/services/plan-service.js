@@ -12,7 +12,8 @@ angular.module('PlanService',['NotificationService'])
         self.plan = {
             years: [],
             title: 'New Plan',
-            public: false
+            public: false,
+            colorscheme: {}
         };
 
         notificationService.notify('plan-changed');
@@ -59,6 +60,7 @@ angular.module('PlanService',['NotificationService'])
     };
 
     self.save = function(title, years, public) {
+        self.updateColors();
         return $http.post('/api/plan/save', self.plan)
         .then(function(response){
             self.plan = response.data;
@@ -73,6 +75,24 @@ angular.module('PlanService',['NotificationService'])
         .then(function(response){
             self.plan = response.data;
             notificationService.notify('plan-changed');
+        });
+    };
+
+    //Adds colors to the colorscheme wherever necessary
+    self.updateColors = function() {
+        if(!self.plan.colorscheme) {
+            self.plan.colorscheme = {};
+        }
+        //Loop through every course, and if we don't have a color for that dept,
+        //create one
+        self.plan.years.forEach(function(year){
+            year.semesters.forEach(function(semester){
+                semester.classes.forEach(function(course){
+                    if(!self.plan.colorscheme[course.dept]) {
+                        self.plan.colorscheme[course.dept] = randomColor();
+                    }
+                });
+            });
         });
     };
 
