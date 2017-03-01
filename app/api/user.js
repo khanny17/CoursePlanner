@@ -6,7 +6,7 @@
     var jwt       = require('jwt-simple');
     var UserModel = require('../models/user');
 
-    var config = require('../../config/config.js');
+    var config = require('../../config/config.dev.js');
 
 
     var init = function(router) {
