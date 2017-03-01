@@ -7,3 +7,7 @@ node_js:
 before_script:
     - npm install -g gulp
 script: gulp
+
+after_success:
+    - ./.publish-gh-pages.sh
+
