@@ -82,8 +82,6 @@ gulp.task('doc', function (cb) {
         .pipe(jsdoc(cb));
 });
 
-gulp.task('dev-tasks', ['jshint', 'doc']);
-
 // -----------------------------
 
 
@@ -184,8 +182,7 @@ gulp.task('clean', function(){
     .pipe(clean());
 });
 
-gulp.task('default', ['dev-tasks', 'build']);
-
+gulp.task('default', ['jshint', 'build']);
 
 gulp.task('watch', function() {
     gulp.watch(sources.sass, ['sass']);
