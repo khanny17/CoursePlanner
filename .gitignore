@@ -3,4 +3,5 @@ node_modules/
 dist/
 public/libs/
 npm-debug.log
+docs/
 

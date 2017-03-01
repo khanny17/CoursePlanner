@@ -8,6 +8,7 @@ var clean = require('gulp-clean');
 var series = require('stream-series');
 var sass = require('gulp-sass');
 var nodemon = require('gulp-nodemon');
+var jsdoc = require('gulp-jsdoc3');
 
 // --- Environment ---
 var envs = {
@@ -24,6 +25,7 @@ var paths = {
 
 
     jshintPaths: ['public/js/**/*.js'],
+    jsdocPaths: ['README.md', 'app/**/*.js']
 
 };
 
@@ -74,6 +76,13 @@ gulp.task('jshint', function(){
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
+
+gulp.task('doc', function (cb) {
+    gulp.src(paths.jsdocPaths, {read: false})
+        .pipe(jsdoc(cb));
+});
+
+gulp.task('dev-tasks', ['jshint', 'doc']);
 
 // -----------------------------
 
@@ -138,7 +147,7 @@ gulp.task('config-passport', function(){
 });
 
 gulp.task('move', ['libs', 'views', 'server', 'angularFiles', 'node', 'env',
-                   'files', 'config', 'config-passport']);
+    'files', 'config', 'config-passport']);
 
 // ------------------
 
@@ -175,7 +184,7 @@ gulp.task('clean', function(){
     .pipe(clean());
 });
 
-gulp.task('default', ['jshint', 'build']);
+gulp.task('default', ['dev-tasks', 'build']);
 
 
 gulp.task('watch', function() {

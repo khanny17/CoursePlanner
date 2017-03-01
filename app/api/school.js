@@ -1,3 +1,7 @@
+/**
+ * REST endpoints for School data
+ * @namespace api/school
+ */
 (function () {
     'use strict';
 
@@ -8,6 +12,12 @@
     };
 
     var endpoints = {
+        /** 
+         * Send all the schools
+         * @function 
+         * @memberof api/school
+         * @instance
+         */
         getSchools: function(req, res) {
             School.find({}, function(err, schools) {
                 if(err) {

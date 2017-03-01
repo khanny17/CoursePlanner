@@ -1,8 +1,18 @@
+/**
+ * REST endpoints for Plan data
+ * @namespace api/plan
+ */
+
 var passport = require('passport');
 var Plan = require('../models/plan');
 
 var endpoints = {
-    //Get all of the logged in user's plans
+    /** 
+     * Get all of the logged in user's plans 
+     * @function 
+     * @memberof api/plan
+     * @instance
+     */
     getMine: function(req, res) {
         Plan.find({
             user: req.user._id
@@ -15,6 +25,12 @@ var endpoints = {
         });
     },
 
+    /** 
+     * Get all of the public plans at the user's school
+     * @function 
+     * @memberof api/plan
+     * @instance
+     */
     getPublic: function(req, res) {
         Plan.find({
             school: req.user.school,
@@ -28,6 +44,13 @@ var endpoints = {
         });
     },
 
+    /** 
+     * Send the plan data for the given plan ID (if the user is authorized)
+     * @function 
+     * @memberof api/plan
+     * @param req.query.planId The _id of the plan
+     * @instance
+     */
     load: function(req, res) {
         Plan.findOne({
             _id: req.query.planId
@@ -44,7 +67,17 @@ var endpoints = {
         });
     },
 
-    // Saves plan to db and returns created plan
+    /** 
+     * Saves plan to db and returns created plan
+     * @function save
+     * @memberof api/plan
+     * @param req.body._id The _id of the plan
+     * @param req.body.title New title of the plan
+     * @param req.body.years New json object holding the plan data
+     * @param req.body.public New public flag value
+     * @param req.body.colorscheme New colorscheme data
+     * @instance
+     */
     save: function(req, res) {
         //If it has an _id, it probably is already in our db
         if(req.body._id){
@@ -83,10 +116,22 @@ var endpoints = {
         });
     },
 
+    /** 
+     * Makes given plan private
+     * @function
+     * @memberof api/plan
+     * @instance
+     */
     makePrivate: function(req, res) {
         helpers.setPublic(req, res, false);
     },
 
+    /**
+     * Makes given plan public
+     * @function 
+     * @memberof api/plan
+     * @instance
+     */
     makePublic: function(req, res) {
         helpers.setPublic(req, res, true);
     }

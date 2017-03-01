@@ -1,3 +1,7 @@
+/**
+ * Compile api files and initialize endpoints
+ * @namespace api/api
+ */ 
 (function(){
     'use strict';
 
@@ -5,6 +9,14 @@
     var path = require('path');
 
 
+    /**
+     * Set connect the given express app up with the api endpoints in this folder
+     * @function
+     * @memberof api/api
+     * @param express Reference to express
+     * @param app Reference to the instantiated express app
+     * @instance
+     */
     var init = function(express, app) {
 
         fs
