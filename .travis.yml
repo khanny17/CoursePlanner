@@ -9,5 +9,5 @@ before_script:
 script: gulp
 
 after_success:
-    - .publish-gh-pages.sh
+    - ./.publish-gh-pages.sh
 

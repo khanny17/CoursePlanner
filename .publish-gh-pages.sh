@@ -22,14 +22,12 @@ SHA=`git rev-parse --verify HEAD`
 git clone $REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-cd ..
 
 #copy new docs over
-rm -rf ./docs
-cp ../docs ./docs
+rm -rf ./docs #delete old gh-pages docs folder
+cp ../docs ./docs # copy new ones
 
 # Now let's go have some fun with the cloned repo
-cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
