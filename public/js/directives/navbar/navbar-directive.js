@@ -4,7 +4,8 @@ angular.module('NavbarDirective',[
     'AuthService', 
     'SchoolService', 
     'OpenPlanModalService',
-    'EditColorschemeModal'
+    'EditColorschemeModal',
+    'HelpModal'
 ])
 
 .directive('navbar', [
@@ -14,7 +15,8 @@ angular.module('NavbarDirective',[
     'authService', 
     'openPlanModal', 
     'editColorschemeModal',
-    function($http, $uibModal, planService, authService, openPlanModal, editColorschemeModal) {
+    'helpModal',
+    function($http, $uibModal, planService, authService, openPlanModal, editColorschemeModal, helpModal) {
         return {
             replace: true,
             restrict: 'E',
@@ -110,14 +112,7 @@ angular.module('NavbarDirective',[
                 };
 
                 scope.help = function() {
-                    var modalInstance = $uibModal.open({
-                        templateUrl: 'views/help_modal.html',
-                        animation: false,
-                        backdrop: false,
-                        controller: ['$scope', function(modalScope){
-                            modalScope.close = modalInstance.close;
-                        }]
-                    });
+                    helpModal.open();
                 };
 
                 //Open a modal that lets users browse and open public plans

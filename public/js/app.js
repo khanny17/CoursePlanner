@@ -1,6 +1,7 @@
 angular.module('CoursePlanner', [
     'labeled-inputs',
     'gg.editableText',
+    'cfp.hotkeys',
     'CoursePlannerRoutes',
     'HomeController',
     'AuthService',
@@ -41,5 +42,21 @@ angular.module('CoursePlanner', [
 
         return filtered;
     };
+})
+
+.run(function(){
+    //Prevent browser default keybindings
+    $(document).bind('keydown', function(e) {
+        //Prevent ctrl+s
+        if(e.ctrlKey && (e.which === 83)) {
+            e.preventDefault();
+        }
+
+
+        //Prevent ctrl+h
+        if(e.ctrlKey && (e.which === 72)) {
+            e.preventDefault();
+        }
+    });
 });
 
