@@ -48,5 +48,8 @@
   "bugs": {
     "url": "https://github.com/khanny17/CoursePlanner/issues"
   },
-  "author": ""
+  "author": "",
+  "devDependencies": {
+    "gulp-sourcemaps": "^2.4.1"
+  }
 }
