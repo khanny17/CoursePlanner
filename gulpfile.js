@@ -8,7 +8,7 @@ var clean = require('gulp-clean');
 var series = require('stream-series');
 var sass = require('gulp-sass');
 var nodemon = require('gulp-nodemon');
-const sourceMaps = require("gulp-sourcemaps");
+//const sourceMaps = require("gulp-sourcemaps");
 const path = require("path");
 
 // --- Environment ---
@@ -96,15 +96,15 @@ gulp.task('views', function(){
 
 gulp.task('server', function(){
     return gulp.src(sources.server)
-	    .pipe(sourceMaps.init())
-	    .pipe(sourceMaps.write('.', { sourceRoot: paths.sourceRootServer}))
+	    //.pipe(sourceMaps.init())
+	    //.pipe(sourceMaps.write('.', { sourceRoot: paths.sourceRootServer}))
     .pipe(gulp.dest(dest.dist));
 });
 
 gulp.task('node', function(){
     return gulp.src(sources.node)
-    .pipe(sourceMaps.init())
-    .pipe(sourceMaps.write('.', { sourceRoot: paths.sourceRootNode}))
+    //.pipe(sourceMaps.init())
+    //.pipe(sourceMaps.write('.', { sourceRoot: paths.sourceRootNode}))
     .pipe(gulp.dest(dest.node));
 });
 

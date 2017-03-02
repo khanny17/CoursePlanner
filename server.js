@@ -7,7 +7,7 @@
   
        
     // Modules 
-    var config         = require(__dirname + '/config/config.dev.js');
+    var config         = require(__dirname + '/config/config.js');
     var express        = require('express');
     var app            = express();
     var bodyParser     = require('body-parser');
