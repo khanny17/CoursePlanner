@@ -2,6 +2,8 @@ Course Planner
 =============
 A webapp for planning which courses to take and which year to take them in.
 
+Development Live Server (takes a minute to load): [http://course-planner-kevin.herokuapp.com/](http://course-planner-kevin.herokuapp.com/)
+
 
 ## Setup
 
